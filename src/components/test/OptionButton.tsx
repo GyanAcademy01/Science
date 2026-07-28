@@ -38,7 +38,7 @@ export function OptionButton({
       disabled={revealed}
       aria-pressed={selected}
       className={cn(
-        "flex w-full items-center gap-3 rounded-[var(--r-md)] border p-3 text-start text-[0.92rem] font-medium transition-all duration-300 sm:p-3.5 sm:text-[0.98rem]",
+        "flex w-full items-center gap-2.5 rounded-[var(--r-md)] border p-2.5 text-start text-[0.85rem] font-medium transition-all duration-300 sm:p-3 sm:text-[0.9rem]",
         !revealed && "hover:border-[var(--stroke-strong)] active:scale-[0.99]",
         revealed && "cursor-default",
         showAsCorrect && "anim-correct",
@@ -47,7 +47,7 @@ export function OptionButton({
       style={style}
     >
       <span
-        className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-[0.85rem] font-extrabold"
+        className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-[0.78rem] font-extrabold"
         style={
           showAsCorrect
             ? { background: "var(--ok)", color: "#fff" }
@@ -57,9 +57,9 @@ export function OptionButton({
         }
       >
         {showAsCorrect ? (
-          <Check size={16} strokeWidth={3} />
+          <Check size={14} strokeWidth={3} />
         ) : showAsWrong ? (
-          <X size={16} strokeWidth={3} />
+          <X size={14} strokeWidth={3} />
         ) : (
           OPTION_LABELS[index]
         )}

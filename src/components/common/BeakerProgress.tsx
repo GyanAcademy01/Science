@@ -17,7 +17,7 @@ function liquidColor(percent: number): string {
 /** 🧪 best-score મુજબ ભરાતું beaker — Test-set card નું મુખ્ય ચિહ્ન */
 export function BeakerProgress({
   percent,
-  size = 64,
+  size = 48,
   className,
 }: BeakerProgressProps) {
   const filled = percent ?? 0;

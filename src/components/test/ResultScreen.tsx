@@ -12,7 +12,7 @@ interface ResultScreenProps {
   onRetry: () => void;
 }
 
-const RADIUS = 66;
+const RADIUS = 52;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 function verdict(percent: number): { text: string; emoji: string } {
@@ -42,11 +42,11 @@ export function ResultScreen({
 
   return (
     <div className="anim-fade-up flex flex-col items-center text-center">
-      <p className="text-[2.4rem] leading-none">{emoji}</p>
-      <h2 className="mt-2 text-[1.3rem] font-extrabold sm:text-[1.5rem]">{text}</h2>
+      <p className="text-[1.9rem] leading-none">{emoji}</p>
+      <h2 className="mt-1.5 text-[1.1rem] font-extrabold sm:text-[1.25rem]">{text}</h2>
 
-      <div className="relative my-5">
-        <svg width="160" height="160" viewBox="0 0 160 160" role="img" aria-label={`સ્કોર ${percent} ટકા`}>
+      <div className="relative my-4">
+        <svg width="124" height="124" viewBox="0 0 124 124" role="img" aria-label={`સ્કોર ${percent} ટકા`}>
           <defs>
             <linearGradient id="score-ring" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#06b6d4" />
@@ -54,65 +54,65 @@ export function ResultScreen({
             </linearGradient>
           </defs>
           <circle
-            cx="80"
-            cy="80"
+            cx="62"
+            cy="62"
             r={RADIUS}
             fill="none"
             stroke="var(--surface-2)"
-            strokeWidth="12"
+            strokeWidth="9"
           />
           <circle
-            cx="80"
-            cy="80"
+            cx="62"
+            cy="62"
             r={RADIUS}
             fill="none"
             stroke="url(#score-ring)"
-            strokeWidth="12"
+            strokeWidth="9"
             strokeLinecap="round"
             strokeDasharray={CIRCUMFERENCE}
             strokeDashoffset={offset}
-            transform="rotate(-90 80 80)"
+            transform="rotate(-90 62 62)"
             className="anim-ring"
             style={{ ["--ring-len" as string]: `${CIRCUMFERENCE}` }}
           />
         </svg>
         <div className="absolute inset-0 grid place-items-center">
           <div>
-            <p className="text-[1.9rem] font-extrabold leading-none">
+            <p className="text-[1.55rem] font-extrabold leading-none">
               {toGujaratiDigits(correct)}
-              <span className="text-[1.1rem] text-[var(--fg-muted)]">
+              <span className="text-[0.92rem] text-[var(--fg-muted)]">
                 /{toGujaratiDigits(total)}
               </span>
             </p>
-            <p className="mt-1 text-[0.78rem] font-semibold text-[var(--fg-muted)]">
+            <p className="mt-0.5 text-[0.7rem] font-semibold text-[var(--fg-muted)]">
               સાચા જવાબ
             </p>
           </div>
         </div>
       </div>
 
-      <div className="grid w-full grid-cols-3 gap-2.5">
+      <div className="grid w-full grid-cols-3 gap-2">
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className="rounded-[var(--r-md)] p-3"
+            className="rounded-[var(--r-md)] p-2.5"
             style={{ background: "var(--surface-2)" }}
           >
-            <p className="text-[1.15rem] font-extrabold" style={{ color: stat.color }}>
+            <p className="text-[1rem] font-extrabold" style={{ color: stat.color }}>
               {typeof stat.value === "number"
                 ? toGujaratiDigits(stat.value)
                 : stat.value}
             </p>
-            <p className="text-[0.75rem] font-semibold text-[var(--fg-muted)]">
+            <p className="text-[0.7rem] font-semibold text-[var(--fg-muted)]">
               {stat.label}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="mt-6 flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
+      <div className="mt-4 flex w-full flex-col gap-2 sm:flex-row sm:justify-center">
         <Button onClick={onRetry} variant="solid" size="md">
-          <RotateCcw size={16} strokeWidth={2.4} />
+          <RotateCcw size={14} strokeWidth={2.4} />
           ફરી આપો
         </Button>
         <LinkButton
@@ -120,7 +120,7 @@ export function ResultScreen({
           variant="outline"
           size="md"
         >
-          <LayoutGrid size={16} strokeWidth={2.4} />
+          <LayoutGrid size={14} strokeWidth={2.4} />
           બીજો સેટ
         </LinkButton>
         <LinkButton
@@ -128,7 +128,7 @@ export function ResultScreen({
           variant="ghost"
           size="md"
         >
-          <BookOpen size={16} strokeWidth={2.4} />
+          <BookOpen size={14} strokeWidth={2.4} />
           થિયરી વાંચો
         </LinkButton>
       </div>

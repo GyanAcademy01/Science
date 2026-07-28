@@ -24,15 +24,15 @@ export function QuestionCard({
 
   return (
     <div key={question.id} className="anim-fade-up">
-      <div className="flex gap-3">
+      <div className="flex gap-2.5">
         <span
           className="select-none font-extrabold leading-none opacity-15"
-          style={{ fontSize: "2.4rem" }}
+          style={{ fontSize: "1.9rem" }}
           aria-hidden
         >
           {toGujaratiDigits(position)}
         </span>
-        <h2 className="flex-1 pt-1 text-[0.98rem] font-bold leading-relaxed sm:text-[1.08rem]">
+        <h2 className="flex-1 pt-0.5 text-[0.9rem] font-bold leading-relaxed sm:text-[0.98rem]">
           {lines.map((line, index) => (
             <span key={`${question.id}-l${index}`} className="block">
               {line}
@@ -41,7 +41,7 @@ export function QuestionCard({
         </h2>
       </div>
 
-      <div className="mt-4 grid gap-2.5 lg:grid-cols-2">
+      <div className="mt-3 grid gap-2 lg:grid-cols-2">
         {question.options.map((option, index) => (
           <OptionButton
             key={`${question.id}-o${index}`}

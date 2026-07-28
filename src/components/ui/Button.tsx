@@ -5,7 +5,7 @@ type Variant = "solid" | "soft" | "ghost" | "outline";
 type Size = "sm" | "md" | "lg";
 
 const BASE =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 disabled:opacity-45 disabled:pointer-events-none select-none";
+  "inline-flex items-center justify-center gap-1.5 rounded-full font-semibold transition-all duration-300 disabled:opacity-45 disabled:pointer-events-none select-none";
 
 const VARIANTS: Record<Variant, string> = {
   solid: "text-white shadow-[0_6px_20px_rgba(6,182,212,0.3)] hover:brightness-110",
@@ -16,9 +16,9 @@ const VARIANTS: Record<Variant, string> = {
 };
 
 const SIZES: Record<Size, string> = {
-  sm: "text-[0.8rem] px-3.5 py-2",
-  md: "text-[0.92rem] px-5 py-2.5",
-  lg: "text-[1.02rem] px-6 py-3.5 sm:text-[1.1rem]",
+  sm: "text-[0.74rem] px-3 py-1.5",
+  md: "text-[0.84rem] px-4 py-2",
+  lg: "text-[0.92rem] px-5 py-2.5 sm:text-[0.98rem]",
 };
 
 function styleFor(variant: Variant): React.CSSProperties | undefined {

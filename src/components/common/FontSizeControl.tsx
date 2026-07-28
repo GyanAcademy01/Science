@@ -9,18 +9,18 @@ export function FontSizeControl() {
     useFontSize();
 
   return (
-    <div className="inline-flex items-center gap-1 rounded-full border border-[var(--stroke)] bg-[var(--surface-2)] p-1">
+    <div className="inline-flex items-center gap-0.5 rounded-full border border-[var(--stroke)] bg-[var(--surface-2)] p-0.5">
       <button
         type="button"
         onClick={decrease}
         disabled={!canDecrease}
         aria-label="અક્ષર નાના કરો"
-        className="grid h-7 w-7 place-items-center rounded-full text-[var(--fg)] transition-colors hover:bg-[var(--surface-solid)] disabled:opacity-35"
+        className="grid h-6 w-6 place-items-center rounded-full text-[var(--fg)] transition-colors hover:bg-[var(--surface-solid)] disabled:opacity-35"
       >
-        <Minus size={14} strokeWidth={2.6} />
+        <Minus size={12} strokeWidth={2.6} />
       </button>
-      <span className="flex min-w-[68px] items-center justify-center gap-1 text-[0.72rem] font-semibold text-[var(--fg-muted)]">
-        <Type size={12} strokeWidth={2.4} />
+      <span className="flex min-w-[58px] items-center justify-center gap-1 text-[0.68rem] font-semibold text-[var(--fg-muted)]">
+        <Type size={11} strokeWidth={2.4} />
         {mounted ? label : "અક્ષર"}
       </span>
       <button
@@ -28,9 +28,9 @@ export function FontSizeControl() {
         onClick={increase}
         disabled={!canIncrease}
         aria-label="અક્ષર મોટા કરો"
-        className="grid h-7 w-7 place-items-center rounded-full text-[var(--fg)] transition-colors hover:bg-[var(--surface-solid)] disabled:opacity-35"
+        className="grid h-6 w-6 place-items-center rounded-full text-[var(--fg)] transition-colors hover:bg-[var(--surface-solid)] disabled:opacity-35"
       >
-        <Plus size={14} strokeWidth={2.6} />
+        <Plus size={12} strokeWidth={2.6} />
       </button>
     </div>
   );

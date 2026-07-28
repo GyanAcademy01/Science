@@ -87,15 +87,15 @@ export function TestShell({
   const backHref = `/chapter/${subjectId}/${topicId}/test`;
 
   return (
-    <main className="mx-auto w-full max-w-[860px] px-3 py-5 sm:px-4 sm:py-8">
-      <div className="mb-4 flex items-center justify-between gap-3">
+    <main className="mx-auto w-full max-w-[860px] px-2.5 py-3 sm:px-3 sm:py-5">
+      <div className="mb-3 flex items-center justify-between gap-2">
         <BackArrow href={backHref} label="સેટ બદલો" />
-        <p className="truncate text-[0.82rem] font-semibold text-[var(--fg-muted)]">
+        <p className="truncate text-[0.76rem] font-semibold text-[var(--fg-muted)]">
           {chapterTitle} · {set.title}
         </p>
       </div>
 
-      <section className="card p-4 sm:rounded-[var(--r-xl)] sm:p-7">
+      <section className="card p-3 sm:rounded-[var(--r-xl)] sm:p-5">
         {finished ? (
           <ResultScreen
             correct={correctCount}
@@ -106,12 +106,12 @@ export function TestShell({
           />
         ) : (
           <>
-            <div className="mb-2 flex items-center justify-between text-[0.8rem] font-semibold">
+            <div className="mb-1.5 flex items-center justify-between text-[0.74rem] font-semibold">
               <span className="text-[var(--fg-muted)]">
                 પ્રશ્ન {toGujaratiDigits(index + 1)} /{" "}
                 {toGujaratiDigits(set.questions.length)}
               </span>
-              <span className="flex gap-3">
+              <span className="flex gap-2.5">
                 <span style={{ color: "var(--ok)" }}>
                   ✓ {toGujaratiDigits(correctCount)}
                 </span>
@@ -123,7 +123,7 @@ export function TestShell({
 
             <LiquidProgress current={attempted} total={set.questions.length} />
 
-            <div className="mt-5">
+            <div className="mt-3.5">
               <QuestionCard
                 question={set.questions[index]}
                 position={index + 1}
@@ -132,20 +132,20 @@ export function TestShell({
               />
             </div>
 
-            <div className="mt-6 flex items-center justify-between gap-2.5 border-t border-[var(--stroke)] pt-4">
+            <div className="mt-4 flex items-center justify-between gap-2 border-t border-[var(--stroke)] pt-3">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setIndex((i) => Math.max(0, i - 1))}
                 disabled={index === 0}
               >
-                <ChevronLeft size={16} strokeWidth={2.6} />
+                <ChevronLeft size={14} strokeWidth={2.6} />
                 પાછળ
               </Button>
 
               {isLast ? (
                 <Button variant="solid" size="sm" onClick={finish}>
-                  <Flag size={15} strokeWidth={2.6} />
+                  <Flag size={13} strokeWidth={2.6} />
                   પરિણામ જુઓ
                 </Button>
               ) : (
@@ -157,7 +157,7 @@ export function TestShell({
                   }
                 >
                   આગળ
-                  <ChevronRight size={16} strokeWidth={2.6} />
+                  <ChevronRight size={14} strokeWidth={2.6} />
                 </Button>
               )}
             </div>

@@ -16,23 +16,23 @@ export function ExplanationPanel({
 }: ExplanationPanelProps) {
   return (
     <div
-      className="anim-slide-down mt-4 rounded-[var(--r-md)] border-s-[3px] p-4"
+      className="anim-slide-down mt-3 rounded-[var(--r-md)] border-s-[3px] p-3"
       style={{
         background: wasRight ? "var(--ok-soft)" : "var(--bad-soft)",
         borderInlineStartColor: wasRight ? "var(--ok)" : "var(--bad)",
       }}
     >
-      <p className="flex items-center gap-2 text-[0.9rem] font-extrabold">
+      <p className="flex items-center gap-1.5 text-[0.83rem] font-extrabold">
         {wasRight ? "✅ સાચો જવાબ!" : "❌ ખોટો જવાબ"}
       </p>
       {!wasRight && (
-        <p className="mt-1.5 text-[0.88rem] font-semibold">
+        <p className="mt-1 text-[0.8rem] font-semibold">
           સાચો જવાબ: ({OPTION_LABELS[correctIndex]}) {correctText}
         </p>
       )}
-      <p className="mt-2 flex gap-2 text-[0.88rem] leading-relaxed">
+      <p className="mt-1.5 flex gap-1.5 text-[0.8rem] leading-relaxed">
         <Lightbulb
-          size={16}
+          size={14}
           strokeWidth={2.2}
           className="mt-0.5 shrink-0 text-[var(--accent-warm)]"
         />

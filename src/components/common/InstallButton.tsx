@@ -40,9 +40,9 @@ export function InstallButton() {
       onClick={install}
       aria-label="એપ ઇન્સ્ટોલ કરો"
       title="એપ ઇન્સ્ટોલ કરો"
-      className="grid h-9 w-9 place-items-center rounded-full border border-[var(--stroke)] bg-[var(--surface-2)] text-[var(--fg)] transition-all duration-300 hover:border-[var(--stroke-strong)] active:scale-95"
+      className="grid h-8 w-8 place-items-center rounded-full border border-[var(--stroke)] bg-[var(--surface-2)] text-[var(--fg)] transition-all duration-300 hover:border-[var(--stroke-strong)] active:scale-95"
     >
-      <Download size={16} strokeWidth={2.2} />
+      <Download size={14} strokeWidth={2.2} />
     </button>
   );
 }

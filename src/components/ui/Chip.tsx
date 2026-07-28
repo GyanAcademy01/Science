@@ -27,7 +27,7 @@ const TONES: Record<Tone, { bg: string; fg: string; border: string }> = {
 };
 
 const BASE =
-  "inline-flex items-center justify-center gap-1.5 rounded-full border font-semibold text-[0.78rem] px-3 py-1.5 transition-all duration-300 sm:text-[0.85rem] dark:brightness-150";
+  "inline-flex items-center justify-center gap-1 rounded-full border font-semibold text-[0.72rem] px-2.5 py-1 transition-all duration-300 sm:text-[0.78rem] dark:brightness-150";
 
 interface ChipProps {
   tone?: Tone;

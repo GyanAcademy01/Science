@@ -18,7 +18,7 @@ const TONES: Record<NonNullable<HexBadgeProps["tone"]>, string> = {
 export function HexBadge({
   children,
   className,
-  size = 46,
+  size = 38,
   tone = "brand",
 }: HexBadgeProps) {
   return (

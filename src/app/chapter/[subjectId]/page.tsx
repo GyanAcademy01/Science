@@ -31,51 +31,51 @@ export default async function ChapterListPage(props: {
   if (!subject) notFound();
 
   return (
-    <main className="mx-auto w-full max-w-[1200px] px-3 py-6 sm:px-4 sm:py-10">
+    <main className="mx-auto w-full max-w-[1200px] px-2.5 py-3 sm:px-3 sm:py-5">
       <BackArrow href="/subjects" label="વિષયો" />
 
-      <header className="mt-4 mb-6 text-center">
-        <h1 className="text-[1.5rem] sm:text-[2rem]">
+      <header className="mt-3 mb-4 text-center">
+        <h1 className="text-[1.25rem] sm:text-[1.6rem]">
           <span className="text-grad">{subject.name}</span>
         </h1>
-        <p className="mt-2 text-[0.88rem] text-[var(--fg-muted)]">
+        <p className="mt-1.5 text-[0.8rem] text-[var(--fg-muted)]">
           {toGujaratiDigits(subject.topicCount)} પ્રકરણ ·{" "}
           {toGujaratiDigits(subject.questionCount)} પ્રશ્નો
         </p>
       </header>
 
-      <div className="grid gap-2 sm:gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-1.5 sm:gap-2.5 md:grid-cols-2 lg:grid-cols-3">
         {subject.topics.map((topic, index) => (
           <Card
             key={topic.id}
             hover
-            className="anim-fade-up flex flex-col p-4 sm:p-5"
+            className="anim-fade-up flex flex-col p-3 sm:p-3.5"
             style={{ animationDelay: `${index * 0.08}s` }}
           >
-            <div className="flex items-center gap-3">
-              <HexBadge size={40} className="sm:hidden">
+            <div className="flex items-center gap-2.5">
+              <HexBadge size={33} className="sm:hidden">
                 {topic.number}
               </HexBadge>
               <span className="hidden sm:block">
-                <HexBadge size={46}>{topic.number}</HexBadge>
+                <HexBadge size={38}>{topic.number}</HexBadge>
               </span>
               <div className="min-w-0 flex-1">
-                <p className="text-[0.7rem] font-bold uppercase tracking-wide text-[var(--fg-muted)]">
+                <p className="text-[0.68rem] font-bold uppercase tracking-wide text-[var(--fg-muted)]">
                   પ્રકરણ {toGujaratiDigits(topic.number)}
                 </p>
-                <h2 className="text-[1rem] leading-snug sm:text-[1.1rem]">
+                <h2 className="text-[0.9rem] leading-snug sm:text-[0.98rem]">
                   {topic.title}
                 </h2>
               </div>
             </div>
 
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-3 flex flex-wrap gap-1.5">
               {topic.hasTheory && (
                 <ChipLink
                   href={`/chapter/${subject.id}/${topic.id}/theory`}
                   tone="cyan"
                 >
-                  <BookOpen size={14} strokeWidth={2.4} />
+                  <BookOpen size={12} strokeWidth={2.4} />
                   થિયરી
                 </ChipLink>
               )}
@@ -84,7 +84,7 @@ export default async function ChapterListPage(props: {
                   href={`/chapter/${subject.id}/${topic.id}/test`}
                   tone="violet"
                 >
-                  <ClipboardCheck size={14} strokeWidth={2.4} />
+                  <ClipboardCheck size={12} strokeWidth={2.4} />
                   ટેસ્ટ ({toGujaratiDigits(topic.testSets)})
                 </ChipLink>
               )}
@@ -93,7 +93,7 @@ export default async function ChapterListPage(props: {
                   href={`/pdf-view?file=${encodeURIComponent(topic.pdfUrl)}&title=${encodeURIComponent(topic.title)}`}
                   tone="amber"
                 >
-                  <FileText size={14} strokeWidth={2.4} />
+                  <FileText size={12} strokeWidth={2.4} />
                   PDF
                 </ChipLink>
               )}

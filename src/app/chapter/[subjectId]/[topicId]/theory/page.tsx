@@ -34,34 +34,34 @@ export default async function TheoryPage(props: {
   const { topic } = found;
 
   return (
-    <main className="mx-auto w-full max-w-[900px] px-2 py-5 sm:px-4 sm:py-8">
+    <main className="mx-auto w-full max-w-[900px] px-2 py-3 sm:px-3 sm:py-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <BackArrow href={`/chapter/${subjectId}`} label="પ્રકરણો" />
         <FontSizeControl />
       </div>
 
-      <header className="mt-4 mb-5 text-center">
-        <p className="text-[0.72rem] font-bold uppercase tracking-wide text-[var(--fg-muted)]">
+      <header className="mt-3 mb-3.5 text-center">
+        <p className="text-[0.68rem] font-bold uppercase tracking-wide text-[var(--fg-muted)]">
           પ્રકરણ {topic.number}
         </p>
-        <h1 className="mt-1 text-[1.35rem] sm:text-[1.8rem]">
+        <h1 className="mt-0.5 text-[1.15rem] sm:text-[1.5rem]">
           <span className="text-grad">{theory.chapterTitle}</span>
         </h1>
-        <p className="mx-auto mt-2 max-w-[620px] text-[0.86rem] leading-relaxed text-[var(--fg-muted)]">
+        <p className="mx-auto mt-1.5 max-w-[580px] text-[0.79rem] leading-relaxed text-[var(--fg-muted)]">
           {theory.description}
         </p>
       </header>
 
       <TheoryRenderer sections={theory.sections} />
 
-      <div className="mt-7 flex flex-wrap justify-center gap-3">
+      <div className="mt-5 flex flex-wrap justify-center gap-2">
         {topic.hasTest && (
           <LinkButton
             href={`/chapter/${subjectId}/${topicId}/test`}
             size="lg"
             className="shimmer-cta"
           >
-            <ClipboardCheck size={18} strokeWidth={2.4} />
+            <ClipboardCheck size={15} strokeWidth={2.4} />
             ટેસ્ટ આપો
           </LinkButton>
         )}
@@ -71,7 +71,7 @@ export default async function TheoryPage(props: {
             variant="outline"
             size="lg"
           >
-            <FileText size={18} strokeWidth={2.4} />
+            <FileText size={15} strokeWidth={2.4} />
             મૂળ PDF
           </LinkButton>
         )}

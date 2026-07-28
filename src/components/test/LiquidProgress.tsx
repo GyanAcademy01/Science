@@ -9,7 +9,7 @@ export function LiquidProgress({ current, total }: LiquidProgressProps) {
 
   return (
     <div
-      className="h-2.5 w-full overflow-hidden rounded-full"
+      className="h-2 w-full overflow-hidden rounded-full"
       style={{ background: "var(--surface-2)" }}
       role="progressbar"
       aria-valuenow={current}

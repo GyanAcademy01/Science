@@ -3,8 +3,8 @@ export function MoleculeBullet({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 20 20"
-      width="18"
-      height="18"
+      width="15"
+      height="15"
       className={className}
       aria-hidden
     >

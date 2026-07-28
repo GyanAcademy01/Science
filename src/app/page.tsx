@@ -35,27 +35,27 @@ const STATS = [
 
 export default function HomePage() {
   return (
-    <main className="mx-auto w-full max-w-[1200px] px-3 py-6 sm:px-4 sm:py-10">
+    <main className="mx-auto w-full max-w-[1200px] px-2.5 py-3 sm:px-3 sm:py-5">
       {/* Hero */}
-      <section className="grid items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+      <section className="grid items-center gap-4 lg:grid-cols-[1.15fr_0.85fr] lg:gap-7">
         <div className="anim-fade-up text-center lg:text-start">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-1.5 text-[0.75rem] font-bold text-[var(--fg-muted)]">
-            <Sparkles size={13} strokeWidth={2.4} />
+          <span className="inline-flex items-center gap-1 rounded-full border border-[var(--stroke)] bg-[var(--surface-2)] px-2.5 py-1 text-[0.7rem] font-bold text-[var(--fg-muted)]">
+            <Sparkles size={12} strokeWidth={2.4} />
             {siteConfig.tagline} · ગાંધીનગર
           </span>
 
-          <h1 className="mt-4 text-[1.9rem] leading-tight sm:text-[2.2rem] lg:text-[3rem]">
+          <h1 className="mt-3 text-[1.55rem] leading-tight sm:text-[1.8rem] lg:text-[2.35rem]">
             <span className="text-grad">વિજ્ઞાન</span>
             <br />
             ધોરણ 6 — સરળ અને સચોટ
           </h1>
 
-          <p className="mx-auto mt-3 max-w-[520px] text-[0.9rem] leading-relaxed text-[var(--fg-muted)] sm:text-[1rem] lg:mx-0">
+          <p className="mx-auto mt-2 max-w-[480px] text-[0.82rem] leading-relaxed text-[var(--fg-muted)] sm:text-[0.9rem] lg:mx-0">
             થિયરી વાંચો, MCQ ટેસ્ટ આપો અને મૂળ PDF જુઓ — બધું એક જ જગ્યાએ,
             મોબાઇલમાં પણ ઝડપી.
           </p>
 
-          <div className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
+          <div className="mt-4 flex flex-wrap justify-center gap-2 lg:justify-start">
             <LinkButton href="/subjects" size="lg" className="shimmer-cta">
               શરૂ કરો
             </LinkButton>
@@ -67,25 +67,25 @@ export default function HomePage() {
 
         <div className="anim-float flex justify-center lg:justify-end">
           <span className="hidden lg:block">
-            <AtomOrb size={320} />
-          </span>
-          <span className="hidden sm:block lg:hidden">
             <AtomOrb size={240} />
           </span>
+          <span className="hidden sm:block lg:hidden">
+            <AtomOrb size={180} />
+          </span>
           <span className="sm:hidden">
-            <AtomOrb size={160} animated={false} />
+            <AtomOrb size={120} animated={false} />
           </span>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="glass anim-fade-up mt-8 grid grid-cols-3 gap-2 rounded-[var(--r-lg)] px-2 py-4 sm:px-4">
+      <section className="glass anim-fade-up mt-5 grid grid-cols-3 gap-1.5 rounded-[var(--r-lg)] px-2 py-3 sm:px-3">
         {STATS.map((stat) => (
           <div key={stat.label} className="text-center">
-            <p className="text-grad text-[1.5rem] font-extrabold leading-none sm:text-[1.9rem]">
+            <p className="text-grad text-[1.25rem] font-extrabold leading-none sm:text-[1.55rem]">
               {toGujaratiDigits(stat.value)}
             </p>
-            <p className="mt-1 text-[0.75rem] font-semibold text-[var(--fg-muted)] sm:text-[0.85rem]">
+            <p className="mt-0.5 text-[0.7rem] font-semibold text-[var(--fg-muted)] sm:text-[0.78rem]">
               {stat.label}
             </p>
           </div>
@@ -93,26 +93,26 @@ export default function HomePage() {
       </section>
 
       {/* Features */}
-      <section className="mt-8">
-        <h2 className="mb-4 text-center text-[1.2rem] sm:text-[1.4rem]">
+      <section className="mt-5">
+        <h2 className="mb-3 text-center text-[1.05rem] sm:text-[1.2rem]">
           એપમાં શું મળશે?
         </h2>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((feature, index) => (
             <Card
               key={feature.title}
               hover
-              className="anim-fade-up p-4 sm:p-5"
+              className="anim-fade-up p-3 sm:p-3.5"
               style={{ animationDelay: `${index * 0.08}s` }}
             >
               <span
-                className="grid h-11 w-11 place-items-center rounded-[var(--r-md)]"
+                className="grid h-9 w-9 place-items-center rounded-[var(--r-md)]"
                 style={{ background: feature.tone }}
               >
-                <feature.icon size={21} strokeWidth={2.2} />
+                <feature.icon size={17} strokeWidth={2.2} />
               </span>
-              <h3 className="mt-3 text-[1.05rem]">{feature.title}</h3>
-              <p className="mt-1.5 text-[0.88rem] leading-relaxed text-[var(--fg-muted)]">
+              <h3 className="mt-2 text-[0.95rem]">{feature.title}</h3>
+              <p className="mt-1 text-[0.8rem] leading-relaxed text-[var(--fg-muted)]">
                 {feature.text}
               </p>
             </Card>

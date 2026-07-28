@@ -36,17 +36,17 @@ export default async function TestSelectPage(props: {
   );
 
   return (
-    <main className="mx-auto w-full max-w-[1000px] px-3 py-6 sm:px-4 sm:py-10">
+    <main className="mx-auto w-full max-w-[1000px] px-2.5 py-3 sm:px-3 sm:py-5">
       <BackArrow href={`/chapter/${subjectId}`} label="પ્રકરણો" />
 
-      <header className="mt-4 mb-6 text-center">
-        <p className="text-[0.72rem] font-bold uppercase tracking-wide text-[var(--fg-muted)]">
+      <header className="mt-3 mb-4 text-center">
+        <p className="text-[0.68rem] font-bold uppercase tracking-wide text-[var(--fg-muted)]">
           પ્રકરણ {found.topic.number} · ટેસ્ટ
         </p>
-        <h1 className="mt-1 text-[1.35rem] sm:text-[1.8rem]">
+        <h1 className="mt-0.5 text-[1.15rem] sm:text-[1.5rem]">
           <span className="text-grad">{chapter.chapterTitle}</span>
         </h1>
-        <p className="mt-2 text-[0.86rem] text-[var(--fg-muted)]">
+        <p className="mt-1.5 text-[0.79rem] text-[var(--fg-muted)]">
           કુલ {toGujaratiDigits(totalQuestions)} પ્રશ્નો ·{" "}
           {toGujaratiDigits(chapter.sets.length)} સેટમાં વહેંચેલા. કોઈપણ સેટથી
           શરૂ કરો.
@@ -59,13 +59,13 @@ export default async function TestSelectPage(props: {
         topicId={topicId}
       />
 
-      <div className="mt-7 flex justify-center">
+      <div className="mt-5 flex justify-center">
         <LinkButton
           href={`/chapter/${subjectId}/${topicId}/theory`}
           variant="outline"
           size="md"
         >
-          <BookOpen size={16} strokeWidth={2.4} />
+          <BookOpen size={14} strokeWidth={2.4} />
           પહેલાં થિયરી વાંચો
         </LinkButton>
       </div>

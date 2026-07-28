@@ -19,7 +19,7 @@ const MIN_SCALE = 0.5;
 const MAX_SCALE = 3;
 const SCALE_STEP = 0.2;
 /** કાર્ડનું આડું padding — ફિટ ગણતરીમાં બાદ કરવું પડે */
-const CARD_GUTTER = 16;
+const CARD_GUTTER = 12;
 
 type Status = "loading" | "ready" | "error";
 
@@ -61,19 +61,19 @@ function ErrorCard({
   onRetry?: () => void;
 }) {
   return (
-    <div className="card anim-fade-up mx-auto my-10 flex max-w-md flex-col items-center gap-3 p-7 text-center">
+    <div className="card anim-fade-up mx-auto my-7 flex max-w-md flex-col items-center gap-2.5 p-5 text-center">
       <span
-        className="flex h-14 w-14 items-center justify-center rounded-full text-white"
+        className="flex h-11 w-11 items-center justify-center rounded-full text-white"
         style={{ background: "var(--grad-brand)" }}
         aria-hidden="true"
       >
-        <TriangleAlert size={26} strokeWidth={2.2} />
+        <TriangleAlert size={21} strokeWidth={2.2} />
       </span>
-      <h2 className="text-[1.05rem] font-extrabold text-[var(--fg)]">{heading}</h2>
-      <p className="text-[0.88rem] leading-relaxed text-[var(--fg-muted)]">{message}</p>
+      <h2 className="text-[0.95rem] font-extrabold text-[var(--fg)]">{heading}</h2>
+      <p className="text-[0.8rem] leading-relaxed text-[var(--fg-muted)]">{message}</p>
       {onRetry ? (
         <Button variant="solid" size="sm" onClick={onRetry} className="mt-1">
-          <RefreshCw size={15} strokeWidth={2.4} />
+          <RefreshCw size={13} strokeWidth={2.4} />
           ફરી પ્રયાસ કરો
         </Button>
       ) : null}
@@ -139,7 +139,7 @@ function PdfPage({
   return (
     <div
       data-pdf-page={pageNumber}
-      className="card anim-fade-up w-full overflow-x-auto p-1.5 sm:p-2"
+      className="card anim-fade-up w-full overflow-x-auto p-1 sm:p-1.5"
       style={box ? { minHeight: Math.round(box.height * scale) } : undefined}
     >
       <canvas
@@ -298,13 +298,13 @@ export default function PDFViewer() {
   const showToolbar = status === "ready" && numPages > 0;
 
   return (
-    <main className="w-full px-3 pt-4 pb-28 sm:px-5 sm:pb-32">
+    <main className="w-full px-2.5 pt-3 pb-20 sm:px-4 sm:pb-24">
       <div ref={shellRef} className="mx-auto w-full max-w-5xl">
         {/* ઉપરની હરોળ */}
-        <div className="anim-fade-up mb-4 flex items-center justify-between gap-3">
+        <div className="anim-fade-up mb-3 flex items-center justify-between gap-2">
           <BackArrow href="/subjects" label="પાછળ" />
           <h1
-            className="min-w-0 flex-1 truncate text-end text-[0.9rem] font-extrabold text-[var(--fg)] sm:text-[1.08rem]"
+            className="min-w-0 flex-1 truncate text-end text-[0.82rem] font-extrabold text-[var(--fg)] sm:text-[0.98rem]"
             title={title}
           >
             {title}
@@ -325,7 +325,7 @@ export default function PDFViewer() {
         ) : status === "loading" ? (
           <AtomLoader label="PDF લોડ થાય છે…" />
         ) : (
-          <div className="flex flex-col items-center gap-4 sm:gap-6">
+          <div className="flex flex-col items-center gap-2.5 sm:gap-4">
             {doc
               ? pageNumbers.map((pageNo) => (
                   <PdfPage
@@ -344,7 +344,7 @@ export default function PDFViewer() {
       {/* તરતો pill toolbar — desktop તથા compact mobile */}
       {showToolbar ? (
         <div
-          className="glass fixed bottom-3 left-1/2 z-40 flex -translate-x-1/2 items-center gap-1 px-2 py-1.5 sm:bottom-6 sm:gap-2 sm:px-3 sm:py-2"
+          className="glass fixed bottom-2.5 left-1/2 z-40 flex -translate-x-1/2 items-center gap-0.5 px-1.5 py-1 sm:bottom-4 sm:gap-1.5 sm:px-2.5 sm:py-1.5"
           style={{ borderRadius: "var(--r-pill)" }}
           role="toolbar"
           aria-label="PDF નિયંત્રણો"
@@ -355,12 +355,12 @@ export default function PDFViewer() {
             onClick={() => setScale((s) => clampScale(s - SCALE_STEP))}
             disabled={scale <= MIN_SCALE}
             aria-label="ઝૂમ ઘટાડો"
-            className="px-2 py-1.5 sm:px-2.5 sm:py-2"
+            className="px-1.5 py-1 sm:px-2 sm:py-1.5"
           >
-            <Minus size={16} strokeWidth={2.6} />
+            <Minus size={14} strokeWidth={2.6} />
           </Button>
 
-          <span className="min-w-[3.1rem] text-center text-[0.72rem] font-bold text-[var(--fg)] tabular-nums sm:min-w-[3.6rem] sm:text-[0.82rem]">
+          <span className="min-w-[2.8rem] text-center text-[0.68rem] font-bold text-[var(--fg)] tabular-nums sm:min-w-[3.2rem] sm:text-[0.76rem]">
             {toGujaratiDigits(zoomPercent)}%
           </span>
 
@@ -370,13 +370,13 @@ export default function PDFViewer() {
             onClick={() => setScale((s) => clampScale(s + SCALE_STEP))}
             disabled={scale >= MAX_SCALE}
             aria-label="ઝૂમ વધારો"
-            className="px-2 py-1.5 sm:px-2.5 sm:py-2"
+            className="px-1.5 py-1 sm:px-2 sm:py-1.5"
           >
-            <Plus size={16} strokeWidth={2.6} />
+            <Plus size={14} strokeWidth={2.6} />
           </Button>
 
           <span
-            className="mx-0.5 h-5 w-px shrink-0 bg-[var(--stroke-strong)] sm:mx-1"
+            className="mx-0.5 h-4 w-px shrink-0 bg-[var(--stroke-strong)] sm:mx-1"
             aria-hidden="true"
           />
 
@@ -385,19 +385,19 @@ export default function PDFViewer() {
             size="sm"
             onClick={handleFit}
             aria-label="પહોળાઈ પ્રમાણે ફિટ કરો"
-            className="gap-1.5 px-2 py-1.5 sm:px-3 sm:py-2"
+            className="gap-1 px-1.5 py-1 sm:px-2.5 sm:py-1.5"
           >
-            <Maximize2 size={15} strokeWidth={2.5} />
+            <Maximize2 size={13} strokeWidth={2.5} />
             <span className="hidden sm:inline">ફિટ</span>
           </Button>
 
           <span
-            className="mx-0.5 h-5 w-px shrink-0 bg-[var(--stroke-strong)] sm:mx-1"
+            className="mx-0.5 h-4 w-px shrink-0 bg-[var(--stroke-strong)] sm:mx-1"
             aria-hidden="true"
           />
 
           <span
-            className="px-1 text-[0.72rem] font-semibold whitespace-nowrap text-[var(--fg-muted)] sm:px-1.5 sm:text-[0.82rem]"
+            className="px-1 text-[0.68rem] font-semibold whitespace-nowrap text-[var(--fg-muted)] sm:px-1.5 sm:text-[0.76rem]"
             aria-live="polite"
           >
             <span className="hidden sm:inline">પાનું </span>
