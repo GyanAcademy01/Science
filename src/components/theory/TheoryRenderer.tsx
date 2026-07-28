@@ -212,7 +212,7 @@ export function TheoryRenderer({ sections }: { sections: TheorySection[] }) {
                   <img
                     src={section.imageUrl}
                     alt={section.imageCaption || section.title}
-                    className="h-auto max-h-[360px] w-full object-cover transition-transform duration-300 hover:scale-[1.01]"
+                    className="h-auto w-full object-contain transition-transform duration-300 hover:scale-[1.005]"
                     loading="lazy"
                   />
                   {section.imageCaption && (

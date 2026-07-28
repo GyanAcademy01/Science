@@ -42,6 +42,8 @@ export const std7_ch2_theory: TheoryData = {
       icon: "🦷",
       title: "૨. દાંતની ગોઠવણી અને પ્રકારો",
       type: "table",
+      imageUrl: "/images/std7_ch2_teeth.jpg",
+      imageCaption: "દાંતના ૪ મુખ્ય પ્રકારો: છેદક, રાક્ષી, અગ્રદાઢ અને દાઢ (કુલ ૩૨ કાયમી દાંત)",
       tableData: {
         headers: ["દાંતનો પ્રકાર", "કાર્ય", "એક જડબામાં સંખ્યા (કુલ)"],
         rows: [
@@ -62,6 +64,8 @@ export const std7_ch2_theory: TheoryData = {
       icon: "🫁",
       title: "૩. મનુષ્યનું પાચનતંત્ર અને પાચનઅંગો",
       type: "table",
+      imageUrl: "/images/std7_ch2_digestive_system.jpg",
+      imageCaption: "મનુષ્યનું સંપૂર્ણ પાચનતંત્ર અને પાચન માર્ગના વિવિધ અંગો",
       tableData: {
         headers: ["અંગ / ભાગ", "લક્ષણો અને સ્ત્રાવ", "કાર્ય"],
         rows: [
@@ -119,6 +123,8 @@ export const std7_ch2_theory: TheoryData = {
       icon: "🐄",
       title: "૫. ઘાસ ખાતા પ્રાણીઓ અને અમીબામાં પોષણ",
       type: "table",
+      imageUrl: "/images/std7_ch2_ruminants_amoeba.jpg",
+      imageCaption: "વાગોળનારા પ્રાણીઓમાં પાચન (આમાશય) અને અમીબામાં પોષણ (ખોટા પગ અને અન્નધાની)",
       tableData: {
         headers: ["સજીવ / પ્રક્રિયા", "વિશેષતા અને રીત"],
         rows: [
