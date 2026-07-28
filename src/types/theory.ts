@@ -20,6 +20,10 @@ export interface TheorySection {
   points?: string[];
   tableData?: TheoryTable;
   qa?: TheoryQA[];
+  /** 🖼️ વિઝ્યુઅલ ઈન્ફોગ્રાફિક ઈમેજ URL */
+  imageUrl?: string;
+  /** ઈમેજ નીચેનું કેપ્શન */
+  imageCaption?: string;
 }
 
 export interface TheoryData {

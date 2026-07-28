@@ -11,6 +11,8 @@ export const std7_ch11_theory: TheoryData = {
       icon: "🔦",
       title: "૧. પ્રકાશના ગુણધર્મો અને પરાવર્તન",
       type: "table",
+      imageUrl: "/images/std7_ch11_reflection.jpg",
+      imageCaption: "પ્રકાશનું પરાવર્તન, સીધી રેખામાં ગતિ અને આપાત કોણ",
       tableData: {
         headers: ["મુદ્દો / સંકલ્પના", "વ્યાખ્યા અને વિગત", "ઉદાહરણ અને પ્રયોગ"],
         rows: [
@@ -68,6 +70,8 @@ export const std7_ch11_theory: TheoryData = {
       icon: "🥄",
       title: "૩. ગોલીય અરીસા (Spherical Mirrors)",
       type: "table",
+      imageUrl: "/images/std7_ch11_mirrors.jpg",
+      imageCaption: "ગોલીય અરીસાના પ્રકારો: અંતર્ગોળ અરીસો vs બહિર્ગોળ અરીસો (સાઇડ મિરર)",
       tableData: {
         headers: ["અરીસાનો પ્રકાર", "સપાટી અને પ્રતિબિંબના પ્રકાર", "મુખ્ય ઉપયોગો"],
         rows: [
@@ -89,6 +93,8 @@ export const std7_ch11_theory: TheoryData = {
       icon: "🔍",
       title: "૪. લેન્સના પ્રકારો (Types of Lenses)",
       type: "table",
+      imageUrl: "/images/std7_ch11_lenses.jpg",
+      imageCaption: "લેન્સના પ્રકારો: બહિર્ગોળ લેન્સ (અભિસારી) vs અંતર્ગોળ લેન્સ (અપસારી)",
       tableData: {
         headers: ["લેન્સનો પ્રકાર", "આકાર અને પ્રકાશનું વાંકા વળવું", "પ્રતિબિંબ અને ઉપયોગ"],
         rows: [
@@ -110,6 +116,8 @@ export const std7_ch11_theory: TheoryData = {
       icon: "🌈",
       title: "૫. સૂર્યપ્રકાશ-સફેદ કે રંગીન (મેઘધનુષ્ય, પ્રિઝમ અને ન્યૂટનની તકતી)",
       type: "table",
+      imageUrl: "/images/std7_ch11_spectrum.jpg",
+      imageCaption: "સૂર્યપ્રકાશનું ૭ રંગોમાં વિભાજન (પ્રિઝમ, મેઘધનુષ્ય અને ન્યૂટનની તકતી)",
       tableData: {
         headers: ["ઘટના / સાધન", "સાત રંગોનો ક્રમ / સિદ્ધાંત", "વૈજ્ઞાનિક સ્પષ્ટતા"],
         rows: [

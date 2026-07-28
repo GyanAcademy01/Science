@@ -206,6 +206,22 @@ export function TheoryRenderer({ sections }: { sections: TheorySection[] }) {
             </header>
 
             <div className="reader ps-0 sm:ps-[46px]">
+              {section.imageUrl && (
+                <figure className="mb-3.5 overflow-hidden rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] shadow-xs">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={section.imageUrl}
+                    alt={section.imageCaption || section.title}
+                    className="h-auto max-h-[360px] w-full object-cover transition-transform duration-300 hover:scale-[1.01]"
+                    loading="lazy"
+                  />
+                  {section.imageCaption && (
+                    <figcaption className="bg-[var(--surface)] px-3 py-2 text-center text-[0.8rem] font-semibold text-[var(--fg-muted)]">
+                      📸 {section.imageCaption}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
               <SectionBody section={section} theme={theme} />
             </div>
           </article>
