@@ -21,6 +21,10 @@ const THEORY: Record<string, Record<string, TheoryData>> = {
   },
   std7: {
     ch1: std7.std7_ch1_theory,
+    ch2: std7.std7_ch2_theory,
+    ch3: std7.std7_ch3_theory,
+    ch4: std7.std7_ch4_theory,
+    ch5: std7.std7_ch5_theory,
   },
 };
 
@@ -42,6 +46,10 @@ const TESTS: Record<string, Record<string, ChapterTests>> = {
   },
   std7: {
     ch1: std7.std7_ch1_tests,
+    ch2: std7.std7_ch2_tests,
+    ch3: std7.std7_ch3_tests,
+    ch4: std7.std7_ch4_tests,
+    ch5: std7.std7_ch5_tests,
   },
 };
 
