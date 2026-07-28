@@ -137,6 +137,28 @@ export const subjects: Subject[] = [
       },
     ],
   },
+  {
+    id: "std7",
+    name: "ધોરણ 7",
+    icon: "🌱",
+    topicCount: 1,
+    questionCount: 40,
+    color: "#10b981",
+    color2: "#059669",
+    description: "ધોરણ ૭ વિજ્ઞાન — પાઠ્યપુસ્તક આધારિત સ્માર્ટ થીયરી અને પ્રશ્નોત્તરી",
+    topics: [
+      {
+        id: "ch1",
+        number: "1",
+        title: "વનસ્પતિમાં પોષણ",
+        fullTitle: "પ્રકરણ 1 — વનસ્પતિમાં પોષણ",
+        hasTheory: true,
+        hasTest: true,
+        testSets: 2,
+        pdfUrl: "/pdfs/ધોરણ 7/1 - વનસ્પતિમાં પોષણ.pdf",
+      },
+    ],
+  },
 ];
 
 export function getSubject(subjectId: string): Subject | undefined {
