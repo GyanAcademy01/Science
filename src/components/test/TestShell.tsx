@@ -103,6 +103,8 @@ export function TestShell({
             subjectId={subjectId}
             topicId={topicId}
             onRetry={retry}
+            questions={set.questions}
+            userAnswers={answers}
           />
         ) : (
           <>

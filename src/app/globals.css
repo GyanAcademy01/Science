@@ -206,6 +206,44 @@ h4 {
   border-color: var(--stroke-strong);
 }
 
+/* 🎨 Theory page — premium black & silver hover */
+.theory-box {
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.3s,
+    border-color 0.3s;
+}
+.theory-box:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+  border-color: rgba(192, 192, 192, 0.4) !important;
+  border-inline-start-color: #c0c0c0 !important;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(192, 192, 192, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.theory-box:hover h2 {
+  color: #e2e8f0 !important;
+}
+.theory-box:hover .reader {
+  color: #cbd5e1;
+}
+.theory-box:hover .table-wrap {
+  border-color: rgba(192, 192, 192, 0.25);
+}
+.theory-box:hover .table-wrap thead tr {
+  background: linear-gradient(135deg, #334155 0%, #1e293b 100%) !important;
+}
+.theory-box:hover .table-wrap tbody td {
+  border-color: rgba(192, 192, 192, 0.12);
+  color: #e2e8f0;
+}
+.theory-box:hover .table-wrap tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.04);
+}
+
 .text-grad {
   background: var(--grad-hero);
   -webkit-background-clip: text;
@@ -413,12 +451,15 @@ h4 {
   border-collapse: collapse;
 }
 .table-wrap thead th {
-  background: var(--grad-brand);
+  background: inherit;
   color: #fff;
   font-weight: 700;
   text-align: start;
   padding: 8px 11px;
   font-size: 0.86em;
+}
+.table-wrap thead tr {
+  background: var(--grad-brand);
 }
 .table-wrap tbody td {
   padding: 7px 11px;
@@ -442,6 +483,12 @@ h4 {
   }
   .card {
     border-radius: var(--r-md);
+  }
+  .theory-topic-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-radius: var(--r-md);
+    padding: 12px 12px;
   }
   .lab-orb,
   .desktop-only {

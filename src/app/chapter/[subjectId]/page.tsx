@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BookOpen, ClipboardCheck, FileText } from "lucide-react";
-import { Card } from "@/components/ui/Card";
-import { ChipLink } from "@/components/ui/Chip";
+import { BookOpen, ClipboardCheck, FileText, Sparkles } from "lucide-react";
 import { HexBadge } from "@/components/common/HexBadge";
 import { BackArrow } from "@/components/common/BackArrow";
 import { getSubject, subjects } from "@/lib/data";
@@ -31,74 +30,91 @@ export default async function ChapterListPage(props: {
   if (!subject) notFound();
 
   return (
-    <main className="mx-auto w-full max-w-[1200px] px-2.5 py-3 sm:px-3 sm:py-5">
+    <main className="mx-auto w-full max-w-[1180px] px-4 py-4 sm:px-6 sm:py-6">
       <BackArrow href="/subjects" label="વિષયો" />
 
-      <header className="mt-3 mb-4 text-center">
-        <h1 className="text-[1.25rem] sm:text-[1.6rem]">
-          <span className="text-grad">{subject.name}</span>
-        </h1>
-        <p className="mt-1.5 text-[0.8rem] text-[var(--fg-muted)]">
-          {toGujaratiDigits(subject.topicCount)} પ્રકરણ ·{" "}
-          {toGujaratiDigits(subject.questionCount)} પ્રશ્નો
-        </p>
+      {/* 🚀 Header */}
+      <header className="relative mt-2 mb-6 text-center">
+        <div className="absolute inset-0 mx-auto h-20 w-64 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
+        
+        <div className="relative z-10">
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-[var(--stroke-strong)] bg-[var(--surface)] px-3.5 py-1 text-xs font-semibold text-[var(--fg-muted)] shadow-sm backdrop-blur-md">
+            <Sparkles size={13} className="text-[var(--brand-1)] animate-pulse" />
+            <span>ધોરણ ૬ વિજ્ઞાન · Gyan Academy</span>
+          </div>
+
+          <h1 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
+            <span className="text-grad">{subject.name}</span>
+          </h1>
+
+          <p className="mt-1.5 text-xs sm:text-sm text-[var(--fg-muted)] max-w-[480px] mx-auto leading-relaxed">
+            કુલ {toGujaratiDigits(subject.topicCount)} પ્રકરણ ·{" "}
+            {toGujaratiDigits(subject.questionCount)} ઇન્ટરેક્ટિવ પ્રશ્નો અને ઓરિજિનલ PDF.
+          </p>
+        </div>
       </header>
 
-      <div className="grid gap-1.5 sm:gap-2.5 md:grid-cols-2 lg:grid-cols-3">
+      {/* 🌟 Chapter Cards Grid */}
+      <div className="grid gap-4 sm:gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {subject.topics.map((topic, index) => (
-          <Card
+          <div
             key={topic.id}
-            hover
-            className="anim-fade-up flex flex-col p-3 sm:p-3.5"
-            style={{ animationDelay: `${index * 0.08}s` }}
+            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--stroke-strong)] hover:shadow-xl anim-fade-up"
+            style={{ animationDelay: `${index * 0.06}s` }}
           >
-            <div className="flex items-center gap-2.5">
-              <HexBadge size={33} className="sm:hidden">
-                {topic.number}
-              </HexBadge>
-              <span className="hidden sm:block">
-                <HexBadge size={38}>{topic.number}</HexBadge>
-              </span>
-              <div className="min-w-0 flex-1">
-                <p className="text-[0.68rem] font-bold uppercase tracking-wide text-[var(--fg-muted)]">
-                  પ્રકરણ {toGujaratiDigits(topic.number)}
-                </p>
-                <h2 className="text-[0.9rem] leading-snug sm:text-[0.98rem]">
-                  {topic.title}
-                </h2>
+            {/* Background glow on card hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
+
+            <div className="relative z-10">
+              {/* Card Top: HexBadge + Chapter Number + Title */}
+              <div className="flex items-start gap-3">
+                <div className="shrink-0 transition-transform duration-300 group-hover:scale-105">
+                  <HexBadge size={40}>{topic.number}</HexBadge>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <span className="inline-block rounded-full bg-[var(--surface-2)] border border-[var(--stroke)] px-2.5 py-0.5 text-[0.65rem] font-bold text-[var(--fg-muted)] uppercase tracking-wide">
+                    પ્રકરણ {toGujaratiDigits(topic.number)}
+                  </span>
+                  <h2 className="text-base font-extrabold text-[var(--fg)] group-hover:text-[var(--brand-1)] transition-colors mt-1 leading-snug">
+                    {topic.title}
+                  </h2>
+                </div>
               </div>
             </div>
 
-            <div className="mt-3 flex flex-wrap gap-1.5">
+            {/* Action Buttons Section: Slightly Reduced Height */}
+            <div className="relative z-10 mt-4 pt-3 border-t border-[var(--stroke)] flex flex-wrap items-center gap-2">
               {topic.hasTheory && (
-                <ChipLink
+                <Link
                   href={`/chapter/${subject.id}/${topic.id}/theory`}
-                  tone="cyan"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-3.5 py-1.5 text-xs font-extrabold shadow-sm shadow-cyan-500/25 transition-all duration-300 hover:shadow-md hover:shadow-cyan-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
                 >
-                  <BookOpen size={12} strokeWidth={2.4} />
-                  થિયરી
-                </ChipLink>
+                  <BookOpen size={14} strokeWidth={2.4} />
+                  <span>થિયરી</span>
+                </Link>
               )}
+
               {topic.hasTest && (
-                <ChipLink
+                <Link
                   href={`/chapter/${subject.id}/${topic.id}/test`}
-                  tone="violet"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-3.5 py-1.5 text-xs font-extrabold shadow-sm shadow-violet-500/25 transition-all duration-300 hover:shadow-md hover:shadow-violet-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
                 >
-                  <ClipboardCheck size={12} strokeWidth={2.4} />
-                  ટેસ્ટ ({toGujaratiDigits(topic.testSets)})
-                </ChipLink>
+                  <ClipboardCheck size={14} strokeWidth={2.4} />
+                  <span>ટેસ્ટ</span>
+                </Link>
               )}
+
               {topic.pdfUrl && (
-                <ChipLink
+                <Link
                   href={`/pdf-view?file=${encodeURIComponent(topic.pdfUrl)}&title=${encodeURIComponent(topic.title)}`}
-                  tone="amber"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3.5 py-1.5 text-xs font-extrabold shadow-sm shadow-amber-500/25 transition-all duration-300 hover:shadow-md hover:shadow-amber-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
                 >
-                  <FileText size={12} strokeWidth={2.4} />
-                  PDF
-                </ChipLink>
+                  <FileText size={14} strokeWidth={2.4} />
+                  <span>PDF</span>
+                </Link>
               )}
             </div>
-          </Card>
+          </div>
         ))}
       </div>
     </main>

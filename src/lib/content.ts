@@ -7,6 +7,16 @@ const THEORY: Record<string, Record<string, TheoryData>> = {
   std6: {
     ch1: std6.std6_ch1_theory,
     ch2: std6.std6_ch2_theory,
+    ch3: std6.std6_ch3_theory,
+    ch4: std6.std6_ch4_theory,
+    ch5: std6.std6_ch5_theory,
+    ch6: std6.std6_ch6_theory,
+    ch7: std6.std6_ch7_theory,
+    ch8: std6.std6_ch8_theory,
+    ch9: std6.std6_ch9_theory,
+    ch10: std6.std6_ch10_theory,
+    ch11: std6.std6_ch11_theory,
+    ch12: std6.std6_ch12_theory,
   },
 };
 
@@ -15,6 +25,16 @@ const TESTS: Record<string, Record<string, ChapterTests>> = {
   std6: {
     ch1: std6.std6_ch1_tests,
     ch2: std6.std6_ch2_tests,
+    ch3: std6.std6_ch3_tests,
+    ch4: std6.std6_ch4_tests,
+    ch5: std6.std6_ch5_tests,
+    ch6: std6.std6_ch6_tests,
+    ch7: std6.std6_ch7_tests,
+    ch8: std6.std6_ch8_tests,
+    ch9: std6.std6_ch9_tests,
+    ch10: std6.std6_ch10_tests,
+    ch11: std6.std6_ch11_tests,
+    ch12: std6.std6_ch12_tests,
   },
 };
 

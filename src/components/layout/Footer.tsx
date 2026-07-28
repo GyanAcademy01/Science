@@ -2,22 +2,18 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 
 const LINKS = [
-  { href: "/subjects", label: "વિષયો" },
   { href: "/about", label: "અમારા વિશે" },
   { href: "/contact-us", label: "સંપર્ક" },
 ];
 
 export function Footer() {
   return (
-    <footer className="mt-10 border-t border-[var(--stroke)] px-3 py-5">
-      <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-2.5 text-center sm:flex-row sm:justify-between sm:text-start">
+    <footer className="mt-3 border-t border-[var(--stroke)] px-3 py-1.5">
+      <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-1.5 text-center sm:flex-row sm:justify-between sm:text-start">
         <div>
-          <p className="text-[0.86rem] font-bold">
+          <p className="text-[0.82rem] font-bold leading-tight">
             🔬 {siteConfig.name}{" "}
             <span className="text-[var(--fg-muted)]">— Gyan Academy</span>
-          </p>
-          <p className="mt-0.5 text-[0.72rem] text-[var(--fg-muted)]">
-            {siteConfig.place} · {siteConfig.phone.join(" | ")}
           </p>
         </div>
 

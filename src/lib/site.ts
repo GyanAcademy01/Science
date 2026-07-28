@@ -6,6 +6,7 @@ export const siteConfig = {
     "ધોરણ 6 વિજ્ઞાન — થિયરી વાંચો, MCQ ટેસ્ટ આપો અને મૂળ PDF જુઓ. Gyan Academy, ગાંધીનગર.",
   language: "gu",
   phone: ["87582 77555", "87583 77555"],
+  email: "web.dev.gyanacademy@gmail.com",
   place: "ગાંધીનગર, ગુજરાત",
 } as const;
 

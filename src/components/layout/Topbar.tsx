@@ -11,9 +11,6 @@ import { cn } from "@/lib/utils";
 
 const NAV = [
   { href: "/", label: "હોમ" },
-  { href: "/subjects", label: "વિષયો" },
-  { href: "/about", label: "અમારા વિશે" },
-  { href: "/contact-us", label: "સંપર્ક" },
 ];
 
 export function Topbar() {

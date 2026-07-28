@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Noto_Sans_Gujarati } from "next/font/google";
 import { Topbar } from "@/components/layout/Topbar";
-import { Footer } from "@/components/layout/Footer";
 import { LabBackground } from "@/components/common/LabBackground";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { siteConfig, storageKeys } from "@/lib/site";
@@ -97,7 +96,6 @@ export default function RootLayout({
         <LabBackground />
         <Topbar />
         <div className="min-h-[70dvh]">{children}</div>
-        <Footer />
         <ScrollToTop />
       </body>
     </html>
