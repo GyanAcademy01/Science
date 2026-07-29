@@ -38,6 +38,19 @@ const THEORY: Record<string, Record<string, TheoryData>> = {
   },
   std8: {
     ch1: std8.std8_ch1_theory,
+    ch2: std8.std8_ch2_theory,
+    ch3: std8.std8_ch3_theory,
+    ch4: std8.std8_ch4_theory,
+    ch5: std8.std8_ch5_theory,
+    ch6: std8.std8_ch6_theory,
+    ch7: std8.std8_ch7_theory,
+    ch8: std8.std8_ch8_theory,
+    ch9: std8.std8_ch9_theory,
+    ch10: std8.std8_ch10_theory,
+    ch11: std8.std8_ch11_theory,
+    ch12: std8.std8_ch12_theory,
+    ch13: std8.std8_ch13_theory,
+    ch14: std8.std8_ch14_theory,
   },
 };
 
@@ -75,6 +88,19 @@ const TESTS: Record<string, Record<string, ChapterTests>> = {
   },
   std8: {
     ch1: std8.std8_ch1_tests,
+    ch2: std8.std8_ch2_tests,
+    ch3: std8.std8_ch3_tests,
+    ch4: std8.std8_ch4_tests,
+    ch5: std8.std8_ch5_tests,
+    ch6: std8.std8_ch6_tests,
+    ch7: std8.std8_ch7_tests,
+    ch8: std8.std8_ch8_tests,
+    ch9: std8.std8_ch9_tests,
+    ch10: std8.std8_ch10_tests,
+    ch11: std8.std8_ch11_tests,
+    ch12: std8.std8_ch12_tests,
+    ch13: std8.std8_ch13_tests,
+    ch14: std8.std8_ch14_tests,
   },
 };
 
