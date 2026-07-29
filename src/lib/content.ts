@@ -2,6 +2,7 @@ import type { TheoryData } from "@/types/theory";
 import type { ChapterTests, TestSet } from "@/types/test";
 import * as std6 from "@/data/std6";
 import * as std7 from "@/data/std7";
+import * as std8 from "@/data/std8";
 
 /** subjectId → topicId → theory */
 const THEORY: Record<string, Record<string, TheoryData>> = {
@@ -34,6 +35,9 @@ const THEORY: Record<string, Record<string, TheoryData>> = {
     ch12: std7.std7_ch12_theory,
     ch13: std7.std7_ch13_theory,
     ch14: std7.std7_ch14_theory,
+  },
+  std8: {
+    ch1: std8.std8_ch1_theory,
   },
 };
 
@@ -68,6 +72,9 @@ const TESTS: Record<string, Record<string, ChapterTests>> = {
     ch12: std7.std7_ch12_tests,
     ch13: std7.std7_ch13_tests,
     ch14: std7.std7_ch14_tests,
+  },
+  std8: {
+    ch1: std8.std8_ch1_tests,
   },
 };
 

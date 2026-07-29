@@ -289,6 +289,28 @@ export const subjects: Subject[] = [
       },
     ],
   },
+  {
+    id: "std8",
+    name: "ધોરણ 8",
+    icon: "🌾",
+    topicCount: 1,
+    questionCount: 30,
+    color: "#16a34a",
+    color2: "#059669",
+    description: "સંપૂર્ણ ધોરણ ૮ વિજ્ઞાન પાઠ્યપુસ્તક (પ્રકરણ ૧ પાક ઉત્પાદન અને વ્યવસ્થાપન)",
+    topics: [
+      {
+        id: "ch1",
+        number: "1",
+        title: "પાક ઉત્પાદન અને વ્યવસ્થાપન",
+        fullTitle: "પ્રકરણ 1 — પાક ઉત્પાદન અને વ્યવસ્થાપન",
+        hasTheory: true,
+        hasTest: true,
+        testSets: 2,
+        pdfUrl: "/pdfs/ધોરણ 8/1 - પાક ઉત્પાદન અને વ્યવસ્થાપન.pdf",
+      },
+    ],
+  },
 ];
 
 export function getSubject(subjectId: string): Subject | undefined {
