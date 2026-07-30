@@ -3,6 +3,7 @@ import type { ChapterTests, TestSet } from "@/types/test";
 import * as std6 from "@/data/std6";
 import * as std7 from "@/data/std7";
 import * as std8 from "@/data/std8";
+import * as std9 from "@/data/std9";
 
 /** subjectId → topicId → theory */
 const THEORY: Record<string, Record<string, TheoryData>> = {
@@ -51,6 +52,21 @@ const THEORY: Record<string, Record<string, TheoryData>> = {
     ch12: std8.std8_ch12_theory,
     ch13: std8.std8_ch13_theory,
     ch14: std8.std8_ch14_theory,
+  },
+  std9: {
+    ch1: std9.std9_ch1_theory,
+    ch2: std9.std9_ch2_theory,
+    ch3: std9.std9_ch3_theory,
+    ch4: std9.std9_ch4_theory,
+    ch5: std9.std9_ch5_theory,
+    ch6: std9.std9_ch6_theory,
+    ch7: std9.std9_ch7_theory,
+    ch8: std9.std9_ch8_theory,
+    ch9: std9.std9_ch9_theory,
+    ch10: std9.std9_ch10_theory,
+    ch11: std9.std9_ch11_theory,
+    ch12: std9.std9_ch12_theory,
+    ch13: std9.std9_ch13_theory,
   },
 };
 
@@ -101,6 +117,21 @@ const TESTS: Record<string, Record<string, ChapterTests>> = {
     ch12: std8.std8_ch12_tests,
     ch13: std8.std8_ch13_tests,
     ch14: std8.std8_ch14_tests,
+  },
+  std9: {
+    ch1: std9.std9_ch1_tests,
+    ch2: std9.std9_ch2_tests,
+    ch3: std9.std9_ch3_tests,
+    ch4: std9.std9_ch4_tests,
+    ch5: std9.std9_ch5_tests,
+    ch6: std9.std9_ch6_tests,
+    ch7: std9.std9_ch7_tests,
+    ch8: std9.std9_ch8_tests,
+    ch9: std9.std9_ch9_tests,
+    ch10: std9.std9_ch10_tests,
+    ch11: std9.std9_ch11_tests,
+    ch12: std9.std9_ch12_tests,
+    ch13: std9.std9_ch13_tests,
   },
 };
 

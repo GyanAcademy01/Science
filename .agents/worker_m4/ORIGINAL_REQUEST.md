@@ -1,26 +1,24 @@
-## 2026-07-29T04:55:14Z
-You are Worker 4 for STD 8 Science Curriculum project.
-Your working directory is: d:\W\Gyan academy  project\Science\.agents\worker_m4
+## 2026-07-30T03:58:27Z
 
-Objective: Create high quality theory summary and 100-question Mega Test TypeScript data files for STD 8 Chapter 14 (Mega Test).
+You are worker_m4 for STD 9 Science project.
+Your Working Directory: d:\W\Gyan academy  project\Science\.agents\worker_m4
+Project Root: d:\W\Gyan academy  project\Science
 
-Source PDF in `public/pdfs/ધોરણ 8/`:
-- Ch 14: `14 - મેગા ટેસ્ટ.pdf` -> Create `src/data/std8/ch14/theory.ts` & `src/data/std8/ch14/test.ts`
+Objective: Create theory.ts and test.ts for STD 9 Chapters 10, 11, and 12 from PDFs in public/pdfs/ધોરણ 9/.
 
-Instructions & Specifications:
-1. Examine `src/data/std8/ch1/theory.ts` and `src/data/std8/ch1/test.ts` to understand the exact structure and exports.
-2. Read the PDF `public/pdfs/ધોરણ 8/14 - મેગા ટેસ્ટ.pdf` using `view_file`.
-3. Create `src/data/std8/ch14/theory.ts`:
-   - `import type { TheoryData } from "@/types/theory";`
-   - `export const std8_ch14_theory: TheoryData = { chapterId: "ch14", chapterTitle: "મેગા ટેસ્ટ (સંપૂર્ણ પુનરાવર્તન)", description: "...", sections: [...] };`
-   - MUST contain individual, detailed summary tables for ALL 13 chapters of STD 8 (Ch 1 through Ch 13)! Each chapter summary section should have a table detailing main concepts, key formulas, important facts, and scientific principles.
-4. Create `src/data/std8/ch14/test.ts`:
-   - `import type { ChapterTests } from "@/types/test";`
-   - `export const std8_ch14_tests: ChapterTests = { chapterId: "ch14", chapterTitle: "મેગા ટેસ્ટ (સંપૂર્ણ પુનરાવર્તન)", sets: [...] };`
-   - MUST contain 100 MCQs divided into 5 test sets (set1, set2, set3, set4, set5) of 20 questions each.
-   - Covering the entire STD 8 syllabus (ch1 to ch13).
-   - Every question must have `id` (1..100 or 1..20 per set), `question` (Gujarati text), `options` (array of 4 Gujarati options), `correctAnswer` (0..3 zero-indexed integer), and `explanation` (Gujarati text).
+PDFs to read:
+- Ch 10: public/pdfs/ધોરણ 9/10 - કાર્યય અને ઊર્જા.pdf
+- Ch 11: public/pdfs/ધોરણ 9/11 - ધ્વનિ.pdf
+- Ch 12: public/pdfs/ધોરણ 9/12 - અન્નસ્ત્રોતોમાં સુધારણા.pdf
 
+Requirements:
+1. Extract content from PDFs.
+2. For Ch 10, 11, and 12, create:
+   - src/data/std9/ch10/theory.ts (TheoryData format with comprehensive Gujarati theory tables & sections) & test.ts (ChapterTests format with 20-40 Gujarati MCQs in 2 test sets)
+   - src/data/std9/ch11/theory.ts & test.ts
+   - src/data/std9/ch12/theory.ts & test.ts
+
+MANDATORY INTEGRITY WARNING:
 DO NOT CHEAT. All implementations must be genuine. DO NOT hardcode test results, create dummy/facade implementations, or circumvent the intended task. A Forensic Auditor will independently verify your work. Integrity violations WILL be detected and your work WILL be rejected.
 
-Update `progress.md` in `d:\W\Gyan academy  project\Science\.agents\worker_m4` during execution. When done, send a message to parent reporting completion and file paths created.
+Follow code style matching existing std8/std7 files. Write progress to .agents/worker_m1/progress.md and final report to .agents/worker_m4/handoff.md. Send message when completed.

@@ -1,60 +1,50 @@
-# BRIEFING — 2026-07-29T10:28:00+05:30
+# BRIEFING — 2026-07-30T09:28:27Z
 
 ## Mission
-Extract content from PDF files for STD 8 Chapters 10, 11, 12, and 13 and create high-quality TypeScript theory (`theory.ts`) and test (`test.ts`) files.
+Create theory.ts and test.ts for STD 9 Science Chapters 7 (ગતિ), 8 (બળ અને ગતિના નિયમો), and 9 (ગુરુત્વાકર્ષણ) based on official textbook PDFs.
 
 ## 🔒 My Identity
-- Archetype: implementer, qa, specialist
+- Archetype: worker
 - Roles: implementer, qa, specialist
 - Working directory: d:\W\Gyan academy  project\Science\.agents\worker_m3
-- Original parent: 074ba8a2-8590-424e-b7b5-6178df1a0840
-- Milestone: STD 8 Science Curriculum Data Files Creation for Ch 10, 11, 12, 13
+- Original parent: ec1bffb9-a2b9-4187-8412-6f1bbe5f7aa0
+- Milestone: STD 9 Science Content Creation (Ch 7, 8, 9)
 
 ## 🔒 Key Constraints
-- Language: 98%+ Gujarati for chat, theory text, questions, options, and explanations.
-- Zero Guessing: Read PDFs thoroughly using `view_file` to cover accurate Gujarati scientific terms, concepts, definitions, tables, and explanations.
-- Data Format: Strictly follow TypeScript types from `@/types/theory` and `@/types/test` as exemplified in `ch1/theory.ts` and `ch1/test.ts`.
-- Test count: 2 test sets per chapter, 20 questions per set (40 total MCQs per chapter).
-- Integrity: Genuine content extraction and question creation, zero hardcoded fake outputs or facades.
+- 98%+ Gujarati language output for educational content, chat, plans, summaries.
+- Exact type compatibility with existing TheoryData & ChapterTests formats.
+- 20-40 Gujarati MCQs across 2 test sets per chapter in test.ts.
+- Detailed theory sections & tables in theory.ts matching PDF contents.
+- Zero cheating / genuine implementations.
+- Update progress.md & handoff.md.
 
 ## Current Parent
-- Conversation ID: 074ba8a2-8590-424e-b7b5-6178df1a0840
-- Updated: 2026-07-29T10:28:00+05:30
+- Conversation ID: ec1bffb9-a2b9-4187-8412-6f1bbe5f7aa0
+- Updated: 2026-07-30T09:28:27Z
 
 ## Task Summary
-- **What to build**:
-  - `src/data/std8/ch10/theory.ts` & `src/data/std8/ch10/test.ts`
-  - `src/data/std8/ch11/theory.ts` & `src/data/std8/ch11/test.ts`
-  - `src/data/std8/ch12/theory.ts` & `src/data/std8/ch12/test.ts`
-  - `src/data/std8/ch13/theory.ts` & `src/data/std8/ch13/test.ts`
-- **Success criteria**: All 8 files created, typecheck `npx tsc --noEmit` passes cleanly, rich Gujarati structured tables in theory, 40 high-quality MCQs per chapter with correct zero-indexed answers and explanations.
+- **What to build**: src/data/std9/ch7/{theory.ts, test.ts}, src/data/std9/ch8/{theory.ts, test.ts}, src/data/std9/ch9/{theory.ts, test.ts}
+- **Success criteria**: All 6 files created, matching TypeScript interfaces, passing build, comprehensive and accurate to standard 9 textbook PDFs.
+- **Interface contracts**: Check existing types in `src/types/` or existing chapter files in `src/data/`.
+- **Code layout**: `src/data/std9/chX/`
+
+## Key Decisions Made
+- Initializing task setup.
+
+## Artifact Index
+- d:\W\Gyan academy  project\Science\.agents\worker_m3\ORIGINAL_REQUEST.md — Original request
+- d:\W\Gyan academy  project\Science\.agents\worker_m3\BRIEFING.md — Briefing file
+- d:\W\Gyan academy  project\Science\.agents\worker_m3\progress.md — Progress heartbeat
 
 ## Change Tracker
-- **Files created**:
-  - `src/data/std8/ch10/theory.ts` — Ch 10 Sound theory with 9 structured Gujarati tables
-  - `src/data/std8/ch10/test.ts` — Ch 10 Sound test sets 1 & 2 (40 MCQs total)
-  - `src/data/std8/ch11/theory.ts` — Ch 11 Chemical Effects of Electric Current theory with 5 structured tables
-  - `src/data/std8/ch11/test.ts` — Ch 11 Chemical Effects test sets 1 & 2 (40 MCQs total)
-  - `src/data/std8/ch12/theory.ts` — Ch 12 Natural Phenomena theory with 5 structured tables
-  - `src/data/std8/ch12/test.ts` — Ch 12 Natural Phenomena test sets 1 & 2 (40 MCQs total)
-  - `src/data/std8/ch13/theory.ts` — Ch 13 Light theory with 5 structured tables
-  - `src/data/std8/ch13/test.ts` — Ch 13 Light test sets 1 & 2 (40 MCQs total)
-- **Build status**: `npx tsc --noEmit` PASS (0 errors)
+- **Files modified**: None
+- **Build status**: Pending
 - **Pending issues**: None
 
 ## Quality Status
-- **Build/test result**: Pass (`npx tsc --noEmit`)
-- **Lint status**: Pass
-- **Tests added/modified**: 160 total MCQs added across 8 test sets for Ch 10..13
+- **Build/test result**: Pending
+- **Lint status**: Pending
+- **Tests added/modified**: Pending
 
 ## Loaded Skills
 - None
-
-## Key Decisions Made
-- Matched exact interface exports `TheoryData` and `ChapterTests`.
-- Structured theory sections with Gujarati markdown tables (`type: "table"`).
-- Included full explanations for all 160 test questions.
-
-## Artifact Index
-- `.agents/worker_m3/progress.md` — Progress tracker
-- `.agents/worker_m3/handoff.md` — Final handoff report
