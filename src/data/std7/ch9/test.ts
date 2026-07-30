@@ -28,7 +28,7 @@ export const std7_ch9_tests: ChapterTests = {
             "ઝડપ = ૧ / (અંતર × સમય)",
           ],
           correctAnswer: 1,
-          explanation: "ઝડપ = કાપેલું કુલ અંતર / તે માટે લાગેલો કુલ સમય ($v = d / t$).",
+          explanation: "ઝડપ = કાપેલું કુલ અંતર / તે માટે લાગેલો કુલ સમય (v = d / t).",
         },
         {
           id: 3,
@@ -129,7 +129,7 @@ export const std7_ch9_tests: ChapterTests = {
             "અંતર = ૧ / (ઝડપ × સમય)",
           ],
           correctAnswer: 2,
-          explanation: "અંતર = ઝડપ × સમય ($d = v \times t$).",
+          explanation: "અંતર = ઝડપ × સમય (d = v × t).",
         },
         {
           id: 16,
@@ -211,7 +211,7 @@ export const std7_ch9_tests: ChapterTests = {
             "૧ સેકન્ડનો ૧ અબજમો ભાગ (10⁻⁹ s)",
           ],
           correctAnswer: 2,
-          explanation: "૧ માઇક્રોસેકન્ડ = ૧ સેકન્ડનો ૧૦ લાખમો ભાગ ($10^{-6}$ સેકન્ડ).",
+          explanation: "૧ માઇક્રોસેકન્ડ = ૧ સેકન્ડનો ૧૦ લાખમો ભાગ (10^{-6} સેકન્ડ).",
         },
         {
           id: 25,
@@ -223,7 +223,7 @@ export const std7_ch9_tests: ChapterTests = {
             "૧ સેકન્ડનો ૧00 અબજમો ભાગ",
           ],
           correctAnswer: 1,
-          explanation: "૧ નેનોસેકન્ડ = ૧ સેકન્ડનો ૧ અબજમો ભાગ ($10^{-9}$ સેકન્ડ).",
+          explanation: "૧ નેનોસેકન્ડ = ૧ સેકન્ડનો ૧ અબજમો ભાગ (10^{-9} સેકન્ડ).",
         },
         {
           id: 26,
@@ -303,7 +303,7 @@ export const std7_ch9_tests: ChapterTests = {
             "સમય = ૧ / ઝડપ",
           ],
           correctAnswer: 1,
-          explanation: "સમય = કાપેલું અંતર / ઝડપ ($t = d / v$).",
+          explanation: "સમય = કાપેલું અંતર / ઝડપ (t = d / v).",
         },
         {
           id: 36,

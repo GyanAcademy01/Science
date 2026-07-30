@@ -9,4 +9,4 @@
 | 03 ⏳ | Milestone 3: STD 9 Ch 7 to 9 Content Generation | ✅ પૂર્ણ |
 | 04 ⏳ | Milestone 4: STD 9 Ch 10 to 12 Content Generation | ✅ પૂર્ણ |
 | 05 ⏳ | Milestone 5: STD 9 Ch 13 Mega Test Content Generation | ✅ પૂર્ણ |
-| 06 ⏳ | Milestone 6: Global Registration, Build Checks & Git Push | ⚙️ ચાલુ છે (Worker 6) |
+| 06 ⏳ | Milestone 6: Global Registration, Build Checks & Git Push | ✅ પૂર્ણ |
