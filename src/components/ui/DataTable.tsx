@@ -14,7 +14,10 @@ function FormattedCell({ text }: { text: string }) {
   const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
 
   return (
-    <div className="flex flex-col gap-1 text-[0.85rem] leading-[1.55]">
+    <div
+      className="flex flex-col gap-1 text-[0.85rem] leading-[1.55]"
+      style={{ wordSpacing: "0.04em" }}
+    >
       {lines.map((line, idx) => {
         // Bullet point starting with "- " or "• "
         if (line.startsWith("- ") || line.startsWith("• ")) {

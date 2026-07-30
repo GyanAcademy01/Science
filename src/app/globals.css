@@ -111,6 +111,7 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   font-family: var(--font-gujarati), system-ui, sans-serif;
+  word-spacing: 0.04em;
   min-height: 100dvh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -433,6 +434,7 @@ h4 {
 .reader {
   font-size: var(--font-scale);
   line-height: 1.65;
+  word-spacing: 0.04em;
 }
 .reader p {
   margin-block: 0.4em;
@@ -457,6 +459,7 @@ h4 {
   text-align: start;
   padding: 8px 12px;
   font-size: 0.86em;
+  word-spacing: 0.04em;
 }
 .table-wrap thead tr {
   background: var(--grad-brand);
@@ -465,6 +468,7 @@ h4 {
   padding: 8px 12px;
   border-top: 1px solid var(--stroke);
   vertical-align: top;
+  word-spacing: 0.04em;
 }
 .table-wrap tbody tr:nth-child(even) {
   background: var(--surface-2);
