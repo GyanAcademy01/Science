@@ -6,55 +6,29 @@ export interface TableThemeProps {
   titleColor?: string;
 }
 
-/** 💡 કોષ્ટક કોષમાં રહેલ લખાણ (બુલેટ પોઇન્ટ્સ, ન્યૂ-લાઇન્સ) ને સુંદર અને છૂટુંછવાયું ફોર્મેટ કરે છે */
+/** 💡 કોષ્ટક કોષમાં રહેલ લખાણ (બુલેટ પોઇન્ટ્સ, ન્યૂ-લાઇન્સ) ને સ્વચ્છ અને યોગ્ય ગૅપ સાથે દર્શાવે છે */
 function FormattedCell({ text }: { text: string }) {
   if (!text) return null;
 
-  // Split lines by newline
-  const lines = text.split("\n").filter((l) => l.trim().length > 0);
+  // Split only on real newlines
+  const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
 
   return (
-    <div
-      className="flex flex-col gap-2.5 text-[0.88rem] leading-[1.8] tracking-[0.015em]"
-      style={{ wordSpacing: "0.06em" }}
-    >
+    <div className="flex flex-col gap-1 text-[0.85rem] leading-[1.55]">
       {lines.map((line, idx) => {
-        const trimmed = line.trim();
-
-        // If line contains multiple bullet points like "- item 1 - item 2"
-        if (trimmed.includes(" - ") && !trimmed.startsWith("http")) {
-          const parts = trimmed
-            .split(/(?=\s+-\s+)/)
-            .map((p) => p.replace(/^\s*-\s*/, "").trim())
-            .filter(Boolean);
-
-          if (parts.length > 1) {
-            return (
-              <ul key={idx} className="flex flex-col gap-2 pl-0.5">
-                {parts.map((pt, pidx) => (
-                  <li key={pidx} className="flex items-start gap-2.5">
-                    <span className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500/80 shadow-xs" />
-                    <span className="flex-1">{pt}</span>
-                  </li>
-                ))}
-              </ul>
-            );
-          }
-        }
-
-        // Single bullet point starting with "- " or "• "
-        if (trimmed.startsWith("- ") || trimmed.startsWith("• ")) {
-          const cleanText = trimmed.replace(/^[-•]\s*/, "");
+        // Bullet point starting with "- " or "• "
+        if (line.startsWith("- ") || line.startsWith("• ")) {
+          const cleanText = line.replace(/^[-•]\s*/, "");
           return (
-            <div key={idx} className="flex items-start gap-2.5">
-              <span className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500/80 shadow-xs" />
+            <div key={idx} className="flex items-start gap-1.5 leading-[1.5]">
+              <span className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500/80" />
               <span className="flex-1">{cleanText}</span>
             </div>
           );
         }
 
         return (
-          <p key={idx} className="mb-0">
+          <p key={idx} className="m-0 leading-[1.55]">
             {line}
           </p>
         );
@@ -88,8 +62,7 @@ export function DataTable({
             {data.headers.map((h) => (
               <th
                 key={h}
-                className="px-4 py-3 text-[0.85rem] font-bold tracking-wide text-white"
-                style={{ wordSpacing: "0.06em" }}
+                className="px-3.5 py-2.5 text-[0.84rem] font-bold tracking-wide text-white"
               >
                 {h}
               </th>
@@ -105,8 +78,8 @@ export function DataTable({
               {row.map((cell, cellIndex) => (
                 <td
                   key={`${row[0]}-${rowIndex}-${cellIndex}`}
-                  className={`px-4 py-3.5 align-top ${
-                    cellIndex === 0 ? "font-bold text-[var(--fg)] min-w-[130px] sm:min-w-[170px]" : ""
+                  className={`px-3.5 py-2.5 align-top ${
+                    cellIndex === 0 ? "font-bold text-[var(--fg)] min-w-[120px] sm:min-w-[150px]" : ""
                   }`}
                 >
                   <FormattedCell text={cell} />
