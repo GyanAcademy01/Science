@@ -17,7 +17,7 @@ Next.js 14+ / React application with TypeScript.
 | 3 | Chapters 7-9 Content | `ch7`, `ch8`, `ch9` `theory.ts` & `test.ts` | None | DONE (Conv: a81d946b-e491-42de-b9f9-b1a462f46a86) |
 | 4 | Chapters 10-13 Content | `ch10`, `ch11`, `ch12`, `ch13` `theory.ts` & `test.ts` | None | DONE (Conv: 34e616ee-035f-4e65-b880-22d5101b5c80) |
 | 5 | Chapter 14 Mega Test | `ch14` `theory.ts` (summary of ch1-13) & `test.ts` (100 MCQs) | Milestones 1-4 | DONE (Conv: 0ab9300b-39cf-465a-8f36-218eecdce386) |
-| 6 | Registration & Build | `src/data/std10/index.ts`, `src/lib/data.ts`, `src/lib/content.ts`, `tsc`, `build`, local git commit (NO PUSH) | Milestones 1-5 | IN_PROGRESS (Conv: 88b3138a-4b18-4c44-b3cc-9f75f7738e8f) |
+| 6 | Registration & Build | `src/data/std10/index.ts`, `src/lib/data.ts`, `src/lib/content.ts`, `tsc`, `build`, local git commit (NO PUSH) | Milestones 1-5 | DONE (Conv: 88b3138a-4b18-4c44-b3cc-9f75f7738e8f) |
 
 ## Interface Contracts
 - `TheoryData`: `{ chapterId: string, chapterTitle: string, description: string, sections: Section[] }`
