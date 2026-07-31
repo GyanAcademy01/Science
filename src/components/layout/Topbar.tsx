@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { InstallButton } from "@/components/common/InstallButton";
+import { FontSizeControl } from "@/components/common/FontSizeControl";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -64,7 +65,9 @@ export function Topbar() {
 
         <div className="flex items-center gap-1.5">
           <InstallButton />
+          <FontSizeControl />
           <ThemeToggle />
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
