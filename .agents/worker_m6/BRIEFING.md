@@ -1,50 +1,46 @@
-# BRIEFING — 2026-07-30T04:04:30Z
+# BRIEFING — 2026-07-31T06:54:00Z
 
 ## Mission
-Complete global registration, route mapping, build verification, and git deployment for STD 9 Science (Chapters 1 to 13).
+STD 10 Science Curriculum Milestone 6: Global Registration, Build Verification & Local Git Commit.
 
 ## 🔒 My Identity
 - Archetype: implementer/qa/specialist
 - Roles: implementer, qa, specialist
 - Working directory: d:\W\Gyan academy  project\Science\.agents\worker_m6
-- Original parent: ec1bffb9-a2b9-4187-8412-6f1bbe5f7aa0
-- Milestone: Global Registration & Build Verification for STD 9
+- Original parent: 56540ccf-1307-4c04-b9f3-199a9cb8f79f
+- Milestone: Milestone 6 (Global Registration & Verification)
 
 ## 🔒 Key Constraints
-- Complete STD 9 science registration across src/data/std9/index.ts, src/lib/data.ts, src/lib/content.ts
-- Calculate exact question count (460 total)
-- Run `npx tsc --noEmit` exit 0, 0 errors
-- Run `npm run build` static site gen success
-- Commit & push to origin main
+- Minimal changes principle, no hardcoded cheating.
+- Check all 14 chapters in `src/data/std10` (ch1 to ch14).
+- Do NOT run `git push origin main`.
+- Gujarati language for communication if replying to user, but parent subagent communication concise.
 
 ## Current Parent
-- Conversation ID: ec1bffb9-a2b9-4187-8412-6f1bbe5f7aa0
-- Updated: 2026-07-30T04:04:30Z
+- Conversation ID: 56540ccf-1307-4c04-b9f3-199a9cb8f79f
+- Updated: 2026-07-31T06:54:00Z
 
 ## Task Summary
-- **What to build**: STD 9 global registration in index.ts, data.ts, content.ts, verify build, git commit & push
-- **Success criteria**: All 13 chapters re-exported in src/data/std9/index.ts, subject registered in src/lib/data.ts and src/lib/content.ts, `npx tsc --noEmit` and `npm run build` pass with 0 errors, git push succeeded.
-- **Interface contracts**: Existing codebase patterns in `src/data/std10/` or `src/lib/data.ts`
-- **Code layout**: `src/data/std9/`, `src/lib/data.ts`, `src/lib/content.ts`
-
-## Key Decisions Made
-- Added `std9` subject entry to `subjects` array in `src/lib/data.ts` with 13 topics, 460 questionCount (360 from Ch1-12 + 100 from Ch13), color #3b82f6/#1d4ed8, and exact pdfUrls from `public/pdfs/ધોરણ 9/`.
-- Verified `npx tsc --noEmit` passes with 0 errors.
-
-## Artifact Index
-- `.agents/worker_m6/ORIGINAL_REQUEST.md` — Original request text
-- `.agents/worker_m6/progress.md` — Heartbeat and progress tracking
-- `.agents/worker_m6/handoff.md` — Final handoff report
+- **What to build**: STD 10 global registration in `subject.ts`, `data.ts`, `content.ts`, re-export index verification, build check (`tsc`, `npm run build`), local git commit.
+- **Success criteria**: TypeScript compilation and Next.js build pass cleanly with accurate MCQ counts and PDF links for all 14 chapters, local git commit created.
 
 ## Change Tracker
-- **Files modified**: `src/lib/data.ts` (added std9 subject metadata & topics)
-- **Build status**: In Progress (`npm run build`)
+- **Files modified**: None yet
+- **Build status**: Untested
 - **Pending issues**: None
 
 ## Quality Status
-- **Build/test result**: `npx tsc --noEmit` passed (exit code 0). `npm run build` building.
-- **Lint status**: 0 errors
-- **Tests added/modified**: STD 9 registration completed
+- **Build/test result**: Pending
+- **Lint status**: Pending
+- **Tests added/modified**: Pending
 
 ## Loaded Skills
 - None
+
+## Key Decisions Made
+- Starting investigation of existing std10 files and codebase configuration.
+
+## Artifact Index
+- ORIGINAL_REQUEST.md — Initial task instructions
+- BRIEFING.md — Context and briefing
+- progress.md — Heartbeat and progress tracking

@@ -1,49 +1,52 @@
-# BRIEFING — 2026-07-30T04:00:37Z
+# BRIEFING — 2026-07-31T12:21:00Z
 
 ## Mission
-Create comprehensive Gujarati theory.ts and test.ts for STD 9 Chapters 1, 2, and 3 based on PDFs in public/pdfs/ધોરણ 9/.
+Create comprehensive Gujarati theory.ts and test.ts for STD 10 Milestone 1 (Chapters 1, 2, and 3) based on PDFs in `public/pdfs/ધોરણ 10/`.
 
 ## 🔒 My Identity
 - Archetype: worker
 - Roles: implementer, qa, specialist
 - Working directory: d:\W\Gyan academy  project\Science\.agents\worker_m1
-- Original parent: ec1bffb9-a2b9-4187-8412-6f1bbe5f7aa0
-- Milestone: STD 9 Science Ch 1, 2, 3 Data Files
+- Original parent: 56540ccf-1307-4c04-b9f3-199a9cb8f79f
+- Milestone: STD 10 Science Milestone 1 (Ch 1, 2, 3 Data Files)
 
 ## 🔒 Key Constraints
 - 98%+ Gujarati language for UI/content text
+- Clean Unicode symbols: H₂O, CO₂, °C, Ω, A, V, W, kWh, m/s, m/s², N, J, p⁺, e⁻, n⁰ etc. ABSOLUTE ZERO raw LaTeX syntax or $
 - Zero Guessing — extract directly from provided PDFs
 - Strict integrity compliance — genuine content, accurate MCQs and theory
 - Must conform strictly to existing project TypeScript interfaces (TheoryData, ChapterTests)
 
 ## Current Parent
-- Conversation ID: ec1bffb9-a2b9-4187-8412-6f1bbe5f7aa0
-- Updated: 2026-07-30T04:00:37Z
+- Conversation ID: 56540ccf-1307-4c04-b9f3-199a9cb8f79f
+- Updated: 2026-07-31T12:21:00Z
 
 ## Task Summary
-- **What to build**: `theory.ts` and `test.ts` for STD 9 Chapters 1, 2, 3 (`src/data/std9/ch1`, `ch2`, `ch3`)
+- **What to build**: `theory.ts` and `test.ts` for STD 10 Chapters 1, 2, 3 (`src/data/std10/ch1`, `ch2`, `ch3`)
 - **Success criteria**:
   - Accurate extraction of science content from PDFs.
   - Complete, detailed `theory.ts` with Gujarati key points, sections, tables, summary.
   - Complete `test.ts` with 30 Gujarati MCQs split across 2 test sets per chapter (set1, set2) with clear options, correct answers, explanations.
-  - Passes TypeScript compilation / build checks without errors.
+  - Clean Unicode symbols and zero LaTeX syntax.
+  - Passes TypeScript compilation (`npx tsc --noEmit`) without errors.
 - **Interface contracts**: `src/types/theory.ts`, `src/types/test.ts`.
 
 ## Change Tracker
 - **Files modified**:
-  - `src/data/std9/ch1/theory.ts`: STD 9 Ch 1 Theory Data
-  - `src/data/std9/ch1/test.ts`: STD 9 Ch 1 Test Sets (30 MCQs)
-  - `src/data/std9/ch2/theory.ts`: STD 9 Ch 2 Theory Data
-  - `src/data/std9/ch2/test.ts`: STD 9 Ch 2 Test Sets (30 MCQs)
-  - `src/data/std9/ch3/theory.ts`: STD 9 Ch 3 Theory Data
-  - `src/data/std9/ch3/test.ts`: STD 9 Ch 3 Test Sets (30 MCQs)
-  - `src/data/std9/index.ts`: Re-export all STD 9 data files
-  - `src/lib/content.ts`: Registered STD 9 theory and test maps
+  - `src/data/std10/ch1/theory.ts`: STD 10 Ch 1 Theory Data (Chemical Reactions and Equations)
+  - `src/data/std10/ch1/test.ts`: STD 10 Ch 1 Test Sets (30 MCQs)
+  - `src/data/std10/ch2/theory.ts`: STD 10 Ch 2 Theory Data (Acids, Bases and Salts)
+  - `src/data/std10/ch2/test.ts`: STD 10 Ch 2 Test Sets (30 MCQs)
+  - `src/data/std10/ch3/theory.ts`: STD 10 Ch 3 Theory Data (Metals and Non-Metals)
+  - `src/data/std10/ch3/test.ts`: STD 10 Ch 3 Test Sets (30 MCQs)
+  - `src/data/std10/index.ts`: Re-export all STD 10 data files
+  - `src/lib/content.ts`: Registered STD 10 theory and test maps
+  - `src/lib/data.ts`: Added STD 10 subject definition and topic list
 - **Build status**: `npx tsc --noEmit` PASSED (0 errors)
 - **Pending issues**: None
 
 ## Quality Status
-- **Build/test result**: Pass
+- **Build/test result**: Pass (tsc --noEmit clean)
 - **Lint status**: Pass
 - **Tests added/modified**: 90 MCQs added across 6 test sets in Ch 1, 2, 3
 
@@ -51,9 +54,9 @@ Create comprehensive Gujarati theory.ts and test.ts for STD 9 Chapters 1, 2, and
 - None
 
 ## Key Decisions Made
-- Created rich, structured theory datasets matching exact NCERT/GSEB STD 9 syllabus from Gyan Academy PDFs.
+- Created rich, structured theory datasets matching exact NCERT/GSEB STD 10 syllabus from Gyan Academy PDFs.
 - Created 30 MCQs per chapter (15 in test-1, 15 in test-2) with accurate zero-indexed correct answers and detailed Gujarati scientific explanations.
-- Integrated std9 into `src/lib/content.ts` for seamless app navigation.
+- Integrated std10 into `src/lib/content.ts` and `src/lib/data.ts` for seamless app navigation.
 
 ## Artifact Index
 - `.agents/worker_m1/ORIGINAL_REQUEST.md` — Original prompt

@@ -1,12 +1,12 @@
-# STD 9 Science Execution Plan
+🎯 શું કરવાનું: ધોરણ 10 વિજ્ઞાનના 1 થી 14 પ્રકરણોનું કન્ટેન્ટ એક્સ્ટ્રેક્શન, થિયરી/ટેસ્ટ ફાઈલ નિર્માણ, ગ્લોબલ રજિસ્ટ્રેશન અને બિલ્ડ વેરિફિકેશન.
 
-🎯 **ધ્યેય**: STD 9 Science (Chapters 1 to 13) નો સંપૂર્ણ અભ્યાસક્રમ Next.js Science App માં તૈયાર કરી global registration, build test અને git push કરવું.
+| # | Task |
+|:---:|:---|
+| 01 ⏳ | પ્રકરણ 1 થી 3 (રાસાયણિક પ્રક્રિયાઓ, એસિડ બેઈઝ, ધાતુઓ) થિયરી અને ટેસ્ટ બનાવવું |
+| 02 ⏳ | પ્રકરણ 4 થી 6 (કાર્બન, જૈવિક ક્રિયાઓ, નિયંત્રણ-સંકલન) થિયરી અને ટેસ્ટ બનાવવું |
+| 03 ⏳ | પ્રકરણ 7 થી 9 (પ્રજનન, આનુવંશિકતા, પ્રકાશ) થિયરી અને ટેસ્ટ બનાવવું |
+| 04 ⏳ | પ્રકરણ 10 થી 13 (માનવ આંખ, વિદ્યુત, ચુંબકીય અસરો, પર્યાવરણ) થિયરી અને ટેસ્ટ બનાવવું |
+| 05 ⏳ | પ્રકરણ 14 (મેગા ટેસ્ટ - 13 પાઠનું સમરી કોષ્ટક અને 100 MCQs) થિયરી અને ટેસ્ટ બનાવવું |
+| 06 ⏳ | રજિસ્ટ્રેશન (index.ts, data.ts, content.ts), બિલ્ડ વેરિફિકેશન (npx tsc, npm run build) અને લોકલ Git commit |
 
-| # | Task | Status |
-|:---:|:---|:---:|
-| 01 ⏳ | Milestone 1: STD 9 Ch 1 to 3 Content Generation | ✅ પૂર્ણ |
-| 02 ⏳ | Milestone 2: STD 9 Ch 4 to 6 Content Generation | ✅ પૂર્ણ |
-| 03 ⏳ | Milestone 3: STD 9 Ch 7 to 9 Content Generation | ✅ પૂર્ણ |
-| 04 ⏳ | Milestone 4: STD 9 Ch 10 to 12 Content Generation | ✅ પૂર્ણ |
-| 05 ⏳ | Milestone 5: STD 9 Ch 13 Mega Test Content Generation | ✅ પૂર્ણ |
-| 06 ⏳ | Milestone 6: Global Registration, Build Checks & Git Push | ✅ પૂર્ણ |
+⚠️ નોંધ: બિલ્ડ સફળ થયા પછી જ લોકલ Git commit કરવું. origin main પર push કરવું નહીં (યુઝર સૂચના આપે ત્યાં સુધી).

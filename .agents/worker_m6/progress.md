@@ -1,13 +1,15 @@
-# Progress Log — worker_m6
+# Progress Log
 
-Last visited: 2026-07-30T04:04:50Z
+Last visited: 2026-07-31T06:55:30Z
 
-| Task | Status | Details |
-|---|---|---|
-| 01 Initial inspection | ✅ Completed | Verified `src/data/std9/index.ts` re-exports and `src/lib/content.ts` mappings |
-| 02 Create `src/data/std9/index.ts` | ✅ Completed | Confirmed 26 exports for ch1 to ch13 theory & tests |
-| 03 Update `src/lib/data.ts` | ✅ Completed | Added std9 subject entry (13 topics, 460 questions, pdfUrls) |
-| 04 Update `src/lib/content.ts` | ✅ Completed | Mapped std9 theory and tests for all 13 chapters |
-| 05 Run `npx tsc --noEmit` | ✅ Completed | Exit code 0, 0 errors |
-| 06 Run `npm run build` | ✅ Completed | Next.js static site generation succeeded (232 static pages prerendered) |
-| 07 Git commit & push | ✅ Completed | Pushed commit `3304825` to `origin main` |
+- [x] Initialized workspace and briefing.
+- [x] Task 1: Inspect and verify `src/types/subject.ts`.
+- [x] Task 2: Ensure `src/data/std10/index.ts` re-exports theory and tests for ch1 to ch14.
+- [x] Task 3: Inspect all std10 chapter test files to count MCQs accurately per chapter and total (490 MCQs total).
+- [x] Task 4: Inspect `public/pdfs/ધોરણ 10/` to verify exact PDF filenames.
+- [x] Task 5: Update `src/lib/data.ts` (added all 14 topics with correct questionCount 490, pdfUrls, color, description).
+- [x] Task 6: Update `src/lib/content.ts` (re-verified std10 THEORY and TESTS mappings for ch1..ch14).
+- [x] Task 7a: Run `npx tsc --noEmit` -> Passed cleanly.
+- [ ] Task 7b: Run `npm run build` -> In progress.
+- [ ] Task 8: Commit changes to Git (`git add .`, `git commit -m "feat(std10): complete STD 10 Science curriculum (Chapters 1 to 14)"`).
+- [ ] Task 9: Document results in `handoff.md` and notify parent agent.

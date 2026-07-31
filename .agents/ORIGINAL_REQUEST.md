@@ -101,3 +101,59 @@ Integrity mode: development
 - [ ] `npm run build` succeeds and pre-renders static HTML pages for all STD 9 chapters.
 - [ ] Git working tree is clean and latest commits are pushed to `origin main`.
 </USER_REQUEST>
+
+## 2026-07-31T12:16:14Z
+
+<USER_REQUEST>
+Complete STD 10 Science Curriculum (Chapters 1 to 14) in the Next.js Science web application by reading PDF files from `public/pdfs/ધોરણ 10/`, creating `theory.ts` and `test.ts` for each chapter, registering them in `src/lib/data.ts` and `src/lib/content.ts`, verifying compilation/build, and committing locally (do NOT push to GitHub until explicitly requested).
+
+Working directory: d:\W\Gyan academy  project\Science
+Integrity mode: development
+
+## Requirements
+
+### R1. Complete Content Extraction & Generation for STD 10 Ch 1 to 14
+- Read PDF files for STD 10 Chapters 1 through 14 from `public/pdfs/ધોરણ 10/`:
+  - Ch 1: `1 - રાસાયણિક પ્રક્રિયાઓ અને સમીકરણો.pdf`
+  - Ch 2: `2 - એસિડ બેઈઝ અને ક્ષાર.pdf`
+  - Ch 3: `3 - ધાતુઓ અને અધાતુઓ.pdf`
+  - Ch 4: `4 - કાર્બબન અને તેના સંયોજનો.pdf`
+  - Ch 5: `5 - જૈવિક ક્રિયાઓ.pdf`
+  - Ch 6: `6 - નિયં ત્રણ અને સંકલન.pdf`
+  - Ch 7: `7 - સજીવો કેવી રીતે પ્રજજન કરે છે.pdf`
+  - Ch 8: `8 - આનુવંશિકતા.pdf`
+  - Ch 9: `9 - પ્રકાશ પરાવર્તતતન અને વક્રીભવન.pdf`
+  - Ch 10: `10 - માનવ આંખ અને રંગબેરંગી દુનિયા ા.pdf`
+  - Ch 11: `11 - વિદ્યુત.pdf`
+  - Ch 12: `12 - વિદ્યુત પ્રવાહની ચું બકીય અસરો.pdf`
+  - Ch 13: `13 - આપણું પર્યાવરણ.pdf`
+  - Ch 14: `14 - મેગા ટેસ્ટ.pdf`
+- For each chapter (Ch 1 to Ch 13), create `src/data/std10/ch<N>/theory.ts` with structured Gujarati theory tables (`TheoryData`) without raw LaTeX syntax (use clean Unicode symbols like `H₂O`, `CO₂`, `°C`, `Ω`, `A`, `V`, `W`, `kWh`, `m/s`, `m/s²`, `N`, `J`, `p⁺`, `e⁻`, `n⁰`), and `src/data/std10/ch<N>/test.ts` with 20 to 40 Gujarati MCQs divided into test sets (`ChapterTests`).
+- For Chapter 14 (Mega Test), create `src/data/std10/ch14/theory.ts` containing comprehensive chapter-by-chapter summary tables covering all 13 prior chapters of STD 10, and `src/data/std10/ch14/test.ts` containing 100 MCQs in 5 test sets of 20 questions each.
+
+### R2. Global Registration & Route Mapping
+- Register `std10` in `src/types/subject.ts` if needed.
+- Re-export all 14 chapters from `src/data/std10/index.ts`.
+- Update `src/lib/data.ts` to list all 14 topics under `std10` subject with accurate topic counts, test set counts, and question counts.
+- Update `src/lib/content.ts` to map `std10` theory and test chapters in `THEORY` and `TESTS` records for Next.js static route generation (`generateStaticParams`).
+
+### R3. Build Verification and Git Commit Rule
+- Run `npx tsc --noEmit` to guarantee 0 TypeScript compilation errors.
+- Run `npm run build` to verify Next.js static site generation for all 14 STD 10 chapters.
+- Commit all created and updated files to local git repository (`git commit`).
+- **CRITICAL:** Do NOT run `git push origin main` until the user explicitly requests it.
+
+## Acceptance Criteria
+
+### Content Completeness
+- [ ] All 14 STD 10 chapters are present in `src/data/std10/` (from `ch1` to `ch14`).
+- [ ] Chapter 14 theory contains individual, detailed summary tables for Chapters 1 through 13.
+- [ ] All questions have valid Gujarati text, 4 options, `correctAnswer` index (0..3), and explanations.
+- [ ] No raw LaTeX syntax or broken `$` symbols in theory or test files (all math formatted with Unicode).
+
+### Technical & Build Health
+- [ ] `npx tsc --noEmit` exits with status code 0.
+- [ ] `npm run build` succeeds and pre-renders static HTML pages for all STD 10 chapters.
+- [ ] Local git working tree is clean after local commit.
+- [ ] No automatic `git push` to GitHub without explicit user instruction.
+</USER_REQUEST>
