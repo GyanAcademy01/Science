@@ -37,19 +37,19 @@ export default function HomePage() {
 
         {/* Hero Section */}
         <section className="mx-auto max-w-3xl text-center">
-          {/* Glassmorphic Stats Capsule Counter Bar */}
-          <div className="inline-flex items-center gap-2 sm:gap-2.5 rounded-full border border-cyan-200/80 dark:border-cyan-800/60 bg-white/80 dark:bg-zinc-900/80 px-4 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm font-extrabold shadow-lg shadow-cyan-500/10 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400">
-            <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-cyan-500 text-white text-xs shadow-sm shrink-0">
+          {/* Top Pill Badge */}
+          <div className="inline-flex items-center gap-2 sm:gap-2.5 rounded-full border border-cyan-200/80 dark:border-cyan-800/60 bg-white/80 dark:bg-zinc-900/80 px-4 py-1.5 text-xs sm:text-xs font-extrabold shadow-sm backdrop-blur-md">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500 text-white text-[10px] shadow-sm shrink-0">
               🎓
             </span>
             <span className="text-zinc-800 dark:text-zinc-200 font-extrabold tracking-tight">ધોરણ ૬ થી ૧૦</span>
             <span className="text-zinc-300 dark:text-zinc-700 text-xs">•</span>
             <span className="flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 font-extrabold">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-500" />
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-500" />
               વિજ્ઞાન
             </span>
             <span className="text-zinc-300 dark:text-zinc-700 text-xs">•</span>
-            <span className="flex items-center gap-1 text-teal-600 dark:text-teal-400 font-extrabold">
+            <span className="text-teal-600 dark:text-teal-400 font-extrabold">
               પદ્ધતિશાસ્ત્ર
             </span>
           </div>
@@ -75,25 +75,25 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Stats - Unique Glassmorphic Capsule Bar */}
-        <section className="mx-auto mt-9 sm:mt-11 w-full max-w-2xl">
-          <div className="relative overflow-hidden rounded-[24px] border border-zinc-200/80 bg-white/80 p-3.5 sm:p-4 backdrop-blur-xl shadow-xl shadow-cyan-500/5 dark:border-zinc-800 dark:bg-zinc-900/80">
-            <div className="grid grid-cols-3 divide-x divide-zinc-200/70 dark:divide-zinc-800">
+        {/* Bottom Glassmorphic Stats Capsule Counter Bar - Matching User Image */}
+        <section className="mx-auto mt-10 sm:mt-12 w-full max-w-3xl">
+          <div className="relative overflow-hidden rounded-[28px] sm:rounded-[32px] border border-zinc-200/90 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 p-4 sm:p-5 backdrop-blur-2xl shadow-xl shadow-cyan-500/10">
+            <div className="grid grid-cols-3 divide-x divide-zinc-200/80 dark:divide-zinc-800">
               {stats.map((s) => {
                 const IconComponent = s.icon;
                 return (
-                  <div key={s.label} className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3.5 px-2 py-1 text-center sm:text-left transition-all duration-300">
+                  <div key={s.label} className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 px-3 py-1.5 text-center sm:text-left transition-all duration-300">
                     <span
-                      className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-2xl text-white shadow-md"
+                      className="flex h-11 w-11 sm:h-13 sm:w-13 shrink-0 items-center justify-center rounded-2xl text-white shadow-md transition-transform hover:scale-105"
                       style={{ backgroundColor: s.color }}
                     >
                       <IconComponent className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.4} />
                     </span>
-                    <div className="flex flex-col">
-                      <p className="text-lg sm:text-2xl font-black tracking-tight text-zinc-900 dark:text-white leading-none">
+                    <div className="flex flex-col justify-center">
+                      <p className="text-xl sm:text-3xl font-black tracking-tight text-zinc-900 dark:text-white leading-none">
                         {s.value}
                       </p>
-                      <p className="mt-1 text-[11px] sm:text-xs font-bold text-zinc-500 dark:text-zinc-400 leading-none">
+                      <p className="mt-1 text-xs sm:text-sm font-extrabold text-zinc-500 dark:text-zinc-400 leading-none">
                         {s.label}
                       </p>
                     </div>
