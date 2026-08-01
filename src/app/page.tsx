@@ -14,78 +14,75 @@ export default function HomePage() {
 
   return (
     <main className="relative flex min-h-[calc(100vh-70px)] flex-col justify-between overflow-hidden">
-      {/* Ambient glowing background blobs */}
+      {/* Ambient soft background lighting */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -left-32 top-8 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl dark:bg-cyan-500/10" />
-        <div className="absolute -right-24 top-24 h-96 w-96 rounded-full bg-blue-400/20 blur-3xl dark:bg-blue-500/10" />
-        <div className="absolute bottom-10 left-[30%] h-72 w-72 rounded-full bg-emerald-400/15 blur-3xl dark:bg-emerald-500/10" />
-        <div className="absolute inset-0 opacity-[0.03] [background-image:radial-gradient(currentColor_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="absolute -left-32 top-8 h-80 w-80 rounded-full bg-cyan-400/15 blur-3xl dark:bg-cyan-500/10" />
+        <div className="absolute -right-24 top-24 h-96 w-96 rounded-full bg-blue-400/15 blur-3xl dark:bg-blue-500/10" />
+        <div className="absolute bottom-10 left-[30%] h-72 w-72 rounded-full bg-teal-400/10 blur-3xl dark:bg-teal-500/10" />
+        <div className="absolute inset-0 opacity-[0.025] [background-image:radial-gradient(currentColor_1px,transparent_1px)] [background-size:24px_24px]" />
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-5 pt-8 sm:px-8 sm:pt-12 flex-1 flex flex-col justify-center items-center">
-        {/* Logo Container - Only Logo shifted higher up */}
-        <div className="flex justify-center mb-4 sm:mb-6 -mt-5 sm:-mt-7">
+      <div className="mx-auto w-full max-w-4xl px-4 pt-6 sm:px-6 sm:pt-10 flex-1 flex flex-col justify-center items-center">
+        {/* Brand Logo Container */}
+        <div className="flex justify-center mb-3 sm:mb-4">
           <Image
             src="/gyan-logo.png"
             alt="Gyan Academy Logo"
-            width={185}
-            height={65}
-            className="h-auto w-[160px] sm:w-[185px] object-contain drop-shadow-md"
+            width={180}
+            height={64}
+            className="h-auto w-[150px] sm:w-[175px] object-contain drop-shadow-sm"
             priority
           />
         </div>
 
         {/* Hero Section */}
-        <section className="mx-auto max-w-3xl text-center">
-          {/* Metallic Chrome 3D Science Title */}
-          <div className="relative inline-block my-2">
-            <div className="absolute inset-0 mx-auto h-16 w-56 rounded-full bg-gradient-to-r from-cyan-500/30 via-blue-500/20 to-teal-500/30 blur-2xl pointer-events-none" />
-            <h1 className="relative text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-[0.16em] text-transparent bg-clip-text bg-gradient-to-b from-slate-950 via-cyan-600 to-teal-600 dark:from-white dark:via-cyan-300 dark:to-cyan-600 drop-shadow-[0_4px_12px_rgba(6,182,212,0.35)]">
+        <section className="mx-auto max-w-2xl text-center">
+          {/* Main Professional Title - Clean Light/Medium Typography */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-wide text-zinc-900 dark:text-white">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 dark:from-cyan-400 dark:via-teal-400 dark:to-blue-400">
               Science
-            </h1>
-          </div>
+            </span>
+          </h1>
 
-          {/* Motivational Quote - Under Title */}
-          <div className="mt-3.5 mb-2 text-center">
-            <p className="text-xs sm:text-sm font-semibold text-zinc-600 dark:text-zinc-400 italic">
-              &ldquo;વિજ્ઞાન એ માત્ર પ્રશ્નો પૂછવાની જ નહીં, પણ સત્ય સુધી પહોંચવાની કળા છે.&rdquo;
-            </p>
-            <div className="mt-1.5 mx-auto w-12 h-[2px] rounded-full bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500" />
-          </div>
+          {/* Motivational Quote */}
+          <p className="mt-3.5 mx-auto max-w-lg text-xs sm:text-sm font-normal text-zinc-600 dark:text-zinc-300 italic leading-relaxed">
+            &ldquo;વિજ્ઞાન એ માત્ર પ્રશ્નો પૂછવાની જ નહીં, પણ સત્ય સુધી પહોંચવાની કળા છે.&rdquo;
+          </p>
 
-          {/* Enhanced Vibrant Feature Highlights Line */}
-          <div className="mt-4 flex items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-extrabold uppercase tracking-wider">
-            <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 drop-shadow-xs">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)] animate-pulse" />
+          {/* Clean Feature Tags */}
+          <div className="mt-4 flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/50 shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
               Theory
             </span>
-            <span className="text-zinc-300 dark:text-zinc-700 font-medium">•</span>
-            <span className="flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 drop-shadow-xs">
-              <span className="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_8px_rgba(6,182,212,0.6)] animate-pulse" />
+            <span className="text-zinc-300 dark:text-zinc-700">•</span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/40 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/50 shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
               Test
             </span>
-            <span className="text-zinc-300 dark:text-zinc-700 font-medium">•</span>
-            <span className="flex items-center gap-1.5 text-rose-600 dark:text-rose-400 drop-shadow-xs">
-              <span className="h-2 w-2 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)] animate-pulse" />
+            <span className="text-zinc-300 dark:text-zinc-700">•</span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 border border-rose-200/60 dark:border-rose-800/50 shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
               PDF
             </span>
           </div>
 
-          <div className="mt-7 flex items-center justify-center">
+          {/* Primary CTA Button */}
+          <div className="mt-6 flex items-center justify-center">
             <Link href="/subjects" prefetch>
-              <span className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3.5 text-sm sm:text-base font-extrabold text-white shadow-lg shadow-cyan-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/40 hover:scale-[1.03] active:scale-95 cursor-pointer">
+              <span className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 px-7 py-3 text-sm sm:text-base font-semibold text-white shadow-md shadow-cyan-500/20 transition-all duration-200 hover:shadow-lg hover:shadow-cyan-500/30 hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
                 અભ્યાસ શરૂ કરો
-                <ArrowRight className="h-5 w-5" strokeWidth={2.5} />
+                <ArrowRight className="h-4.5 w-4.5" strokeWidth={2.2} />
               </span>
             </Link>
           </div>
         </section>
 
-        {/* Bottom Glassmorphic Stats Capsule Counter Bar */}
-        <section className="mx-auto mt-6 sm:mt-8 w-full max-w-xl">
-          <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-cyan-200/80 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 p-2.5 sm:p-3.5 backdrop-blur-xl shadow-lg shadow-cyan-500/5">
-            {/* Clean Category Line inside Bottom Capsule */}
-            <div className="flex items-center justify-center gap-2 mb-2 pb-2 border-b border-zinc-200/70 dark:border-zinc-800/80 text-xs sm:text-sm font-bold text-zinc-600 dark:text-zinc-300">
+        {/* Professional Stats Glass Capsule Bar */}
+        <section className="mx-auto mt-8 sm:mt-10 w-full max-w-lg">
+          <div className="relative overflow-hidden rounded-2xl border border-zinc-200/90 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 p-3 sm:p-4 backdrop-blur-xl shadow-lg shadow-cyan-500/5">
+            {/* Category Tag Header */}
+            <div className="flex items-center justify-center gap-2 mb-2.5 pb-2 border-b border-zinc-200/70 dark:border-zinc-800/80 text-xs font-bold text-zinc-600 dark:text-zinc-400">
               <span>🎓 ધોરણ ૬ થી ૧૦</span>
               <span className="text-zinc-300 dark:text-zinc-700">•</span>
               <span className="text-cyan-600 dark:text-cyan-400">વિજ્ઞાન</span>
@@ -93,14 +90,14 @@ export default function HomePage() {
               <span className="text-teal-600 dark:text-teal-400">પદ્ધતિશાસ્ત્ર</span>
             </div>
 
-            {/* Stats Row */}
+            {/* Stats Items */}
             <div className="grid grid-cols-3 divide-x divide-zinc-200/80 dark:divide-zinc-800">
               {stats.map((s) => {
                 const IconComponent = s.icon;
                 return (
-                  <div key={s.label} className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 px-2 py-0.5 text-center sm:text-left transition-all duration-300">
+                  <div key={s.label} className="flex flex-col sm:flex-row items-center justify-center gap-2 px-2 py-0.5 text-center sm:text-left transition-all duration-300">
                     <span
-                      className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-xl text-white shadow-sm"
+                      className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-xl text-white shadow-xs"
                       style={{ backgroundColor: s.color }}
                     >
                       <IconComponent className="h-4 w-4 sm:h-4.5 sm:w-4.5" strokeWidth={2.4} />
@@ -109,7 +106,7 @@ export default function HomePage() {
                       <p className="text-base sm:text-xl font-black tracking-tight text-zinc-900 dark:text-white leading-none">
                         {s.value}
                       </p>
-                      <p className="mt-0.5 text-[10px] sm:text-xs font-bold text-zinc-500 dark:text-zinc-400 leading-none">
+                      <p className="mt-1 text-[10px] sm:text-xs font-bold text-zinc-500 dark:text-zinc-400 leading-none">
                         {s.label}
                       </p>
                     </div>
