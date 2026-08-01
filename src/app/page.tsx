@@ -45,10 +45,9 @@ export default function HomePage() {
 
         {/* Hero Section */}
         <section className="mx-auto max-w-3xl text-center">
-          <h1 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-zinc-950 sm:text-3xl lg:text-4xl dark:text-white">
-            વિજ્ઞાન શીખવાની
-            <span className="mt-1 block text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600">
-              સૌથી સરળ અને સુંદર રીત.
+          <h1 className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600">
+              વિજ્ઞાન
             </span>
           </h1>
 
