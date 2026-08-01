@@ -37,15 +37,12 @@ export default function HomePage() {
 
         {/* Hero Section */}
         <section className="mx-auto max-w-3xl text-center">
-          {/* Brand New Modern Science Title Design */}
-          <div className="relative inline-block my-1">
-            <div className="absolute inset-0 mx-auto h-16 w-56 rounded-full bg-gradient-to-r from-cyan-500/25 via-teal-500/25 to-blue-600/25 blur-2xl pointer-events-none" />
-            <div className="relative flex items-center justify-center gap-2.5 px-6 py-2 sm:px-8 sm:py-2.5 rounded-full border border-cyan-200/80 dark:border-cyan-800/60 bg-white/75 dark:bg-zinc-900/80 backdrop-blur-xl shadow-lg shadow-cyan-500/10">
-              <span className="text-xl sm:text-2xl animate-pulse">⚛️</span>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-indigo-600">
-                Science
-              </h1>
-            </div>
+          {/* Metallic Chrome 3D Science Title */}
+          <div className="relative inline-block my-2">
+            <div className="absolute inset-0 mx-auto h-16 w-56 rounded-full bg-gradient-to-r from-cyan-500/30 via-blue-500/20 to-teal-500/30 blur-2xl pointer-events-none" />
+            <h1 className="relative text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-[0.16em] text-transparent bg-clip-text bg-gradient-to-b from-slate-950 via-cyan-600 to-teal-600 dark:from-white dark:via-cyan-300 dark:to-cyan-600 drop-shadow-[0_4px_12px_rgba(6,182,212,0.35)]">
+              Science
+            </h1>
           </div>
 
           {/* Motivational Quote - Under Title */}
