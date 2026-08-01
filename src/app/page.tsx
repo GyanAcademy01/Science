@@ -44,10 +44,23 @@ export default function HomePage() {
             </span>
           </h1>
 
-          {/* Feature Highlights Line */}
-          <p className="mt-3.5 text-xs sm:text-sm font-bold tracking-wide text-zinc-500 dark:text-zinc-400">
-            Theory &nbsp;•&nbsp; Test &nbsp;•&nbsp; PDF
-          </p>
+          {/* Enhanced Vibrant Feature Highlights Line */}
+          <div className="mt-4 flex items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-extrabold uppercase tracking-wider">
+            <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 drop-shadow-xs">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)] animate-pulse" />
+              Theory
+            </span>
+            <span className="text-zinc-300 dark:text-zinc-700 font-medium">•</span>
+            <span className="flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 drop-shadow-xs">
+              <span className="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_8px_rgba(6,182,212,0.6)] animate-pulse" />
+              Test
+            </span>
+            <span className="text-zinc-300 dark:text-zinc-700 font-medium">•</span>
+            <span className="flex items-center gap-1.5 text-rose-600 dark:text-rose-400 drop-shadow-xs">
+              <span className="h-2 w-2 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)] animate-pulse" />
+              PDF
+            </span>
+          </div>
 
           <div className="mt-7 flex items-center justify-center">
             <Link href="/subjects" prefetch>
