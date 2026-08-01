@@ -90,7 +90,7 @@ export default async function ChapterListPage(props: {
                   className="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-2.5 py-2 text-[0.78rem] sm:text-[0.84rem] font-bold shadow-md shadow-emerald-500/25 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/40 hover:scale-[1.03] active:scale-95 text-center whitespace-nowrap"
                 >
                   <BookOpen size={15} strokeWidth={2.4} className="shrink-0" />
-                  <span>થિયરી</span>
+                  <span>Theory</span>
                 </Link>
               )}
 
@@ -100,7 +100,7 @@ export default async function ChapterListPage(props: {
                   className="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 px-2.5 py-2 text-[0.78rem] sm:text-[0.84rem] font-bold shadow-sm shadow-slate-200/50 transition-all duration-300 hover:border-emerald-400 hover:shadow-md hover:scale-[1.03] active:scale-95 text-center whitespace-nowrap"
                 >
                   <ClipboardCheck size={15} strokeWidth={2.4} className="shrink-0 text-emerald-500 dark:text-emerald-400" />
-                  <span>ટેસ્ટ</span>
+                  <span>Test</span>
                 </Link>
               )}
 
