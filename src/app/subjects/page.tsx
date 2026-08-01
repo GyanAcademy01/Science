@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Card } from "@/components/ui/Card";
 import { BackArrow } from "@/components/common/BackArrow";
 import { subjects } from "@/lib/data";
 import { toGujaratiDigits } from "@/lib/utils";
@@ -30,18 +29,18 @@ export default function SubjectsPage() {
         </div>
       </div>
 
-      <div className="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      {/* 🚀 Vertical List of Glassmorphic Capsule Bar Subject Cards */}
+      <div className="mx-auto flex max-w-3xl flex-col gap-3 sm:gap-3.5">
         {subjects.map((subject, index) => (
           <Link key={subject.id} href={`/chapter/${subject.id}`} className="group block">
-            <Card
-              hover
-              accentTop
-              className="anim-fade-up flex flex-col justify-between min-h-[175px] sm:min-h-[195px] p-5 sm:p-6 shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg"
-              style={{ animationDelay: `${index * 0.08}s` }}
+            <div
+              className="anim-fade-up relative flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 rounded-2xl sm:rounded-full border border-zinc-200/90 dark:border-zinc-800 bg-white/85 dark:bg-zinc-900/85 px-4 py-3 sm:px-6 sm:py-3.5 backdrop-blur-xl shadow-xs transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:border-cyan-500/40"
+              style={{ animationDelay: `${index * 0.06}s` }}
             >
-              <div className="flex items-start gap-3.5 sm:gap-4">
+              {/* Left Side: Hex Icon + Title & Description */}
+              <div className="flex items-center gap-3.5 min-w-0 w-full sm:w-auto">
                 <span
-                  className="hex grid h-12 w-12 sm:h-14 sm:w-14 shrink-0 place-items-center text-[1.35rem] sm:text-[1.55rem] shadow-sm transition-transform duration-300 group-hover:scale-105"
+                  className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl sm:rounded-full text-xl text-white shadow-xs transition-transform duration-300 group-hover:scale-105"
                   style={{
                     background: `linear-gradient(135deg, ${subject.color}, ${subject.color2})`,
                   }}
@@ -50,17 +49,18 @@ export default function SubjectsPage() {
                   {subject.icon}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <h2 className="text-[1.1rem] sm:text-[1.25rem] font-bold text-[var(--fg)] group-hover:text-[var(--brand-1)] transition-colors leading-snug">
+                  <h2 className="text-sm sm:text-base font-extrabold text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors leading-tight">
                     {subject.name}
                   </h2>
-                  <p className="mt-1 text-[0.82rem] sm:text-[0.88rem] leading-relaxed text-[var(--fg-muted)]">
+                  <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400 line-clamp-1">
                     {subject.description}
                   </p>
                 </div>
               </div>
 
-              <div className="mt-5 pt-3.5 border-t border-[var(--stroke)]/60 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-[0.82rem] font-bold">
+              {/* Right Side: Clean Chapter & Question Count Text + Action Circle */}
+              <div className="flex items-center justify-between sm:justify-end gap-3.5 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-zinc-200/60 dark:border-zinc-800/80">
+                <div className="flex items-center gap-2 text-xs font-bold">
                   <span className="text-cyan-600 dark:text-cyan-400">
                     {toGujaratiDigits(subject.topicCount)} પ્રકરણ
                   </span>
@@ -69,11 +69,12 @@ export default function SubjectsPage() {
                     {toGujaratiDigits(subject.questionCount)} પ્રશ્નો
                   </span>
                 </div>
-                <span className="text-[var(--fg-muted)] group-hover:text-[var(--brand-1)] transition-colors">
-                  <ArrowRight size={18} strokeWidth={2.5} />
+
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 shadow-xs">
+                  <ArrowRight size={16} strokeWidth={2.5} />
                 </span>
               </div>
-            </Card>
+            </div>
           </Link>
         ))}
       </div>
