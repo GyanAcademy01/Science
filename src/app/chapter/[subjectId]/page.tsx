@@ -87,9 +87,9 @@ export default async function ChapterListPage(props: {
               {topic.hasTheory && (
                 <Link
                   href={`/chapter/${subject.id}/${topic.id}/theory`}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-3 py-1.5 text-[0.75rem] font-extrabold shadow-sm shadow-cyan-500/25 transition-all duration-300 hover:shadow-md hover:shadow-cyan-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4.5 py-1.5 min-w-[88px] text-[0.78rem] font-extrabold shadow-sm shadow-cyan-500/25 transition-all duration-300 hover:shadow-md hover:shadow-cyan-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
                 >
-                  <BookOpen size={13} strokeWidth={2.4} />
+                  <BookOpen size={14} strokeWidth={2.4} />
                   <span>થિયરી</span>
                 </Link>
               )}
@@ -97,9 +97,9 @@ export default async function ChapterListPage(props: {
               {topic.hasTest && (
                 <Link
                   href={`/chapter/${subject.id}/${topic.id}/test`}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-3 py-1.5 text-[0.75rem] font-extrabold shadow-sm shadow-violet-500/25 transition-all duration-300 hover:shadow-md hover:shadow-violet-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-4.5 py-1.5 min-w-[88px] text-[0.78rem] font-extrabold shadow-sm shadow-violet-500/25 transition-all duration-300 hover:shadow-md hover:shadow-violet-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
                 >
-                  <ClipboardCheck size={13} strokeWidth={2.4} />
+                  <ClipboardCheck size={14} strokeWidth={2.4} />
                   <span>ટેસ્ટ</span>
                 </Link>
               )}
@@ -107,9 +107,9 @@ export default async function ChapterListPage(props: {
               {topic.pdfUrl && (
                 <Link
                   href={`/pdf-view?file=${encodeURIComponent(topic.pdfUrl)}&title=${encodeURIComponent(topic.title)}`}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1.5 text-[0.75rem] font-extrabold shadow-sm shadow-amber-500/25 transition-all duration-300 hover:shadow-md hover:shadow-amber-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4.5 py-1.5 min-w-[88px] text-[0.78rem] font-extrabold shadow-sm shadow-amber-500/25 transition-all duration-300 hover:shadow-md hover:shadow-amber-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
                 >
-                  <FileText size={13} strokeWidth={2.4} />
+                  <FileText size={14} strokeWidth={2.4} />
                   <span>PDF</span>
                 </Link>
               )}
