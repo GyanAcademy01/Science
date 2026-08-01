@@ -53,7 +53,7 @@ export default function SubjectsPage() {
                     {subject.name}
                   </h2>
                   <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                    {subject.description} • <span className="font-semibold text-zinc-600 dark:text-zinc-300">{toGujaratiDigits(subject.topicCount)} પ્રકરણો અને {toGujaratiDigits(subject.questionCount)} પ્રશ્નો</span>
+                    {subject.description} • {toGujaratiDigits(subject.topicCount)} પ્રકરણો અને {toGujaratiDigits(subject.questionCount)} પ્રશ્નો
                   </p>
                 </div>
               </div>
