@@ -15,7 +15,7 @@ function FormattedCell({ text }: { text: string }) {
 
   return (
     <div
-      className="flex flex-col gap-0.5 text-[0.85rem] leading-[1.45]"
+      className="flex flex-col gap-1.5 text-[0.85rem] leading-[1.55]"
       style={{ wordSpacing: "0.04em" }}
     >
       {lines.map((line, idx) => {
@@ -23,15 +23,15 @@ function FormattedCell({ text }: { text: string }) {
         if (line.startsWith("- ") || line.startsWith("• ")) {
           const cleanText = line.replace(/^[-•]\s*/, "");
           return (
-            <div key={idx} className="flex items-start gap-1.5 leading-[1.45]">
-              <span className="mt-[0.45em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500/80" />
+            <div key={idx} className="flex items-start gap-1.5 leading-[1.55]">
+              <span className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500/80" />
               <span className="flex-1">{cleanText}</span>
             </div>
           );
         }
 
         return (
-          <div key={idx} className="leading-[1.45]">
+          <div key={idx} className="leading-[1.55]">
             {line}
           </div>
         );
