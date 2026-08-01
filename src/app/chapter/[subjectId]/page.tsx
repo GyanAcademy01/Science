@@ -59,7 +59,7 @@ export default async function ChapterListPage(props: {
         {subject.topics.map((topic, index) => (
           <div
             key={topic.id}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] p-4 sm:p-4.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--stroke-strong)] hover:shadow-xl anim-fade-up"
+            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] p-5 sm:p-5.5 min-h-[155px] sm:min-h-[168px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--stroke-strong)] hover:shadow-xl anim-fade-up"
             style={{ animationDelay: `${index * 0.05}s` }}
           >
             {/* Background glow on card hover */}
@@ -69,13 +69,13 @@ export default async function ChapterListPage(props: {
               {/* Card Top: HexBadge + Chapter Number + Title */}
               <div className="flex items-start gap-3">
                 <div className="shrink-0 transition-transform duration-300 group-hover:scale-105">
-                  <HexBadge size={38}>{topic.number}</HexBadge>
+                  <HexBadge size={40}>{topic.number}</HexBadge>
                 </div>
                 <div className="min-w-0 flex-1">
                   <span className="inline-block rounded-full bg-[var(--surface-2)] border border-[var(--stroke)] px-2.5 py-0.5 text-[0.65rem] font-bold text-[var(--fg-muted)] uppercase tracking-wide">
                     પ્રકરણ {toGujaratiDigits(topic.number)}
                   </span>
-                  <h2 className="text-[0.95rem] font-extrabold text-[var(--fg)] group-hover:text-[var(--brand-1)] transition-colors mt-1 leading-snug">
+                  <h2 className="text-[1rem] font-extrabold text-[var(--fg)] group-hover:text-[var(--brand-1)] transition-colors mt-1 leading-snug">
                     {topic.title}
                   </h2>
                 </div>
@@ -83,7 +83,7 @@ export default async function ChapterListPage(props: {
             </div>
 
             {/* Action Buttons Section */}
-            <div className="relative z-10 mt-3.5 pt-3 border-t border-[var(--stroke)]/60 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+            <div className="relative z-10 mt-4 pt-3.5 border-t border-[var(--stroke)]/60 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
               {topic.hasTheory && (
                 <Link
                   href={`/chapter/${subject.id}/${topic.id}/theory`}
