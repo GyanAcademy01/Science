@@ -44,9 +44,23 @@ export default function HomePage() {
             </span>
           </h1>
 
-          <p className="mx-auto mt-4 max-w-xl text-xs sm:text-sm font-medium leading-relaxed text-zinc-600 sm:text-base dark:text-zinc-300">
-            ધોરણ ૬ થી ૧૦ ના વિજ્ઞાન અને પદ્ધતિશાસ્ત્રના તમામ પ્રકરણોની થીયરી, ઓરિજિનલ PDF અને ઇન્ટરેક્ટિવ MCQs ટેસ્ટ — બધું જ એક જ જગ્યાએ ડિજિટલ સ્વરૂપે.
-          </p>
+          {/* Feature Highlights Pills */}
+          <div className="mt-3.5 flex items-center justify-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-bold">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/50 shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              Theory
+            </span>
+            <span className="text-zinc-300 dark:text-zinc-700">•</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-50 dark:bg-cyan-950/40 px-3 py-1 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/50 shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+              Test
+            </span>
+            <span className="text-zinc-300 dark:text-zinc-700">•</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 dark:bg-rose-950/40 px-3 py-1 text-rose-700 dark:text-rose-300 border border-rose-200/60 dark:border-rose-800/50 shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+              PDF
+            </span>
+          </div>
 
           <div className="mt-7 flex items-center justify-center">
             <Link href="/subjects" prefetch>
