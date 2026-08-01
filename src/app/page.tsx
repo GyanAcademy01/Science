@@ -35,14 +35,6 @@ export default function HomePage() {
           />
         </div>
 
-        {/* Motivational Quote - TAT-GK style */}
-        <div className="mb-4 text-center">
-          <p className="text-xs sm:text-sm font-semibold text-zinc-600 dark:text-zinc-400 italic">
-            &ldquo;વિજ્ઞાન એ માત્ર પ્રશ્નો પૂછવાની જ નહીં, પણ સત્ય સુધી પહોંચવાની કળા છે.&rdquo;
-          </p>
-          <div className="mt-1.5 mx-auto w-12 h-[2px] rounded-full bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500" />
-        </div>
-
         {/* Hero Section */}
         <section className="mx-auto max-w-3xl text-center">
           <h1 className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
@@ -50,6 +42,14 @@ export default function HomePage() {
               વિજ્ઞાન
             </span>
           </h1>
+
+          {/* Motivational Quote - Under Title */}
+          <div className="mt-3.5 mb-2 text-center">
+            <p className="text-xs sm:text-sm font-semibold text-zinc-600 dark:text-zinc-400 italic">
+              &ldquo;વિજ્ઞાન એ માત્ર પ્રશ્નો પૂછવાની જ નહીં, પણ સત્ય સુધી પહોંચવાની કળા છે.&rdquo;
+            </p>
+            <div className="mt-1.5 mx-auto w-12 h-[2px] rounded-full bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500" />
+          </div>
 
           {/* Enhanced Vibrant Feature Highlights Line */}
           <div className="mt-4 flex items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-extrabold uppercase tracking-wider">
