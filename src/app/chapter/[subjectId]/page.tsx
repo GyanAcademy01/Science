@@ -82,14 +82,14 @@ export default async function ChapterListPage(props: {
               </div>
             </div>
 
-            {/* Action Buttons Section - Guaranteed 1 Single Line Row */}
-            <div className="relative z-10 mt-3.5 pt-3 border-t border-[var(--stroke)]/60 grid grid-cols-3 gap-1.5 sm:gap-2">
+            {/* Action Buttons Section - Matching User Image Design Exactly */}
+            <div className="relative z-10 mt-4 pt-3.5 border-t border-[var(--stroke)]/60 grid grid-cols-3 gap-2 sm:gap-2.5">
               {topic.hasTheory && (
                 <Link
                   href={`/chapter/${subject.id}/${topic.id}/theory`}
-                  className="inline-flex items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-2 py-1.5 text-[0.74rem] sm:text-[0.78rem] font-extrabold shadow-sm shadow-cyan-500/25 transition-all duration-300 hover:shadow-md hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-2.5 py-2 text-[0.78rem] sm:text-[0.84rem] font-bold shadow-md shadow-emerald-500/25 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/40 hover:scale-[1.03] active:scale-95 text-center whitespace-nowrap"
                 >
-                  <BookOpen size={13} strokeWidth={2.4} className="shrink-0" />
+                  <BookOpen size={15} strokeWidth={2.4} className="shrink-0" />
                   <span>થિયરી</span>
                 </Link>
               )}
@@ -97,9 +97,9 @@ export default async function ChapterListPage(props: {
               {topic.hasTest && (
                 <Link
                   href={`/chapter/${subject.id}/${topic.id}/test`}
-                  className="inline-flex items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-2 py-1.5 text-[0.74rem] sm:text-[0.78rem] font-extrabold shadow-sm shadow-violet-500/25 transition-all duration-300 hover:shadow-md hover:shadow-violet-500/40 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 px-2.5 py-2 text-[0.78rem] sm:text-[0.84rem] font-bold shadow-sm shadow-slate-200/50 transition-all duration-300 hover:border-emerald-400 hover:shadow-md hover:scale-[1.03] active:scale-95 text-center whitespace-nowrap"
                 >
-                  <ClipboardCheck size={13} strokeWidth={2.4} className="shrink-0" />
+                  <ClipboardCheck size={15} strokeWidth={2.4} className="shrink-0 text-emerald-500 dark:text-emerald-400" />
                   <span>ટેસ્ટ</span>
                 </Link>
               )}
@@ -107,9 +107,9 @@ export default async function ChapterListPage(props: {
               {topic.pdfUrl && (
                 <Link
                   href={`/pdf-view?file=${encodeURIComponent(topic.pdfUrl)}&title=${encodeURIComponent(topic.title)}`}
-                  className="inline-flex items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white px-2 py-1.5 text-[0.74rem] sm:text-[0.78rem] font-extrabold shadow-sm shadow-amber-500/25 transition-all duration-300 hover:shadow-md hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-gradient-to-r from-rose-50 to-orange-50 dark:from-rose-950/40 dark:to-orange-950/30 border border-rose-200/80 dark:border-rose-800/50 text-rose-600 dark:text-rose-400 px-2.5 py-2 text-[0.78rem] sm:text-[0.84rem] font-extrabold shadow-sm shadow-rose-500/10 transition-all duration-300 hover:border-rose-400 hover:shadow-md hover:scale-[1.03] active:scale-95 text-center whitespace-nowrap"
                 >
-                  <FileText size={13} strokeWidth={2.4} className="shrink-0" />
+                  <FileText size={15} strokeWidth={2.4} className="shrink-0 text-rose-500 dark:text-rose-400" />
                   <span>PDF</span>
                 </Link>
               )}
