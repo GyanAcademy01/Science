@@ -13,7 +13,7 @@ export const subjects: Subject[] = [
     questionCount: 480,
     color: "#06b6d4",
     color2: "#7c3aed",
-    description: "સંપૂર્ણ ધોરણ ૬ વિજ્ઞાન પાઠ્યપુસ્તક (પ્રકરણ ૧ થી ૧૨)",
+    description: "સંપૂર્ણ ધોરણ ૬ વિજ્ઞાન પાઠ્યપુસ્તક",
     topics: [
       {
         id: "ch1",
@@ -145,7 +145,7 @@ export const subjects: Subject[] = [
     questionCount: 475,
     color: "#10b981",
     color2: "#059669",
-    description: "સંપૂર્ણ ધોરણ ૭ વિજ્ઞાન પાઠ્યપુસ્તક (પ્રકરણ ૧ થી ૧૪)",
+    description: "સંપૂર્ણ ધોરણ ૭ વિજ્ઞાન પાઠ્યપુસ્તક",
     topics: [
       {
         id: "ch1",
@@ -297,7 +297,7 @@ export const subjects: Subject[] = [
     questionCount: 570,
     color: "#16a34a",
     color2: "#059669",
-    description: "સંપૂર્ણ ધોરણ ૮ વિજ્ઞાન પાઠ્યપુસ્તક (પ્રકરણ ૧ થી ૧૪)",
+    description: "સંપૂર્ણ ધોરણ ૮ વિજ્ઞાન પાઠ્યપુસ્તક",
     topics: [
       {
         id: "ch1",
@@ -449,7 +449,7 @@ export const subjects: Subject[] = [
     questionCount: 460,
     color: "#3b82f6",
     color2: "#1d4ed8",
-    description: "સંપૂર્ણ ધોરણ ૯ વિજ્ઞાન પાઠ્યપુસ્તક (પ્રકરણ ૧ થી ૧૩)",
+    description: "સંપૂર્ણ ધોરણ ૯ વિજ્ઞાન પાઠ્યપુસ્તક",
     topics: [
       {
         id: "ch1",
@@ -591,7 +591,7 @@ export const subjects: Subject[] = [
     questionCount: 490,
     color: "#059669",
     color2: "#0284c7",
-    description: "સંપૂર્ણ ધોરણ ૧૦ વિજ્ઞાન પાઠ્યપુસ્તક (પ્રકરણ ૧ થી ૧૪)",
+    description: "સંપૂર્ણ ધોરણ ૧૦ વિજ્ઞાન પાઠ્યપુસ્તક",
     topics: [
       {
         id: "ch1",
@@ -743,7 +743,7 @@ export const subjects: Subject[] = [
     questionCount: 450,
     color: "#8b5cf6",
     color2: "#6d28d9",
-    description: "વિજ્ઞાન પદ્ધતિશાસ્ત્ર પાઠ્યપુસ્તક (પ્રકરણ ૧ થી ૧૫)",
+    description: "વિજ્ઞાન પદ્ધતિશાસ્ત્ર પાઠ્યપુસ્તક",
     topics: [
       {
         id: "ch1",
