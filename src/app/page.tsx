@@ -37,24 +37,7 @@ export default function HomePage() {
 
         {/* Hero Section */}
         <section className="mx-auto max-w-3xl text-center">
-          {/* Top Pill Badge */}
-          <div className="inline-flex items-center gap-2 sm:gap-2.5 rounded-full border border-cyan-200/80 dark:border-cyan-800/60 bg-white/80 dark:bg-zinc-900/80 px-4 py-1.5 text-xs sm:text-xs font-extrabold shadow-sm backdrop-blur-md">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500 text-white text-[10px] shadow-sm shrink-0">
-              🎓
-            </span>
-            <span className="text-zinc-800 dark:text-zinc-200 font-extrabold tracking-tight">ધોરણ ૬ થી ૧૦</span>
-            <span className="text-zinc-300 dark:text-zinc-700 text-xs">•</span>
-            <span className="flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 font-extrabold">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-500" />
-              વિજ્ઞાન
-            </span>
-            <span className="text-zinc-300 dark:text-zinc-700 text-xs">•</span>
-            <span className="text-teal-600 dark:text-teal-400 font-extrabold">
-              પદ્ધતિશાસ્ત્ર
-            </span>
-          </div>
-
-          <h1 className="mt-4 text-2xl font-extrabold leading-snug tracking-tight text-zinc-950 sm:text-3xl lg:text-4xl dark:text-white">
+          <h1 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-zinc-950 sm:text-3xl lg:text-4xl dark:text-white">
             વિજ્ઞાન શીખવાની
             <span className="mt-1 block text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600">
               સૌથી સરળ અને સુંદર રીત.
