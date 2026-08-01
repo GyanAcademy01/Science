@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { BookOpen, Sparkles } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { TestSetGrid } from "@/components/test/TestSetGrid";
 import { BackArrow } from "@/components/common/BackArrow";
 import { LinkButton } from "@/components/ui/Button";
@@ -37,22 +37,21 @@ export default async function TestSelectPage(props: {
 
   return (
     <main className="mx-auto w-full max-w-[1000px] px-3 py-4 sm:px-6 sm:py-6">
-      <BackArrow href={`/chapter/${subjectId}`} label="પ્રકરણો" />
-
-      {/* Header */}
-      <header className="mt-2 mb-6 text-center">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--stroke-strong)] bg-[var(--surface)] px-3 py-1 text-xs font-semibold text-[var(--fg-muted)] shadow-sm">
-          <Sparkles size={13} className="text-[var(--brand-1)]" />
-          પ્રકરણ {toGujaratiDigits(found.topic.number)} · સ્વ-મૂલ્યાંકન ટેસ્ટ
-        </span>
-        <h1 className="mt-2 text-xl font-extrabold sm:text-2xl lg:text-3xl">
-          <span className="text-grad">{chapter.chapterTitle}</span>
-        </h1>
-        <p className="mt-2 text-xs sm:text-sm text-[var(--fg-muted)] max-w-[500px] mx-auto">
-          કુલ {toGujaratiDigits(totalQuestions)} પ્રશ્નો ·{" "}
-          {toGujaratiDigits(chapter.sets.length)} ઇન્ટરેક્ટિવ સેટ. દરેક પ્રશ્ન સાથે તુરંત વિસ્તૃત સમજૂતી મળશે.
-        </p>
-      </header>
+      {/* 🚀 Header Bar matching Hindi Project style */}
+      <div className="relative mb-5 flex min-h-[36px] items-center justify-center">
+        <div className="absolute left-0">
+          <BackArrow href={`/chapter/${subjectId}`} label="પ્રકરણો" />
+        </div>
+        <div className="flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-full shadow-lg shadow-black/10 dark:shadow-black/40">
+          <div className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-violet-50 dark:bg-violet-950/50 text-violet-500 text-xs sm:text-sm">✏️</div>
+          <span className="text-xs sm:text-sm font-extrabold text-zinc-800 dark:text-zinc-200 tracking-tight uppercase max-w-[150px] sm:max-w-[240px] truncate">{chapter.chapterTitle}</span>
+          <span className="text-zinc-300 dark:text-zinc-700 text-xs">•</span>
+          <div className="flex items-center gap-1">
+            <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-pulse" />
+            <span className="text-xs sm:text-sm font-bold text-violet-500">ટેસ્ટ</span>
+          </div>
+        </div>
+      </div>
 
       {/* Modern Test Cards Grid */}
       <TestSetGrid

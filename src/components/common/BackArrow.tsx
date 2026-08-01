@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
-/** ગુજરાતી વાચકો માટે "પાછળ" — તીર ડાબે તરફ મુકાય તે માટે rotate નહીં, ArrowLeft જ યોગ્ય */
 export function BackArrow({
   href,
   label = "પાછળ",
@@ -12,10 +10,17 @@ export function BackArrow({
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-1 rounded-full border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-1.5 text-[0.76rem] font-semibold text-[var(--fg-muted)] transition-all duration-300 hover:border-[var(--stroke-strong)] hover:text-[var(--fg)] active:scale-95"
+      className="flex h-8 w-8 items-center justify-center rounded-[8px] bg-gradient-to-b from-[#f24c4c] to-[#d92b2b] border-b-[3px] border-[#9b1c1c] text-white hover:brightness-110 active:translate-y-[1.5px] active:border-b-[1.5px] active:shadow-none transition-all duration-75 cursor-pointer shadow-[0_3px_8px_rgba(239,68,68,0.15)] shrink-0"
+      aria-label={label}
+      title={label}
     >
-      <ArrowRight size={13} strokeWidth={2.4} className="rotate-180" />
-      {label}
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="h-4.5 w-4.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]"
+      >
+        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+      </svg>
     </Link>
   );
 }

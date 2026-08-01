@@ -35,22 +35,22 @@ export default async function TheoryPage(props: {
 
   return (
     <main className="mx-auto w-full max-w-[900px] px-2 py-3 sm:px-3 sm:py-5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
+      {/* 🚀 Header Bar matching Hindi Project style */}
+      <div className="relative mb-5 flex min-h-[36px] items-center justify-between">
         <BackArrow href={`/chapter/${subjectId}`} label="પ્રકરણો" />
+
+        <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-full shadow-md shadow-black/10 dark:shadow-black/40">
+          <div className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-teal-50 dark:bg-teal-950/50 text-teal-500 text-xs sm:text-sm">📖</div>
+          <span className="text-xs sm:text-sm font-extrabold text-zinc-800 dark:text-zinc-200 tracking-tight uppercase max-w-[150px] sm:max-w-[240px] truncate">{theory.chapterTitle}</span>
+          <span className="text-zinc-300 dark:text-zinc-700 text-xs">•</span>
+          <div className="flex items-center gap-1">
+            <span className="h-1.5 w-1.5 rounded-full bg-teal-500 animate-pulse" />
+            <span className="text-xs sm:text-sm font-bold text-teal-500">થિયરી</span>
+          </div>
+        </div>
+
         <FontSizeControl />
       </div>
-
-      <header className="mt-3 mb-3.5 text-center">
-        <p className="text-[0.68rem] font-bold uppercase tracking-wide text-[var(--fg-muted)]">
-          પ્રકરણ {topic.number}
-        </p>
-        <h1 className="mt-0.5 text-[1.15rem] sm:text-[1.5rem]">
-          <span className="text-grad">{theory.chapterTitle}</span>
-        </h1>
-        <p className="mx-auto mt-1.5 max-w-[580px] text-[0.79rem] leading-relaxed text-[var(--fg-muted)]">
-          {theory.description}
-        </p>
-      </header>
 
       <TheoryRenderer sections={theory.sections} />
 

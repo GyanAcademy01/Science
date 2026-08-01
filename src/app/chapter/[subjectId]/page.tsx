@@ -31,28 +31,21 @@ export default async function ChapterListPage(props: {
 
   return (
     <main className="mx-auto w-full max-w-[1140px] px-3 py-3 sm:px-5 sm:py-5">
-      <BackArrow href="/subjects" label="વિષયો" />
-
-      {/* 🚀 Header */}
-      <header className="relative mt-1 mb-5 text-center">
-        <div className="absolute inset-0 mx-auto h-20 w-64 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
-
-        <div className="relative z-10">
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-[var(--stroke-strong)] bg-[var(--surface)] px-3.5 py-1 text-xs font-semibold text-[var(--fg-muted)] shadow-sm backdrop-blur-md">
-            <Sparkles size={13} className="text-[var(--brand-1)] animate-pulse" />
-            <span>{subject.name} · Gyan Academy</span>
-          </div>
-
-          <h1 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
-            <span className="text-grad">{subject.name}</span>
-          </h1>
-
-          <p className="mt-1.5 text-xs sm:text-sm text-[var(--fg-muted)] max-w-[480px] mx-auto leading-relaxed">
-            કુલ {toGujaratiDigits(subject.topicCount)} પ્રકરણ ·{" "}
-            {toGujaratiDigits(subject.questionCount)} ઇન્ટરેક્ટિવ પ્રશ્નો અને ઓરિજિનલ PDF.
-          </p>
+      {/* 🚀 Header Bar matching Hindi Project style */}
+      <div className="relative mb-5 flex min-h-[36px] items-center justify-center">
+        <div className="absolute left-0">
+          <BackArrow href="/subjects" label="વિષયો" />
         </div>
-      </header>
+        <div className="flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-full shadow-lg shadow-black/10 dark:shadow-black/40">
+          <div className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-xs sm:text-sm">{subject.icon}</div>
+          <span className="text-xs sm:text-sm font-extrabold text-zinc-800 dark:text-zinc-200 tracking-tight uppercase">{subject.name}</span>
+          <span className="text-zinc-300 dark:text-zinc-700 text-xs">•</span>
+          <div className="flex items-center gap-1">
+            <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: subject.color }} />
+            <span className="text-xs sm:text-sm font-bold" style={{ color: subject.color }}>પ્રકરણો</span>
+          </div>
+        </div>
+      </div>
 
       {/* 🌟 Chapter Cards Grid */}
       <div className="grid gap-3.5 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">

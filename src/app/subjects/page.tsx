@@ -14,17 +14,22 @@ export const metadata: Metadata = {
 
 export default function SubjectsPage() {
   return (
-    <main className="mx-auto w-full max-w-[1240px] px-3 pt-1.5 pb-4 sm:px-5 sm:pt-2 sm:pb-6">
-      <BackArrow href="/" label="હોમ" />
-
-      <header className="mt-1 mb-3.5 sm:mb-4 text-center">
-        <h1 className="text-[1.35rem] sm:text-[1.75rem] font-extrabold tracking-tight">
-          <span className="text-grad">વિષયો</span>
-        </h1>
-        <p className="mt-1 text-[0.82rem] sm:text-[0.88rem] text-[var(--fg-muted)]">
-          જે વિષય ભણવો હોય તે પસંદ કરો
-        </p>
-      </header>
+    <main className="mx-auto w-full max-w-[1240px] px-3 pt-2 pb-4 sm:px-5 sm:pt-3 sm:pb-6">
+      {/* 🚀 Header Bar matching Hindi Project style */}
+      <div className="relative mb-5 flex min-h-[36px] items-center justify-center">
+        <div className="absolute left-0">
+          <BackArrow href="/" label="હોમ" />
+        </div>
+        <div className="flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-full shadow-lg shadow-black/10 dark:shadow-black/40">
+          <div className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-cyan-50 dark:bg-cyan-950/50 text-cyan-500 text-xs sm:text-sm">📚</div>
+          <span className="text-xs sm:text-sm font-extrabold text-zinc-800 dark:text-zinc-200 tracking-tight uppercase">વિજ્ઞાન એકેડેમી</span>
+          <span className="text-zinc-300 dark:text-zinc-700 text-xs">•</span>
+          <div className="flex items-center gap-1">
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-500 animate-pulse" />
+            <span className="text-xs sm:text-sm font-bold text-cyan-500">વિષયો</span>
+          </div>
+        </div>
+      </div>
 
       <div className="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {subjects.map((subject, index) => (
