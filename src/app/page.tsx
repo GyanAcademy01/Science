@@ -37,10 +37,22 @@ export default function HomePage() {
 
         {/* Hero Section */}
         <section className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-200/70 bg-cyan-50 dark:bg-cyan-950/40 border-cyan-500/20 px-4 py-1 text-[11px] sm:text-xs font-bold text-cyan-700 dark:text-cyan-300 shadow-sm backdrop-blur-md">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-500" />
-            ધોરણ ૬ થી ૧૦ · વિજ્ઞાન · પદ્ધતિશાસ્ત્ર
-          </span>
+          {/* Glassmorphic Stats Capsule Counter Bar */}
+          <div className="inline-flex items-center gap-2 sm:gap-2.5 rounded-full border border-cyan-200/80 dark:border-cyan-800/60 bg-white/80 dark:bg-zinc-900/80 px-4 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm font-extrabold shadow-lg shadow-cyan-500/10 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400">
+            <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-cyan-500 text-white text-xs shadow-sm shrink-0">
+              🎓
+            </span>
+            <span className="text-zinc-800 dark:text-zinc-200 font-extrabold tracking-tight">ધોરણ ૬ થી ૧૦</span>
+            <span className="text-zinc-300 dark:text-zinc-700 text-xs">•</span>
+            <span className="flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 font-extrabold">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-500" />
+              વિજ્ઞાન
+            </span>
+            <span className="text-zinc-300 dark:text-zinc-700 text-xs">•</span>
+            <span className="flex items-center gap-1 text-teal-600 dark:text-teal-400 font-extrabold">
+              પદ્ધતિશાસ્ત્ર
+            </span>
+          </div>
 
           <h1 className="mt-4 text-2xl font-extrabold leading-snug tracking-tight text-zinc-950 sm:text-3xl lg:text-4xl dark:text-white">
             વિજ્ઞાન શીખવાની
