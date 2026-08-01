@@ -24,7 +24,7 @@ export default function HomePage() {
 
       <div className="mx-auto w-full max-w-4xl px-4 pt-3 sm:px-6 sm:pt-5 flex-1 flex flex-col justify-center items-center">
         {/* Brand Logo Container - Shifted higher up */}
-        <div className="flex justify-center mb-3 sm:mb-4 -mt-8 sm:-mt-12">
+        <div className="flex justify-center mb-2 -mt-8 sm:-mt-12">
           <Image
             src="/gyan-logo.png"
             alt="Gyan Academy Logo"
@@ -35,19 +35,22 @@ export default function HomePage() {
           />
         </div>
 
+        {/* Motivational Quote - Right under Logo */}
+        <div className="mb-3 text-center">
+          <p className="text-xs sm:text-sm font-normal text-zinc-600 dark:text-zinc-300 italic leading-relaxed">
+            &ldquo;વિજ્ઞાન એ માત્ર પ્રશ્નો પૂછવાની જ નહીં, પણ સત્ય સુધી પહોંચવાની કળા છે.&rdquo;
+          </p>
+          <div className="mt-1.5 mx-auto w-10 h-[1.5px] rounded-full bg-gradient-to-r from-cyan-500 to-teal-500" />
+        </div>
+
         {/* Hero Section */}
         <section className="mx-auto max-w-2xl text-center">
           {/* Main Professional Title - Clean Light/Medium Typography */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-wide text-zinc-900 dark:text-white">
+          <h1 className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-medium tracking-wide text-zinc-900 dark:text-white">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 dark:from-cyan-400 dark:via-teal-400 dark:to-blue-400">
               Science
             </span>
           </h1>
-
-          {/* Motivational Quote */}
-          <p className="mt-3.5 mx-auto max-w-lg text-xs sm:text-sm font-normal text-zinc-600 dark:text-zinc-300 italic leading-relaxed">
-            &ldquo;વિજ્ઞાન એ માત્ર પ્રશ્નો પૂછવાની જ નહીં, પણ સત્ય સુધી પહોંચવાની કળા છે.&rdquo;
-          </p>
 
           {/* Clean Feature Tags */}
           <div className="mt-4 flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
