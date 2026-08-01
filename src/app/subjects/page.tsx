@@ -37,8 +37,8 @@ export default function SubjectsPage() {
               className="anim-fade-up relative flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border border-zinc-200/90 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 px-4 py-3 sm:px-6 sm:py-3.5 backdrop-blur-xl shadow-md shadow-black/10 dark:shadow-black/50 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-xl group-hover:shadow-black/15 group-hover:border-cyan-500/40"
               style={{ animationDelay: `${index * 0.06}s` }}
             >
-              {/* Left Side: Hex Icon + Title & Description */}
-              <div className="flex items-center gap-3.5 min-w-0 w-full sm:w-auto">
+              {/* Left Side: Icon + Title & Integrated Sentence Description */}
+              <div className="flex items-center gap-3.5 min-w-0 flex-1">
                 <span
                   className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl sm:rounded-full text-xl text-white shadow-xs transition-transform duration-300 group-hover:scale-105"
                   style={{
@@ -52,20 +52,16 @@ export default function SubjectsPage() {
                   <h2 className="text-sm sm:text-base font-extrabold text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors leading-tight">
                     {subject.name}
                   </h2>
-                  <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400 line-clamp-1">
-                    {subject.description}
+                  <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                    {subject.description} • <span className="font-semibold text-zinc-600 dark:text-zinc-300">{toGujaratiDigits(subject.topicCount)} પ્રકરણો અને {toGujaratiDigits(subject.questionCount)} પ્રશ્નો</span>
                   </p>
                 </div>
               </div>
 
-              {/* Right Side: Clean Chapter & Question Count Sentence + Action Circle */}
-              <div className="flex items-center justify-between sm:justify-end gap-3.5 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-zinc-200/60 dark:border-zinc-800/80">
-                <span className="text-xs sm:text-[0.82rem] font-semibold text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
-                  {toGujaratiDigits(subject.topicCount)} પ્રકરણો અને {toGujaratiDigits(subject.questionCount)} પ્રશ્નો
-                </span>
-
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 shadow-xs shrink-0">
-                  <ArrowRight size={16} strokeWidth={2.5} />
+              {/* Right Side: Action Circle */}
+              <div className="flex items-center justify-end shrink-0">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 shadow-xs">
+                  <ArrowRight size={17} strokeWidth={2.5} />
                 </span>
               </div>
             </div>
