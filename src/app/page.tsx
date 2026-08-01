@@ -75,14 +75,31 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Bottom Glassmorphic Stats Capsule Counter Bar - Matching User Image */}
+        {/* Bottom Glassmorphic Stats Capsule Counter Bar with Integrated Categories */}
         <section className="mx-auto mt-10 sm:mt-12 w-full max-w-3xl">
-          <div className="relative overflow-hidden rounded-[28px] sm:rounded-[32px] border border-zinc-200/90 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 p-4 sm:p-5 backdrop-blur-2xl shadow-xl shadow-cyan-500/10">
+          <div className="relative overflow-hidden rounded-[28px] sm:rounded-[36px] border border-cyan-200/80 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 p-4 sm:p-5.5 backdrop-blur-2xl shadow-xl shadow-cyan-500/10">
+            {/* Integrated Category Pill Bar inside Bottom Capsule */}
+            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3.5 pb-3 border-b border-zinc-200/70 dark:border-zinc-800/80 text-xs font-bold">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/50 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/50 shadow-xs">
+                🎓 ધોરણ ૬ થી ૧૦
+              </span>
+              <span className="text-zinc-300 dark:text-zinc-700">•</span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/50 shadow-xs">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                વિજ્ઞાન
+              </span>
+              <span className="text-zinc-300 dark:text-zinc-700">•</span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-violet-50 dark:bg-violet-950/50 text-violet-700 dark:text-violet-300 border border-violet-200/60 dark:border-violet-800/50 shadow-xs">
+                પદ્ધતિશાસ્ત્ર
+              </span>
+            </div>
+
+            {/* Stats Row */}
             <div className="grid grid-cols-3 divide-x divide-zinc-200/80 dark:divide-zinc-800">
               {stats.map((s) => {
                 const IconComponent = s.icon;
                 return (
-                  <div key={s.label} className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 px-3 py-1.5 text-center sm:text-left transition-all duration-300">
+                  <div key={s.label} className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 px-3 py-1 text-center sm:text-left transition-all duration-300">
                     <span
                       className="flex h-11 w-11 sm:h-13 sm:w-13 shrink-0 items-center justify-center rounded-2xl text-white shadow-md transition-transform hover:scale-105"
                       style={{ backgroundColor: s.color }}
