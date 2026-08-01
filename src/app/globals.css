@@ -433,11 +433,11 @@ h4 {
 
 .reader {
   font-size: var(--font-scale);
-  line-height: 1.65;
+  line-height: 1.55;
   word-spacing: 0.04em;
 }
 .reader p {
-  margin-block: 0.4em;
+  margin-block: 0.25em;
 }
 
 /* Tables always scroll rather than break layout */
@@ -446,6 +446,9 @@ h4 {
   -webkit-overflow-scrolling: touch;
   border-radius: var(--r-md);
   border: 1px solid var(--stroke);
+}
+.table-wrap p {
+  margin: 0;
 }
 .table-wrap table {
   width: 100%;
