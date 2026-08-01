@@ -60,11 +60,9 @@ export default function SubjectsPage() {
 
               {/* Right Side: Clean Chapter & Question Count Sentence + Action Circle */}
               <div className="flex items-center justify-between sm:justify-end gap-3.5 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-zinc-200/60 dark:border-zinc-800/80">
-                <div className="flex items-center gap-1.5 text-xs sm:text-[0.82rem] font-semibold text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
-                  <span>કુલ {toGujaratiDigits(subject.topicCount)} પ્રકરણો</span>
-                  <span className="text-zinc-300 dark:text-zinc-700 font-normal">•</span>
-                  <span>{toGujaratiDigits(subject.questionCount)} પ્રશ્નો</span>
-                </div>
+                <span className="text-xs sm:text-[0.82rem] font-semibold text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
+                  {toGujaratiDigits(subject.topicCount)} પ્રકરણો અને {toGujaratiDigits(subject.questionCount)} પ્રશ્નો
+                </span>
 
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 shadow-xs shrink-0">
                   <ArrowRight size={16} strokeWidth={2.5} />
