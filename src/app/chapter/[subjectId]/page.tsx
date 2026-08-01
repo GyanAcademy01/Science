@@ -83,7 +83,7 @@ export default async function ChapterListPage(props: {
             </div>
 
             {/* Action Buttons Section */}
-            <div className="relative z-10 mt-3.5 pt-3 border-t border-[var(--stroke)]/60 flex flex-wrap items-center gap-2">
+            <div className="relative z-10 mt-3.5 pt-3 border-t border-[var(--stroke)]/60 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
               {topic.hasTheory && (
                 <Link
                   href={`/chapter/${subject.id}/${topic.id}/theory`}
