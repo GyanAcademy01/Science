@@ -29,9 +29,9 @@ export default function HomePage() {
             ધોરણ ૬ થી ૧૦ · વિજ્ઞાન · પદ્ધતિશાસ્ત્ર
           </span>
 
-          <h1 className="mt-5 text-4xl font-black leading-[1.12] tracking-[-0.045em] text-zinc-950 sm:text-5xl lg:text-6xl dark:text-white">
+          <h1 className="mt-4 text-2xl font-extrabold leading-snug tracking-tight text-zinc-950 sm:text-3xl lg:text-4xl dark:text-white">
             વિજ્ઞાન શીખવાની
-            <span className="mt-2 block text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600">
+            <span className="mt-1 block text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600">
               સૌથી સરળ અને સુંદર રીત.
             </span>
           </h1>
