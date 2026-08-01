@@ -56,10 +56,9 @@ export function ContactForm() {
             id="contact-name"
             type="text"
             required
-            placeholder="દા.ત. રાહુલ પટેલ"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-2 text-xs text-[var(--fg)] placeholder:text-[var(--fg-muted)] focus:border-[var(--brand-1)] focus:outline-none"
+            className="w-full rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-2 text-xs text-[var(--fg)] focus:border-[var(--brand-1)] focus:outline-none"
           />
         </div>
 
@@ -71,10 +70,9 @@ export function ContactForm() {
             id="contact-phone"
             type="tel"
             required
-            placeholder="દા.ત. 87582 77555"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-2 text-xs text-[var(--fg)] placeholder:text-[var(--fg-muted)] focus:border-[var(--brand-1)] focus:outline-none"
+            className="w-full rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-2 text-xs text-[var(--fg)] focus:border-[var(--brand-1)] focus:outline-none"
           />
         </div>
       </div>
@@ -104,10 +102,9 @@ export function ContactForm() {
           id="contact-message"
           rows={3}
           required
-          placeholder="તમારો સંદેશ અહીં લખો..."
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-2 text-xs text-[var(--fg)] placeholder:text-[var(--fg-muted)] focus:border-[var(--brand-1)] focus:outline-none"
+          className="w-full rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-2 text-xs text-[var(--fg)] focus:border-[var(--brand-1)] focus:outline-none"
         />
       </div>
 
