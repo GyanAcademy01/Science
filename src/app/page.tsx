@@ -44,23 +44,10 @@ export default function HomePage() {
             </span>
           </h1>
 
-          {/* Feature Highlights Pills */}
-          <div className="mt-3.5 flex items-center justify-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-bold">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/50 shadow-xs">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              Theory
-            </span>
-            <span className="text-zinc-300 dark:text-zinc-700">•</span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-50 dark:bg-cyan-950/40 px-3 py-1 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/50 shadow-xs">
-              <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
-              Test
-            </span>
-            <span className="text-zinc-300 dark:text-zinc-700">•</span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 dark:bg-rose-950/40 px-3 py-1 text-rose-700 dark:text-rose-300 border border-rose-200/60 dark:border-rose-800/50 shadow-xs">
-              <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
-              PDF
-            </span>
-          </div>
+          {/* Feature Highlights Line */}
+          <p className="mt-3.5 text-xs sm:text-sm font-bold tracking-wide text-zinc-500 dark:text-zinc-400">
+            Theory &nbsp;•&nbsp; Test &nbsp;•&nbsp; PDF
+          </p>
 
           <div className="mt-7 flex items-center justify-center">
             <Link href="/subjects" prefetch>
@@ -72,23 +59,16 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Bottom Glassmorphic Stats Capsule Counter Bar with Integrated Categories */}
+        {/* Bottom Glassmorphic Stats Capsule Counter Bar */}
         <section className="mx-auto mt-6 sm:mt-8 w-full max-w-xl">
           <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-cyan-200/80 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 p-2.5 sm:p-3.5 backdrop-blur-xl shadow-lg shadow-cyan-500/5">
-            {/* Integrated Category Pill Bar inside Bottom Capsule */}
-            <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-2 pb-2 border-b border-zinc-200/70 dark:border-zinc-800/80 text-[10px] sm:text-xs font-bold">
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-950/50 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/50">
-                🎓 ધોરણ ૬ થી ૧૦
-              </span>
+            {/* Clean Category Line inside Bottom Capsule */}
+            <div className="flex items-center justify-center gap-2 mb-2 pb-2 border-b border-zinc-200/70 dark:border-zinc-800/80 text-xs sm:text-sm font-bold text-zinc-600 dark:text-zinc-300">
+              <span>🎓 ધોરણ ૬ થી ૧૦</span>
               <span className="text-zinc-300 dark:text-zinc-700">•</span>
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/50">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                વિજ્ઞાન
-              </span>
+              <span className="text-cyan-600 dark:text-cyan-400">વિજ્ઞાન</span>
               <span className="text-zinc-300 dark:text-zinc-700">•</span>
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-violet-50 dark:bg-violet-950/50 text-violet-700 dark:text-violet-300 border border-violet-200/60 dark:border-violet-800/50">
-                પદ્ધતિશાસ્ત્ર
-              </span>
+              <span className="text-teal-600 dark:text-teal-400">પદ્ધતિશાસ્ત્ર</span>
             </div>
 
             {/* Stats Row */}
