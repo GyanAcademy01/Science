@@ -22,15 +22,15 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-[0.03] [background-image:radial-gradient(currentColor_1px,transparent_1px)] [background-size:24px_24px]" />
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-5 pt-8 sm:px-8 sm:pt-12 flex-1 flex flex-col justify-center items-center">
-        {/* Logo Container - Exact TAT-GK style */}
-        <div className="flex justify-center mb-1.5">
+      <div className="mx-auto w-full max-w-5xl px-5 pt-2 sm:pt-4 flex-1 flex flex-col justify-center items-center">
+        {/* Logo Container - Shifted higher up */}
+        <div className="flex justify-center mb-1 -mt-2 sm:-mt-3">
           <Image
             src="/gyan-logo.png"
             alt="Gyan Academy Logo"
             width={160}
             height={60}
-            className="h-auto w-[140px] sm:w-[160px] object-contain drop-shadow-md"
+            className="h-auto w-[135px] sm:w-[155px] object-contain drop-shadow-md"
             priority
           />
         </div>
