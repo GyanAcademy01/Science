@@ -22,9 +22,9 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-[0.025] [background-image:radial-gradient(currentColor_1px,transparent_1px)] [background-size:24px_24px]" />
       </div>
 
-      <div className="mx-auto w-full max-w-4xl px-4 pt-6 sm:px-6 sm:pt-10 flex-1 flex flex-col justify-center items-center">
-        {/* Brand Logo Container */}
-        <div className="flex justify-center mb-3 sm:mb-4">
+      <div className="mx-auto w-full max-w-4xl px-4 pt-3 sm:px-6 sm:pt-5 flex-1 flex flex-col justify-center items-center">
+        {/* Brand Logo Container - Shifted higher up */}
+        <div className="flex justify-center mb-3 sm:mb-4 -mt-8 sm:-mt-12">
           <Image
             src="/gyan-logo.png"
             alt="Gyan Academy Logo"
