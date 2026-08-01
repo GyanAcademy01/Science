@@ -59,20 +59,20 @@ export default function HomePage() {
         </section>
 
         {/* Bottom Glassmorphic Stats Capsule Counter Bar with Integrated Categories */}
-        <section className="mx-auto mt-10 sm:mt-12 w-full max-w-3xl">
-          <div className="relative overflow-hidden rounded-[28px] sm:rounded-[36px] border border-cyan-200/80 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 p-4 sm:p-5.5 backdrop-blur-2xl shadow-xl shadow-cyan-500/10">
+        <section className="mx-auto mt-6 sm:mt-8 w-full max-w-xl">
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-cyan-200/80 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 p-2.5 sm:p-3.5 backdrop-blur-xl shadow-lg shadow-cyan-500/5">
             {/* Integrated Category Pill Bar inside Bottom Capsule */}
-            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3.5 pb-3 border-b border-zinc-200/70 dark:border-zinc-800/80 text-xs font-bold">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/50 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/50 shadow-xs">
+            <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-2 pb-2 border-b border-zinc-200/70 dark:border-zinc-800/80 text-[10px] sm:text-xs font-bold">
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-950/50 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/50">
                 🎓 ધોરણ ૬ થી ૧૦
               </span>
               <span className="text-zinc-300 dark:text-zinc-700">•</span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/50 shadow-xs">
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/50">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 વિજ્ઞાન
               </span>
               <span className="text-zinc-300 dark:text-zinc-700">•</span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-violet-50 dark:bg-violet-950/50 text-violet-700 dark:text-violet-300 border border-violet-200/60 dark:border-violet-800/50 shadow-xs">
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-violet-50 dark:bg-violet-950/50 text-violet-700 dark:text-violet-300 border border-violet-200/60 dark:border-violet-800/50">
                 પદ્ધતિશાસ્ત્ર
               </span>
             </div>
@@ -82,18 +82,18 @@ export default function HomePage() {
               {stats.map((s) => {
                 const IconComponent = s.icon;
                 return (
-                  <div key={s.label} className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 px-3 py-1 text-center sm:text-left transition-all duration-300">
+                  <div key={s.label} className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 px-2 py-0.5 text-center sm:text-left transition-all duration-300">
                     <span
-                      className="flex h-11 w-11 sm:h-13 sm:w-13 shrink-0 items-center justify-center rounded-2xl text-white shadow-md transition-transform hover:scale-105"
+                      className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-xl text-white shadow-sm"
                       style={{ backgroundColor: s.color }}
                     >
-                      <IconComponent className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.4} />
+                      <IconComponent className="h-4 w-4 sm:h-4.5 sm:w-4.5" strokeWidth={2.4} />
                     </span>
                     <div className="flex flex-col justify-center">
-                      <p className="text-xl sm:text-3xl font-black tracking-tight text-zinc-900 dark:text-white leading-none">
+                      <p className="text-base sm:text-xl font-black tracking-tight text-zinc-900 dark:text-white leading-none">
                         {s.value}
                       </p>
-                      <p className="mt-1 text-xs sm:text-sm font-extrabold text-zinc-500 dark:text-zinc-400 leading-none">
+                      <p className="mt-0.5 text-[10px] sm:text-xs font-bold text-zinc-500 dark:text-zinc-400 leading-none">
                         {s.label}
                       </p>
                     </div>
