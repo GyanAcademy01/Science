@@ -30,7 +30,7 @@ export default async function ChapterListPage(props: {
   if (!subject) notFound();
 
   return (
-    <main className="mx-auto w-full max-w-[1060px] px-3 py-3 sm:px-5 sm:py-5">
+    <main className="mx-auto w-full max-w-[1140px] px-3 py-3 sm:px-5 sm:py-5">
       <BackArrow href="/subjects" label="વિષયો" />
 
       {/* 🚀 Header */}
@@ -54,12 +54,12 @@ export default async function ChapterListPage(props: {
         </div>
       </header>
 
-      {/* 🌟 Chapter Cards Grid - Tighter width & Snug Fit */}
+      {/* 🌟 Chapter Cards Grid */}
       <div className="grid gap-3.5 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {subject.topics.map((topic, index) => (
           <div
             key={topic.id}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] p-5 sm:p-5.5 min-h-[155px] sm:min-h-[168px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--stroke-strong)] hover:shadow-xl anim-fade-up"
+            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] p-4 sm:p-4.5 min-h-[150px] sm:min-h-[162px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--stroke-strong)] hover:shadow-xl anim-fade-up"
             style={{ animationDelay: `${index * 0.05}s` }}
           >
             {/* Background glow on card hover */}
@@ -75,21 +75,21 @@ export default async function ChapterListPage(props: {
                   <span className="inline-block rounded-full bg-[var(--surface-2)] border border-[var(--stroke)] px-2.5 py-0.5 text-[0.65rem] font-bold text-[var(--fg-muted)] uppercase tracking-wide">
                     પ્રકરણ {toGujaratiDigits(topic.number)}
                   </span>
-                  <h2 className="text-[1rem] font-extrabold text-[var(--fg)] group-hover:text-[var(--brand-1)] transition-colors mt-1 leading-snug">
+                  <h2 className="text-[0.98rem] font-extrabold text-[var(--fg)] group-hover:text-[var(--brand-1)] transition-colors mt-1 leading-snug">
                     {topic.title}
                   </h2>
                 </div>
               </div>
             </div>
 
-            {/* Action Buttons Section */}
-            <div className="relative z-10 mt-4 pt-3.5 border-t border-[var(--stroke)]/60 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+            {/* Action Buttons Section - Guaranteed 1 Single Line Row */}
+            <div className="relative z-10 mt-3.5 pt-3 border-t border-[var(--stroke)]/60 grid grid-cols-3 gap-1.5 sm:gap-2">
               {topic.hasTheory && (
                 <Link
                   href={`/chapter/${subject.id}/${topic.id}/theory`}
-                  className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4.5 py-1.5 min-w-[88px] text-[0.78rem] font-extrabold shadow-sm shadow-cyan-500/25 transition-all duration-300 hover:shadow-md hover:shadow-cyan-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
+                  className="inline-flex items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-2 py-1.5 text-[0.74rem] sm:text-[0.78rem] font-extrabold shadow-sm shadow-cyan-500/25 transition-all duration-300 hover:shadow-md hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
                 >
-                  <BookOpen size={14} strokeWidth={2.4} />
+                  <BookOpen size={13} strokeWidth={2.4} className="shrink-0" />
                   <span>થિયરી</span>
                 </Link>
               )}
@@ -97,9 +97,9 @@ export default async function ChapterListPage(props: {
               {topic.hasTest && (
                 <Link
                   href={`/chapter/${subject.id}/${topic.id}/test`}
-                  className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-4.5 py-1.5 min-w-[88px] text-[0.78rem] font-extrabold shadow-sm shadow-violet-500/25 transition-all duration-300 hover:shadow-md hover:shadow-violet-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
+                  className="inline-flex items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-2 py-1.5 text-[0.74rem] sm:text-[0.78rem] font-extrabold shadow-sm shadow-violet-500/25 transition-all duration-300 hover:shadow-md hover:shadow-violet-500/40 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
                 >
-                  <ClipboardCheck size={14} strokeWidth={2.4} />
+                  <ClipboardCheck size={13} strokeWidth={2.4} className="shrink-0" />
                   <span>ટેસ્ટ</span>
                 </Link>
               )}
@@ -107,9 +107,9 @@ export default async function ChapterListPage(props: {
               {topic.pdfUrl && (
                 <Link
                   href={`/pdf-view?file=${encodeURIComponent(topic.pdfUrl)}&title=${encodeURIComponent(topic.title)}`}
-                  className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4.5 py-1.5 min-w-[88px] text-[0.78rem] font-extrabold shadow-sm shadow-amber-500/25 transition-all duration-300 hover:shadow-md hover:shadow-amber-500/40 hover:scale-[1.03] active:scale-95 shrink-0"
+                  className="inline-flex items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white px-2 py-1.5 text-[0.74rem] sm:text-[0.78rem] font-extrabold shadow-sm shadow-amber-500/25 transition-all duration-300 hover:shadow-md hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
                 >
-                  <FileText size={14} strokeWidth={2.4} />
+                  <FileText size={13} strokeWidth={2.4} className="shrink-0" />
                   <span>PDF</span>
                 </Link>
               )}
