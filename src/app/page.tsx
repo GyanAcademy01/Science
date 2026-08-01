@@ -28,9 +28,9 @@ export default function HomePage() {
           <Image
             src="/gyan-logo.png"
             alt="Gyan Academy Logo"
-            width={200}
-            height={75}
-            className="h-auto w-[175px] sm:w-[205px] object-contain drop-shadow-md"
+            width={185}
+            height={65}
+            className="h-auto w-[160px] sm:w-[185px] object-contain drop-shadow-md"
             priority
           />
         </div>
