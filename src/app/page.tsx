@@ -24,7 +24,7 @@ export default function HomePage() {
 
       <div className="mx-auto w-full max-w-5xl px-5 pt-8 sm:px-8 sm:pt-12 flex-1 flex flex-col justify-center items-center">
         {/* Logo Container - Exact TAT-GK style */}
-        <div className="flex justify-center mb-3">
+        <div className="flex justify-center mb-1.5">
           <Image
             src="/gyan-logo.png"
             alt="Gyan Academy Logo"
@@ -33,6 +33,14 @@ export default function HomePage() {
             className="h-auto w-[140px] sm:w-[160px] object-contain drop-shadow-md"
             priority
           />
+        </div>
+
+        {/* Motivational Quote - TAT-GK style */}
+        <div className="mb-4 text-center">
+          <p className="text-xs sm:text-sm font-semibold text-zinc-600 dark:text-zinc-400 italic">
+            &ldquo;વિજ્ઞાન એ માત્ર પ્રશ્નો પૂછવાની જ નહીં, પણ સત્ય સુધી પહોંચવાની કળા છે.&rdquo;
+          </p>
+          <div className="mt-1.5 mx-auto w-12 h-[2px] rounded-full bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500" />
         </div>
 
         {/* Hero Section */}
