@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 
 export default function SubjectsPage() {
   return (
-    <main className="mx-auto w-full max-w-[1240px] px-3 py-4 sm:px-5 sm:py-6">
+    <main className="mx-auto w-full max-w-[1240px] px-3 pt-1.5 pb-4 sm:px-5 sm:pt-2 sm:pb-6">
       <BackArrow href="/" label="હોમ" />
 
-      <header className="mt-4 mb-6 text-center">
+      <header className="mt-1 mb-3.5 sm:mb-4 text-center">
         <h1 className="text-[1.35rem] sm:text-[1.75rem] font-extrabold tracking-tight">
           <span className="text-grad">વિષયો</span>
         </h1>
-        <p className="mt-1.5 text-[0.85rem] sm:text-[0.92rem] text-[var(--fg-muted)]">
+        <p className="mt-1 text-[0.82rem] sm:text-[0.88rem] text-[var(--fg-muted)]">
           જે વિષય ભણવો હોય તે પસંદ કરો
         </p>
       </header>
