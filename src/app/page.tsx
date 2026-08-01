@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, CheckCircle, Layers } from "lucide-react";
 import { Footer } from "@/components/layout/Footer";
@@ -21,7 +22,19 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-[0.03] [background-image:radial-gradient(currentColor_1px,transparent_1px)] [background-size:24px_24px]" />
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-5 pt-10 sm:px-8 sm:pt-14 flex-1 flex flex-col justify-center items-center">
+      <div className="mx-auto w-full max-w-5xl px-5 pt-8 sm:px-8 sm:pt-12 flex-1 flex flex-col justify-center items-center">
+        {/* Logo Container - Exact TAT-GK style */}
+        <div className="flex justify-center mb-3">
+          <Image
+            src="/gyan-logo.png"
+            alt="Gyan Academy Logo"
+            width={160}
+            height={60}
+            className="h-auto w-[140px] sm:w-[160px] object-contain drop-shadow-md"
+            priority
+          />
+        </div>
+
         {/* Hero Section */}
         <section className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-200/70 bg-cyan-50 dark:bg-cyan-950/40 border-cyan-500/20 px-4 py-1 text-[11px] sm:text-xs font-bold text-cyan-700 dark:text-cyan-300 shadow-sm backdrop-blur-md">
@@ -36,11 +49,11 @@ export default function HomePage() {
             </span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-xl text-xs sm:text-sm font-medium leading-relaxed text-zinc-600 sm:text-base dark:text-zinc-300">
+          <p className="mx-auto mt-4 max-w-xl text-xs sm:text-sm font-medium leading-relaxed text-zinc-600 sm:text-base dark:text-zinc-300">
             ધોરણ ૬ થી ૧૦ ના વિજ્ઞાન અને પદ્ધતિશાસ્ત્રના તમામ પ્રકરણોની થીયરી, ઓરિજિનલ PDF અને ઇન્ટરેક્ટિવ MCQs ટેસ્ટ — બધું જ એક જ જગ્યાએ ડિજિટલ સ્વરૂપે.
           </p>
 
-          <div className="mt-8 flex items-center justify-center">
+          <div className="mt-7 flex items-center justify-center">
             <Link href="/subjects" prefetch>
               <span className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3.5 text-sm sm:text-base font-extrabold text-white shadow-lg shadow-cyan-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/40 hover:scale-[1.03] active:scale-95 cursor-pointer">
                 અભ્યાસ શરૂ કરો
@@ -51,7 +64,7 @@ export default function HomePage() {
         </section>
 
         {/* Stats - Unique Glassmorphic Capsule Bar */}
-        <section className="mx-auto mt-10 sm:mt-12 w-full max-w-2xl">
+        <section className="mx-auto mt-9 sm:mt-11 w-full max-w-2xl">
           <div className="relative overflow-hidden rounded-[24px] border border-zinc-200/80 bg-white/80 p-3.5 sm:p-4 backdrop-blur-xl shadow-xl shadow-cyan-500/5 dark:border-zinc-800 dark:bg-zinc-900/80">
             <div className="grid grid-cols-3 divide-x divide-zinc-200/70 dark:divide-zinc-800">
               {stats.map((s) => {
