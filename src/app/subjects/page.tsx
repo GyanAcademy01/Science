@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/Card";
-import { Chip } from "@/components/ui/Chip";
 import { BackArrow } from "@/components/common/BackArrow";
 import { subjects } from "@/lib/data";
 import { toGujaratiDigits } from "@/lib/utils";
@@ -60,14 +59,17 @@ export default function SubjectsPage() {
                 </div>
               </div>
 
-              <div className="mt-5 pt-3.5 border-t border-[var(--stroke)]/60 flex flex-wrap items-center gap-2">
-                <Chip tone="cyan" className="px-3 py-1 text-[0.78rem] font-bold">
-                  {toGujaratiDigits(subject.topicCount)} પ્રકરણ
-                </Chip>
-                <Chip tone="violet" className="px-3 py-1 text-[0.78rem] font-bold">
-                  {toGujaratiDigits(subject.questionCount)} પ્રશ્નો
-                </Chip>
-                <span className="ms-auto text-[var(--fg-muted)] group-hover:text-[var(--brand-1)] transition-colors">
+              <div className="mt-5 pt-3.5 border-t border-[var(--stroke)]/60 flex items-center justify-between">
+                <div className="flex items-center gap-2 text-[0.82rem] font-bold">
+                  <span className="text-cyan-600 dark:text-cyan-400">
+                    {toGujaratiDigits(subject.topicCount)} પ્રકરણ
+                  </span>
+                  <span className="text-zinc-300 dark:text-zinc-700 font-medium">•</span>
+                  <span className="text-violet-600 dark:text-violet-400">
+                    {toGujaratiDigits(subject.questionCount)} પ્રશ્નો
+                  </span>
+                </div>
+                <span className="text-[var(--fg-muted)] group-hover:text-[var(--brand-1)] transition-colors">
                   <ArrowRight size={18} strokeWidth={2.5} />
                 </span>
               </div>
