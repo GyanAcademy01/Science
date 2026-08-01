@@ -5,6 +5,7 @@ import * as std7 from "@/data/std7";
 import * as std8 from "@/data/std8";
 import * as std9 from "@/data/std9";
 import * as std10 from "@/data/std10";
+import * as pedagogy from "@/data/pedagogy";
 
 /** subjectId → topicId → theory */
 const THEORY: Record<string, Record<string, TheoryData>> = {
@@ -84,6 +85,18 @@ const THEORY: Record<string, Record<string, TheoryData>> = {
     ch12: std10.std10_ch12_theory,
     ch13: std10.std10_ch13_theory,
     ch14: std10.std10_ch14_theory,
+  },
+  pedagogy: {
+    ch1: pedagogy.pedagogy_ch1_theory,
+    ch2: pedagogy.pedagogy_ch2_theory,
+    ch3: pedagogy.pedagogy_ch3_theory,
+    ch4: pedagogy.pedagogy_ch4_theory,
+    ch5: pedagogy.pedagogy_ch5_theory,
+    ch6: pedagogy.pedagogy_ch6_theory,
+    ch7: pedagogy.pedagogy_ch7_theory,
+    ch8: pedagogy.pedagogy_ch8_theory,
+    ch9: pedagogy.pedagogy_ch9_theory,
+    ch10: pedagogy.pedagogy_ch10_theory,
   },
 };
 
@@ -165,6 +178,18 @@ const TESTS: Record<string, Record<string, ChapterTests>> = {
     ch12: std10.std10_ch12_tests,
     ch13: std10.std10_ch13_tests,
     ch14: std10.std10_ch14_tests,
+  },
+  pedagogy: {
+    ch1: pedagogy.pedagogy_ch1_tests,
+    ch2: pedagogy.pedagogy_ch2_tests,
+    ch3: pedagogy.pedagogy_ch3_tests,
+    ch4: pedagogy.pedagogy_ch4_tests,
+    ch5: pedagogy.pedagogy_ch5_tests,
+    ch6: pedagogy.pedagogy_ch6_tests,
+    ch7: pedagogy.pedagogy_ch7_tests,
+    ch8: pedagogy.pedagogy_ch8_tests,
+    ch9: pedagogy.pedagogy_ch9_tests,
+    ch10: pedagogy.pedagogy_ch10_tests,
   },
 };
 
