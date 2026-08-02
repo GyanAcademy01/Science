@@ -23,14 +23,6 @@ export function OptionButton({
   const showAsCorrect = revealed && isCorrect;
   const showAsWrong = revealed && selected && !isCorrect;
 
-  const style: React.CSSProperties = showAsCorrect
-    ? { background: "var(--ok-soft)", borderColor: "var(--ok)" }
-    : showAsWrong
-      ? { background: "var(--bad-soft)", borderColor: "var(--bad)" }
-      : selected
-        ? { background: "var(--surface-2)", borderColor: "var(--stroke-strong)" }
-        : { background: "var(--surface-2)", borderColor: "var(--stroke)" };
-
   return (
     <button
       type="button"
@@ -38,33 +30,39 @@ export function OptionButton({
       disabled={revealed}
       aria-pressed={selected}
       className={cn(
-        "flex w-full items-center gap-2.5 rounded-[var(--r-md)] border p-2.5 text-start text-[0.85rem] font-medium transition-all duration-300 sm:p-3 sm:text-[0.9rem]",
-        !revealed && "hover:border-[var(--stroke-strong)] active:scale-[0.99]",
-        revealed && "cursor-default",
-        showAsCorrect && "anim-correct",
-        showAsWrong && "anim-wrong",
+        "group relative flex w-full items-center gap-3.5 rounded-2xl sm:rounded-full border px-4 py-3 sm:px-5 sm:py-3.5 text-start text-sm sm:text-base font-bold transition-all duration-200 shadow-xs",
+        // Default / unselected state
+        !revealed && !selected && "border-zinc-200/90 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 text-zinc-800 dark:text-zinc-100 hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 hover:shadow-md active:scale-[0.99]",
+        // Selected before reveal
+        !revealed && selected && "border-indigo-500 bg-indigo-50/80 dark:bg-indigo-950/40 text-indigo-900 dark:text-indigo-200 shadow-md shadow-indigo-500/10 ring-2 ring-indigo-500/20",
+        // Revealed correct
+        showAsCorrect && "border-emerald-500 bg-emerald-50/90 dark:bg-emerald-950/50 text-emerald-900 dark:text-emerald-200 shadow-md shadow-emerald-500/15 anim-correct",
+        // Revealed wrong
+        showAsWrong && "border-rose-500 bg-rose-50/90 dark:bg-rose-950/50 text-rose-900 dark:text-rose-200 shadow-md shadow-rose-500/15 anim-wrong",
+        revealed && "cursor-default"
       )}
-      style={style}
     >
       <span
-        className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-[0.78rem] font-extrabold"
-        style={
+        className={cn(
+          "grid h-7 w-7 sm:h-8 sm:w-8 shrink-0 place-items-center rounded-full text-xs sm:text-sm font-extrabold transition-all duration-200 border",
           showAsCorrect
-            ? { background: "var(--ok)", color: "#fff" }
+            ? "bg-emerald-500 border-emerald-500 text-white shadow-xs"
             : showAsWrong
-              ? { background: "var(--bad)", color: "#fff" }
-              : { background: "var(--surface-solid)", color: "var(--fg-muted)" }
-        }
+              ? "bg-rose-500 border-rose-500 text-white shadow-xs"
+              : selected
+                ? "bg-indigo-600 border-indigo-600 text-white"
+                : "bg-zinc-100 dark:bg-zinc-800 border-zinc-200/80 dark:border-zinc-700 text-zinc-500 dark:text-zinc-400 group-hover:border-zinc-300 dark:group-hover:border-zinc-600"
+        )}
       >
         {showAsCorrect ? (
-          <Check size={14} strokeWidth={3} />
+          <Check size={16} strokeWidth={3} />
         ) : showAsWrong ? (
-          <X size={14} strokeWidth={3} />
+          <X size={16} strokeWidth={3} />
         ) : (
           OPTION_LABELS[index]
         )}
       </span>
-      <span className="flex-1">{text}</span>
+      <span className="flex-1 leading-snug">{text}</span>
     </button>
   );
 }
