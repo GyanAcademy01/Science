@@ -53,7 +53,8 @@
   --sp-2xl: 20px;
   --sp-3xl: 26px;
 
-  /* Reader font scaling (1..5 → 14/16/18/20/24px) */
+  /* App font scaling (1..5 → 14/15/16/18/22px) */
+  --content-font-size: 16px;
   --font-scale: 16px;
 }
 
@@ -128,6 +129,34 @@ h4 {
 
 ::selection {
   background: var(--stroke-strong);
+}
+
+/* ========================================================================
+   App typography scaling
+   ======================================================================== */
+
+.content-wrap {
+  font-size: var(--content-font-size, 16px);
+}
+
+.content-wrap p,
+.content-wrap span:not(.no-scale),
+.content-wrap h1,
+.content-wrap h2,
+.content-wrap h3,
+.content-wrap h4,
+.content-wrap h5,
+.content-wrap h6,
+.content-wrap a,
+.content-wrap li,
+.content-wrap td,
+.content-wrap th,
+.content-wrap label,
+.content-wrap button,
+.content-wrap input,
+.content-wrap textarea,
+.content-wrap select {
+  font-size: inherit;
 }
 
 /* Focus ring — keyboard only */

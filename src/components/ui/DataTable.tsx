@@ -15,7 +15,7 @@ function FormattedCell({ text }: { text: string }) {
 
   return (
     <div
-      className="flex flex-col gap-1.5 text-[0.85rem] leading-[1.55]"
+      className="flex flex-col gap-1.5 text-[0.85em] leading-[1.55]"
       style={{ wordSpacing: "0.04em" }}
     >
       {lines.map((line, idx) => {
@@ -65,7 +65,7 @@ export function DataTable({
             {data.headers.map((h) => (
               <th
                 key={h}
-                className="px-3.5 py-2.5 text-[0.84rem] font-bold tracking-wide text-white"
+                className="px-3.5 py-2.5 text-[0.84em] font-bold tracking-wide text-white"
               >
                 {h}
               </th>

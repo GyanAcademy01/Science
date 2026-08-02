@@ -76,9 +76,11 @@ const bootScript = `
     if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     if (t === 'dark') document.documentElement.classList.add('dark');
     var f = localStorage.getItem('${storageKeys.fontSize}');
-    var sizes = ['14px','16px','18px','20px','24px'];
+    var sizes = ['14px','15px','16px','18px','22px'];
     var i = f ? parseInt(f, 10) : 1;
     if (isNaN(i) || i < 0 || i > 4) i = 1;
+    document.documentElement.setAttribute('data-font-size', String(i));
+    document.documentElement.style.setProperty('--content-font-size', sizes[i]);
     document.documentElement.style.setProperty('--font-scale', sizes[i]);
   } catch (e) {}
 })();
@@ -95,7 +97,12 @@ export default function RootLayout({
       <body className={`${display.variable} ${gujarati.variable} antialiased`}>
         <LabBackground />
         <Topbar />
-        <div className="min-h-[70dvh]">{children}</div>
+        <div
+          className="content-wrap min-h-[70dvh]"
+          style={{ fontSize: "var(--content-font-size, 16px)" }}
+        >
+          {children}
+        </div>
         <ScrollToTop />
       </body>
     </html>
