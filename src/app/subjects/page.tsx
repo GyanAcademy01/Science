@@ -34,7 +34,7 @@ export default function SubjectsPage() {
         {subjects.map((subject, index) => (
           <Link key={subject.id} href={`/chapter/${subject.id}`} className="group block">
             <div
-              className="anim-fade-up relative flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border border-zinc-200/90 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 px-4 py-3 sm:px-6 sm:py-3.5 backdrop-blur-xl shadow-md shadow-black/10 dark:shadow-black/50 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-xl group-hover:shadow-black/15 group-hover:border-cyan-500/40"
+              className="anim-fade-up relative flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border border-zinc-200/90 dark:border-zinc-800 bg-white/95 dark:bg-zinc-900/95 px-4 py-3 sm:px-6 sm:py-3.5 backdrop-blur-xl shadow-lg shadow-black/15 dark:shadow-black/60 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-2xl group-hover:shadow-black/25 group-hover:border-cyan-500/40"
               style={{ animationDelay: `${index * 0.06}s` }}
             >
               {/* Left Side: Icon + Title & Integrated Sentence Description */}
