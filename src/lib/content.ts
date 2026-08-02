@@ -102,6 +102,13 @@ const THEORY: Record<string, Record<string, TheoryData>> = {
     ch13: pedagogy.pedagogy_ch13_theory,
     ch14: pedagogy.pedagogy_ch14_theory,
     ch15: pedagogy.pedagogy_ch15_theory,
+    ch16: pedagogy.pedagogy_ch16_theory,
+    ch17: pedagogy.pedagogy_ch17_theory,
+    ch18: pedagogy.pedagogy_ch18_theory,
+    ch19: pedagogy.pedagogy_ch19_theory,
+    ch20: pedagogy.pedagogy_ch20_theory,
+    ch21: pedagogy.pedagogy_ch21_theory,
+    ch22: pedagogy.pedagogy_ch22_theory,
   },
 };
 
@@ -200,6 +207,13 @@ const TESTS: Record<string, Record<string, ChapterTests>> = {
     ch13: pedagogy.pedagogy_ch13_tests,
     ch14: pedagogy.pedagogy_ch14_tests,
     ch15: pedagogy.pedagogy_ch15_tests,
+    ch16: pedagogy.pedagogy_ch16_tests,
+    ch17: pedagogy.pedagogy_ch17_tests,
+    ch18: pedagogy.pedagogy_ch18_tests,
+    ch19: pedagogy.pedagogy_ch19_tests,
+    ch20: pedagogy.pedagogy_ch20_tests,
+    ch21: pedagogy.pedagogy_ch21_tests,
+    ch22: pedagogy.pedagogy_ch22_tests,
   },
 };
 

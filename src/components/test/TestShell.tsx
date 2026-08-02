@@ -86,27 +86,39 @@ export function TestShell({
 
   return (
     <main className="mx-auto w-full max-w-[760px] px-2.5 py-2.5 sm:px-4 sm:py-4">
-      {/* 🚀 Compact Top Bar Header matching Maths screenshot */}
-      <div className="relative mb-3.5 flex min-h-[40px] items-center justify-between">
-        {/* Left: 3D Tactical Red Back Arrow button */}
-        <BackArrow href={backHref} label="સેટ બદલો" />
-
-        {/* Center: Top Pill Header Badges */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
-          <span className="rounded-full border border-purple-200 dark:border-purple-800/60 bg-purple-100/90 dark:bg-purple-950/80 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[0.7rem] sm:text-xs font-black text-purple-600 dark:text-purple-300 uppercase tracking-wide">
-            {set.title.toUpperCase()}
-          </span>
-          <span className="rounded-full border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[0.7rem] sm:text-xs font-bold text-zinc-700 dark:text-zinc-200 max-w-[150px] sm:max-w-[240px] truncate">
-            {chapterTitle} 🧍
-          </span>
+      {/* 🚀 Compact Top Bar Header */}
+      <div className="relative mb-3.5 flex min-h-[40px] items-center justify-center px-2">
+        {/* Left: Back Arrow button floating absolutely */}
+        <div className="absolute left-0 top-0 sm:top-1/2 sm:-translate-y-1/2">
+          <BackArrow href={backHref} label="સેટ બદલો" />
         </div>
 
-        {/* Right spacing balance */}
-        <div className="w-8 sm:w-10 hidden sm:block" />
+        {/* Center: Top Info Title/Badges */}
+        <div className="flex flex-col items-center justify-center pt-1 sm:pt-0">
+          {/* Top row: Subject, Ch, Test Num */}
+          <div className="flex items-center gap-1.5 mb-1 sm:mb-1.5">
+            <span className="px-1.5 sm:px-2 py-0.5 rounded-md bg-emerald-50 border border-emerald-100 text-emerald-600 text-[0.65rem] sm:text-[0.7rem] font-black tracking-widest shadow-sm">
+              {subjectId === 'pedagogy' ? 'વિજ્ઞાન પદ્ધતિશાસ્ત્ર' : `ધોરણ ${toGujaratiDigits(subjectId.replace(/\D/g, ''))}`}
+            </span>
+            <span className="px-1.5 sm:px-2 py-0.5 rounded-md bg-indigo-50 border border-indigo-100 text-indigo-600 text-[0.65rem] sm:text-[0.7rem] font-black tracking-widest shadow-sm">
+              પ્રકરણ {toGujaratiDigits(topicId.replace(/\D/g, ''))}
+            </span>
+            <span className="px-1.5 sm:px-2 py-0.5 rounded-md bg-white border border-slate-200 text-slate-500 text-[0.65rem] sm:text-[0.7rem] font-black tracking-widest shadow-sm">
+              ટેસ્ટ {toGujaratiDigits(set.setId.replace(/\D/g, ''))}
+            </span>
+          </div>
+          {/* Bottom row: Chapter Title */}
+          <h1 className="text-[0.75rem] sm:text-[0.85rem] font-black text-slate-800 tracking-tight flex items-center gap-1 text-center max-w-[200px] sm:max-w-[280px] truncate">
+            {chapterTitle} 🧍
+          </h1>
+        </div>
       </div>
 
       {/* 🌟 Compact Main Floating Card Container */}
-      <section className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-zinc-200/90 dark:border-zinc-800 bg-white/95 dark:bg-zinc-900/95 p-3.5 sm:p-5 backdrop-blur-xl shadow-xl shadow-black/10 dark:shadow-black/60">
+      <section className="bg-white rounded-2xl shadow-xl shadow-black/10 border border-slate-100 p-2.5 sm:p-3 relative overflow-hidden group">
+        {/* Decorative glow */}
+        <div className="absolute -right-16 -top-16 w-48 h-48 bg-indigo-500/5 rounded-full opacity-50" />
+
         {finished ? (
           <ResultScreen
             correct={correctCount}
@@ -118,7 +130,7 @@ export function TestShell({
             userAnswers={answers}
           />
         ) : (
-          <div className="flex flex-col gap-3.5">
+          <div className="relative z-10 flex flex-col gap-3.5">
             {/* Question Card View */}
             <QuestionCard
               question={set.questions[index]}
@@ -128,71 +140,80 @@ export function TestShell({
             />
 
             {/* 📊 Bottom Progress Info & Line Bar */}
-            <div className="mt-1 pt-2.5 border-t border-zinc-100 dark:border-zinc-800/80">
-              <div className="flex items-center justify-between text-[0.7rem] sm:text-[0.74rem] font-black tracking-widest uppercase">
-                <span className="text-indigo-600 dark:text-indigo-400">
-                  PROGRESS: {index + 1} / {set.questions.length}
+            <div className="mt-2 border-t border-slate-100 pt-2">
+              <div className="flex items-center justify-between mb-1.5 px-1">
+                <span className="text-[0.7rem] font-black text-slate-400 tracking-widest uppercase">
+                  Progress: {index + 1} / {set.questions.length}
                 </span>
-                <span className="text-indigo-600 dark:text-indigo-400">
+                <span className="text-[0.7rem] font-black text-indigo-600 tracking-widest uppercase">
                   {progressPct}%
                 </span>
               </div>
-              <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+              
+              <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden shadow-inner mb-3">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 shadow-2xs shadow-indigo-500/50 transition-all duration-500"
+                  className="h-full bg-gradient-to-r from-indigo-500 via-indigo-500 to-purple-500 shadow-[0_0_10px_rgba(79,70,229,0.3)] transition-all duration-500"
                   style={{ width: `${progressPct}%` }}
                 />
               </div>
-            </div>
 
-            {/* 🎯 Compact Navigation Controls Bar */}
-            <div className="mt-0.5 flex items-center justify-between gap-2.5">
-              {/* Back Circle Arrow */}
-              <button
-                type="button"
-                onClick={() => setIndex((i) => Math.max(0, i - 1))}
-                disabled={index === 0}
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 disabled:opacity-30 disabled:hover:bg-transparent transition-all shadow-2xs"
-                title="અગાઉનો પ્રશ્ન"
-              >
-                <ArrowLeft size={16} strokeWidth={2.5} />
-              </button>
-
-              {/* Middle Skip Pill Button */}
-              <button
-                type="button"
-                onClick={() =>
-                  setIndex((i) => Math.min(set.questions.length - 1, i + 1))
-                }
-                disabled={isLast}
-                className="flex items-center justify-center gap-1 rounded-full border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-5 sm:px-8 py-2 text-xs font-bold text-zinc-700 dark:text-zinc-200 hover:bg-zinc-50 dark:hover:bg-zinc-700/80 transition-all shadow-2xs disabled:opacity-40"
-              >
-                <Play size={12} fill="currentColor" strokeWidth={2} />
-                <span>Skip</span>
-              </button>
-
-              {/* Right Prominent Next / Finish Button */}
-              {isLast ? (
+              {/* 🎯 Compact Navigation Controls Bar */}
+              <div className="flex gap-3">
+                {/* Back Circle Arrow */}
                 <button
                   type="button"
-                  onClick={finish}
-                  className="flex flex-1 sm:max-w-[260px] items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 py-2.5 text-xs sm:text-sm font-extrabold text-white shadow-md shadow-emerald-500/30 hover:shadow-lg hover:scale-[1.01] active:scale-95 transition-all"
+                  onClick={() => setIndex((i) => Math.max(0, i - 1))}
+                  disabled={index === 0}
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white border border-slate-200 text-slate-500 flex items-center justify-center shrink-0 disabled:opacity-30 disabled:pointer-events-none transition-all active:scale-95 shadow-sm"
+                  title="અગાઉનો પ્રશ્ન"
                 >
-                  <Flag size={15} strokeWidth={2.5} />
-                  <span>પરિણામ જુઓ</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-[22px] sm:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                  </svg>
                 </button>
-              ) : (
+
+                {/* Middle Skip Pill Button */}
                 <button
                   type="button"
                   onClick={() =>
                     setIndex((i) => Math.min(set.questions.length - 1, i + 1))
                   }
-                  className="flex flex-1 sm:max-w-[260px] items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 py-2.5 text-xs sm:text-sm font-extrabold text-white shadow-md shadow-indigo-500/30 hover:shadow-lg hover:scale-[1.01] active:scale-95 transition-all"
+                  disabled={isLast}
+                  className="flex-1 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl bg-white border border-slate-200 text-slate-600 font-bold text-sm flex items-center justify-center gap-1.5 sm:gap-2 group/skip"
                 >
-                  <span>Next</span>
-                  <ArrowRight size={15} strokeWidth={2.5} />
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-[18px] sm:h-[18px] group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                    <line x1="19" y1="5" x2="19" y2="19"></line>
+                  </svg>
+                  {index < set.questions.length - 1 ? 'Skip' : 'Skip & Finish'}
                 </button>
-              )}
+
+                {/* Right Prominent Next / Finish Button */}
+                {isLast ? (
+                  <button
+                    type="button"
+                    onClick={finish}
+                    className="flex-[2] px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl bg-indigo-600 text-white font-black text-sm shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-1.5 sm:gap-2 group/next"
+                  >
+                    <span>પરિણામ જુઓ</span>
+                    <Flag size={15} strokeWidth={2.5} />
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setIndex((i) => Math.min(set.questions.length - 1, i + 1))
+                    }
+                    className="flex-[2] px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl bg-indigo-600 text-white font-black text-sm shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-1.5 sm:gap-2 group/next"
+                  >
+                    <span>Next</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-[18px] sm:h-[18px] group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         )}

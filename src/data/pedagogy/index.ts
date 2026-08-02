@@ -28,3 +28,18 @@ export * from "./ch14/theory";
 export * from "./ch14/test";
 export * from "./ch15/theory";
 export * from "./ch15/test";
+export * from "./ch16/theory";
+export * from "./ch16/test";
+export * from "./ch17/theory";
+export * from "./ch17/test";
+export * from "./ch18/theory";
+export * from "./ch18/test";
+export * from "./ch19/theory";
+export * from "./ch19/test";
+export * from "./ch20/theory";
+export * from "./ch20/test";
+export * from "./ch21/theory";
+export * from "./ch21/test";
+export * from "./ch22/theory";
+export * from "./ch22/test";
+
