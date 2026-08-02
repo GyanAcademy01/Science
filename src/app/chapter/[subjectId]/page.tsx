@@ -53,7 +53,7 @@ export default async function ChapterListPage(props: {
         {subject.topics.map((topic, index) => (
           <div
             key={topic.id}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] p-3.5 sm:p-4 min-h-[148px] sm:min-h-[158px] shadow-[0_4px_20px_rgba(0,0,0,0.12)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--stroke-strong)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.18)] dark:hover:shadow-[0_8px_25px_rgba(0,0,0,0.7)] anim-fade-up"
+            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] p-3.5 sm:p-4 min-h-[148px] sm:min-h-[158px] shadow-[0_6px_24px_rgba(0,0,0,0.22)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.7)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--stroke-strong)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.32)] dark:hover:shadow-[0_12px_30px_rgba(0,0,0,0.8)] anim-fade-up"
             style={{ animationDelay: `${index * 0.04}s` }}
           >
             {/* Background glow on card hover */}
