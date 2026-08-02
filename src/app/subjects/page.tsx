@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function SubjectsPage() {
   return (
-    <main className="mx-auto w-full max-w-[1240px] px-3 pt-2 pb-4 sm:px-5 sm:pt-3 sm:pb-6">
+    <main className="mx-auto w-full max-w-3xl px-3 pt-2 pb-4 sm:px-5 sm:pt-3 sm:pb-6">
       {/* 🚀 Header Bar matching Hindi Project style */}
       <div className="relative mb-5 flex min-h-[36px] items-center justify-center">
         <div className="absolute left-0">
@@ -30,7 +30,7 @@ export default function SubjectsPage() {
       </div>
 
       {/* 🚀 Vertical List of Glassmorphic Capsule Bar Subject Cards */}
-      <div className="mx-auto flex max-w-3xl flex-col gap-3 sm:gap-3.5">
+      <div className="flex flex-col gap-3 sm:gap-3.5">
         {subjects.map((subject, index) => (
           <Link key={subject.id} href={`/chapter/${subject.id}`} className="group block">
             <div

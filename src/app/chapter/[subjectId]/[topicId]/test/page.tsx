@@ -30,7 +30,7 @@ export default async function TestSelectPage(props: {
   if (!found || !chapter) notFound();
 
   return (
-    <main className="mx-auto w-full max-w-[1000px] px-3 py-4 sm:px-6 sm:py-6">
+    <main className="mx-auto w-full max-w-[920px] px-3 py-4 sm:px-6 sm:py-6">
       {/* 🚀 Header Bar matching Hindi Project style */}
       <div className="relative mb-5 flex min-h-[36px] items-center justify-center">
         <div className="absolute left-0">
