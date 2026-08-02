@@ -53,7 +53,7 @@ export default async function ChapterListPage(props: {
         {subject.topics.map((topic, index) => (
           <div
             key={topic.id}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] p-3.5 sm:p-4 min-h-[148px] sm:min-h-[158px] shadow-md shadow-black/10 dark:shadow-black/50 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--stroke-strong)] hover:shadow-xl anim-fade-up"
+            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] p-3.5 sm:p-4 min-h-[148px] sm:min-h-[158px] shadow-[0_4px_20px_rgba(0,0,0,0.12)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--stroke-strong)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.18)] dark:hover:shadow-[0_8px_25px_rgba(0,0,0,0.7)] anim-fade-up"
             style={{ animationDelay: `${index * 0.04}s` }}
           >
             {/* Background glow on card hover */}
@@ -81,7 +81,7 @@ export default async function ChapterListPage(props: {
               {topic.hasTheory && (
                 <Link
                   href={`/chapter/${subject.id}/${topic.id}/theory`}
-                  className="inline-flex items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-2 py-1.5 text-[0.76rem] font-bold shadow-xs transition-all duration-200 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-2 py-1 text-[0.76rem] font-bold shadow-xs transition-all duration-200 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
                 >
                   <BookOpen size={13.5} strokeWidth={2.4} className="shrink-0" />
                   <span>Theory</span>
@@ -91,7 +91,7 @@ export default async function ChapterListPage(props: {
               {topic.hasTest && (
                 <Link
                   href={`/chapter/${subject.id}/${topic.id}/test`}
-                  className="inline-flex items-center justify-center gap-1 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 px-2 py-1.5 text-[0.76rem] font-bold shadow-xs transition-all duration-200 hover:border-emerald-400 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 px-2 py-1 text-[0.76rem] font-bold shadow-xs transition-all duration-200 hover:border-emerald-400 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
                 >
                   <ClipboardCheck size={13.5} strokeWidth={2.4} className="shrink-0 text-emerald-500 dark:text-emerald-400" />
                   <span>Test</span>
@@ -101,7 +101,7 @@ export default async function ChapterListPage(props: {
               {topic.pdfUrl && (
                 <Link
                   href={buildPdfViewerHref(subject.id, topic.id)}
-                  className="inline-flex items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-rose-50 to-orange-50 dark:from-rose-950/40 dark:to-orange-950/30 border border-rose-200/80 dark:border-rose-800/50 text-rose-600 dark:text-rose-400 px-2 py-1.5 text-[0.76rem] font-extrabold shadow-xs transition-all duration-200 hover:border-rose-400 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-1 rounded-full bg-gradient-to-r from-rose-50 to-orange-50 dark:from-rose-950/40 dark:to-orange-950/30 border border-rose-200/80 dark:border-rose-800/50 text-rose-600 dark:text-rose-400 px-2 py-1 text-[0.76rem] font-extrabold shadow-xs transition-all duration-200 hover:border-rose-400 hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
                 >
                   <FileText size={13.5} strokeWidth={2.4} className="shrink-0 text-rose-500 dark:text-rose-400" />
                   <span>PDF</span>
