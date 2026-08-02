@@ -1,11 +1,11 @@
-export type TheorySectionType = "text" | "points" | "table" | "qa" | "callout";
+type TheorySectionType = "text" | "points" | "table" | "qa" | "callout";
 
 export interface TheoryTable {
   headers: string[];
   rows: string[][];
 }
 
-export interface TheoryQA {
+interface TheoryQA {
   q: string;
   a: string;
 }

@@ -6,7 +6,7 @@ import { DataTable } from "@/components/ui/DataTable";
 import { MoleculeBullet } from "@/components/common/MoleculeBullet";
 import { ProtectedContent } from "@/components/common/ProtectedContent";
 
-export interface TopicBoxTheme {
+interface TopicBoxTheme {
   id: string;
   name: string;
   borderColor: string;
@@ -17,7 +17,7 @@ export interface TopicBoxTheme {
 }
 
 /** 🎨 ૧૦ અલગ અલગ ટોપિક બોક્સ કલર થીમ્સ */
-export const TOPIC_BOX_THEMES: TopicBoxTheme[] = [
+const TOPIC_BOX_THEMES: TopicBoxTheme[] = [
   {
     id: "cyan",
     name: "સાગર સાયન",
