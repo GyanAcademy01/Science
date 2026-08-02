@@ -1,21 +1,64 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Send } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { siteConfig } from "@/lib/site";
+
+const INITIAL_FORM = {
+  name: "",
+  phone: "",
+  subject: "સામાન્ય પ્રશ્ન",
+  message: "",
+};
+
+type FormData = typeof INITIAL_FORM;
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    subject: "સામાન્ય પ્રશ્ન",
-    message: "",
-  });
+  const [error, setError] = useState("");
+  const [formData, setFormData] = useState<FormData>(INITIAL_FORM);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.phone || !formData.message) return;
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const data = {
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      subject: formData.subject.trim(),
+      message: formData.message.trim(),
+    };
+
+    if (data.name.length < 2 || data.name.length > 80) {
+      setError("કૃપા કરીને નામ 2 થી 80 અક્ષરમાં લખો.");
+      return;
+    }
+    if (data.phone.length < 5 || data.phone.length > 25) {
+      setError("કૃપા કરીને માન્ય મોબાઇલ નંબર લખો.");
+      return;
+    }
+    if (!data.subject || data.subject.length > 80) {
+      setError("કૃપા કરીને વિષય પસંદ કરો.");
+      return;
+    }
+    if (data.message.length < 1 || data.message.length > 2000) {
+      setError("સંદેશ 1 થી 2000 અક્ષરનો હોવો જોઈએ.");
+      return;
+    }
+
+    const body = [
+      `નામ: ${data.name}`,
+      `મોબાઇલ: ${data.phone}`,
+      `વિષય: ${data.subject}`,
+      "",
+      data.message,
+    ].join("\n");
+    const mailto = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
+      `Gyan Academy સંપર્ક: ${data.subject}`,
+    )}&body=${encodeURIComponent(body)}`;
+
+    setError("");
+    window.location.href = mailto;
     setSubmitted(true);
   };
 
@@ -25,19 +68,23 @@ export function ContactForm() {
         <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-[var(--ok-soft)] text-[var(--ok)]">
           <CheckCircle2 size={24} />
         </div>
-        <h3 className="mt-3 text-lg font-bold">સંદેશ મળી ગયો છે!</h3>
+        <h3 className="mt-3 text-lg font-bold">Email composer ખોલવાનો પ્રયાસ થયો છે.</h3>
         <p className="mt-1.5 text-xs text-[var(--fg-muted)]">
-          ધન્યવાદ {formData.name}! આપના સંદેશનો Gyan Academy ટીમ દ્વારા ટૂંક સમયમાં સંપર્ક કરવામાં આવશે.
+          સંદેશ મોકલાયો હોવાનો દાવો નથી: તમારા deviceનું email app ખુલ્યું હોય તો ત્યાંથી મોકલવાનું બાકી છે. ન ખુલ્યું હોય તો {" "}
+          <a className="font-semibold text-[var(--brand-1)] hover:underline" href={`mailto:${siteConfig.email}`}>
+            {siteConfig.email}
+          </a>
+          {" "}પર સીધો email કરો.
         </p>
         <button
           type="button"
           onClick={() => {
             setSubmitted(false);
-            setFormData({ name: "", phone: "", subject: "સામાન્ય પ્રશ્ન", message: "" });
+            setFormData(INITIAL_FORM);
           }}
           className="mt-4 text-xs font-semibold text-[var(--brand-1)] hover:underline"
         >
-          બીજો સંદેશ મોકલો →
+          બીજો સંદેશ લખો →
         </button>
       </div>
     );
@@ -46,7 +93,12 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="glass space-y-3.5 rounded-[var(--r-lg)] p-4 sm:p-6">
       <h3 className="text-base font-bold">તમારો સંદેશ મોકલો</h3>
-      
+      {error ? (
+        <p role="alert" className="rounded-[var(--r-md)] bg-red-500/10 px-3 py-2 text-xs font-semibold text-red-600 dark:text-red-400">
+          {error}
+        </p>
+      ) : null}
+
       <div className="grid gap-3 sm:grid-cols-2">
         <div>
           <label htmlFor="contact-name" className="block text-xs font-semibold text-[var(--fg-muted)] mb-1">
@@ -56,8 +108,10 @@ export function ContactForm() {
             id="contact-name"
             type="text"
             required
+            maxLength={80}
+            autoComplete="name"
             value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            onChange={(event) => setFormData({ ...formData, name: event.target.value })}
             className="w-full rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-2 text-xs text-[var(--fg)] focus:border-[var(--brand-1)] focus:outline-none"
           />
         </div>
@@ -70,8 +124,10 @@ export function ContactForm() {
             id="contact-phone"
             type="tel"
             required
+            maxLength={25}
+            autoComplete="tel"
             value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            onChange={(event) => setFormData({ ...formData, phone: event.target.value })}
             className="w-full rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-2 text-xs text-[var(--fg)] focus:border-[var(--brand-1)] focus:outline-none"
           />
         </div>
@@ -84,7 +140,7 @@ export function ContactForm() {
         <select
           id="contact-subject"
           value={formData.subject}
-          onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+          onChange={(event) => setFormData({ ...formData, subject: event.target.value })}
           className="w-full rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-2 text-xs text-[var(--fg)] focus:border-[var(--brand-1)] focus:outline-none"
         >
           <option value="સામાન્ય પ્રશ્ન">સામાન્ય પ્રશ્ન</option>
@@ -102,8 +158,9 @@ export function ContactForm() {
           id="contact-message"
           rows={3}
           required
+          maxLength={2000}
           value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          onChange={(event) => setFormData({ ...formData, message: event.target.value })}
           className="w-full rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] px-3 py-2 text-xs text-[var(--fg)] focus:border-[var(--brand-1)] focus:outline-none"
         />
       </div>

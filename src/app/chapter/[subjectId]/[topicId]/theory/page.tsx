@@ -6,6 +6,7 @@ import { BackArrow } from "@/components/common/BackArrow";
 import { LinkButton } from "@/components/ui/Button";
 import { getTopic } from "@/lib/data";
 import { allTopicParams, getTheory } from "@/lib/content";
+import { buildPdfViewerHref } from "@/lib/pdf";
 
 export function generateStaticParams() {
   return allTopicParams();
@@ -75,7 +76,7 @@ export default async function TheoryPage(props: {
         )}
         {topic.pdfUrl && (
           <LinkButton
-            href={`/pdf-view?file=${encodeURIComponent(topic.pdfUrl)}&title=${encodeURIComponent(topic.title)}`}
+            href={buildPdfViewerHref(subjectId, topicId)}
             variant="outline"
             size="lg"
           >

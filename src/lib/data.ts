@@ -63,7 +63,7 @@ export const subjects: Subject[] = [
         hasTheory: true,
         hasTest: true,
         testSets: 2,
-        pdfUrl: "/pdfs/ધોરણ 6/5 - શરીરનું હલનચલન.pdf",
+        pdfUrl: "/pdfs/ધોરણ 6/5 - શરીરનું હલન ચલન.pdf",
       },
       {
         id: "ch6",

@@ -6,7 +6,6 @@ import { BackArrow } from "@/components/common/BackArrow";
 import { LinkButton } from "@/components/ui/Button";
 import { getTopic } from "@/lib/data";
 import { allTopicParams, getChapterTests } from "@/lib/content";
-import { toGujaratiDigits } from "@/lib/utils";
 
 export function generateStaticParams() {
   return allTopicParams();
@@ -29,11 +28,6 @@ export default async function TestSelectPage(props: {
   const found = getTopic(subjectId, topicId);
   const chapter = getChapterTests(subjectId, topicId);
   if (!found || !chapter) notFound();
-
-  const totalQuestions = chapter.sets.reduce(
-    (sum, set) => sum + set.totalQuestions,
-    0,
-  );
 
   return (
     <main className="mx-auto w-full max-w-[1000px] px-3 py-4 sm:px-6 sm:py-6">

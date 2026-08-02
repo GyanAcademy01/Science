@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BookOpen, ClipboardCheck, FileText, Sparkles } from "lucide-react";
+import { BookOpen, ClipboardCheck, FileText } from "lucide-react";
 import { HexBadge } from "@/components/common/HexBadge";
 import { BackArrow } from "@/components/common/BackArrow";
 import { getSubject, subjects } from "@/lib/data";
 import { toGujaratiDigits } from "@/lib/utils";
+import { buildPdfViewerHref } from "@/lib/pdf";
 
 export function generateStaticParams() {
   return subjects.map((subject) => ({ subjectId: subject.id }));
@@ -99,7 +100,7 @@ export default async function ChapterListPage(props: {
 
               {topic.pdfUrl && (
                 <Link
-                  href={`/pdf-view?file=${encodeURIComponent(topic.pdfUrl)}&title=${encodeURIComponent(topic.title)}`}
+                  href={buildPdfViewerHref(subject.id, topic.id)}
                   className="inline-flex items-center justify-center gap-1 rounded-2xl bg-gradient-to-r from-rose-50 to-orange-50 dark:from-rose-950/40 dark:to-orange-950/30 border border-rose-200/80 dark:border-rose-800/50 text-rose-600 dark:text-rose-400 px-2 py-1.5 text-[0.76rem] sm:text-[0.8rem] font-extrabold shadow-sm shadow-rose-500/10 transition-all duration-300 hover:border-rose-400 hover:shadow-md hover:scale-[1.02] active:scale-95 text-center whitespace-nowrap"
                 >
                   <FileText size={14} strokeWidth={2.4} className="shrink-0 text-rose-500 dark:text-rose-400" />

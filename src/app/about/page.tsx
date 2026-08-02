@@ -33,7 +33,7 @@ export default function AboutPage() {
           <span className="text-grad">અમારા વિશે</span>
         </h1>
         <p className="mt-1.5 max-w-[520px] text-[0.82rem] leading-relaxed text-[var(--fg-muted)]">
-          {siteConfig.fullName} — ધોરણ 6 ના વિદ્યાર્થીઓ માટે તૈયાર કરેલી વિજ્ઞાન
+          {siteConfig.fullName} — ધોરણ ૬થી ૧૦ તથા વિજ્ઞાન પદ્ધતિશાસ્ત્ર માટે તૈયાર કરેલી વિજ્ઞાન
           અભ્યાસ એપ. અહીંનું બધું જ લખાણ Gyan Academy, {siteConfig.place} ની
           મૂળ પુસ્તિકા પર આધારિત છે.
         </p>
@@ -61,10 +61,8 @@ export default function AboutPage() {
       <Card className="mt-2.5 p-3.5 sm:p-5">
         <h2 className="text-[1rem]">હાલનો અભ્યાસક્રમ</h2>
         <p className="mt-1.5 text-[0.8rem] leading-relaxed text-[var(--fg-muted)]">
-          ધોરણ 6 વિજ્ઞાનનાં {toGujaratiDigits(siteStats.chapters)} પ્રકરણ અને
-          કુલ {toGujaratiDigits(siteStats.questions)} MCQ પ્રશ્નો ઉપલબ્ધ છે —
-          આહારના ઘટકો તથા વસ્તુઓના જૂથ બનાવવાં. આગળનાં પ્રકરણો ક્રમશઃ ઉમેરાતાં
-          જશે.
+          ધોરણ ૬થી ૧૦ વિજ્ઞાન અને વિજ્ઞાન પદ્ધતિશાસ્ત્રનાં કુલ {toGujaratiDigits(siteStats.chapters)} પ્રકરણ અને
+          કુલ {toGujaratiDigits(siteStats.questions)} MCQ પ્રશ્નો ઉપલબ્ધ છે — થિયરી, પ્રશ્નોત્તર અને મૂળ PDF સાથે.
         </p>
         <div className="mt-3">
           <LinkButton href="/subjects" size="md">

@@ -3,6 +3,7 @@ import { Outfit, Noto_Sans_Gujarati } from "next/font/google";
 import { Topbar } from "@/components/layout/Topbar";
 import { LabBackground } from "@/components/common/LabBackground";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
+import { ServiceWorkerRegistration } from "@/components/common/ServiceWorkerRegistration";
 import { siteConfig, storageKeys } from "@/lib/site";
 import "./globals.css";
 
@@ -39,12 +40,13 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "વિજ્ઞાન",
-    "ધોરણ 6 વિજ્ઞાન",
+    "ધોરણ 6 થી 10 વિજ્ઞાન",
+    "વિજ્ઞાન પદ્ધતિશાસ્ત્ર",
     "Science Gujarati",
     "Gyan Academy",
     "MCQ Test",
     "આહારના ઘટકો",
-    "વસ્તુઓના જૂથ બનાવવાં",
+    "વિજ્ઞાન MCQ",
   ],
   authors: [{ name: "Gyan Academy" }],
   creator: "Gyan Academy",
@@ -104,6 +106,7 @@ export default function RootLayout({
           {children}
         </div>
         <ScrollToTop />
+        <ServiceWorkerRegistration />
       </body>
     </html>
   );

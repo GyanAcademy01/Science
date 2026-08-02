@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Play, Flag } from "lucide-react";
+import { Flag } from "lucide-react";
 import type { TestSet } from "@/types/test";
 import { BackArrow } from "@/components/common/BackArrow";
 import { QuestionCard } from "./QuestionCard";
@@ -40,7 +40,6 @@ export function TestShell({
     [answers, set.questions],
   );
 
-  const attempted = answers.filter((a) => a !== null).length;
   const isLast = index === set.questions.length - 1;
   const progressPct = Math.round(((index + 1) / set.questions.length) * 100);
 

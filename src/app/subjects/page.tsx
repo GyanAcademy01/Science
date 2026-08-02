@@ -7,7 +7,7 @@ import { toGujaratiDigits } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "વિષયો",
-  description: "ધોરણ 6 થી 10 વિજ્ઞાન અને પદ્ધતિશાસ્ત્રના વિષયો અને પ્રકરણો.",
+  description: "ધોરણ ૬થી ૧૦ વિજ્ઞાન અને વિજ્ઞાન પદ્ધતિશાસ્ત્રના વિષયો અને પ્રકરણો.",
 };
 
 export default function SubjectsPage() {

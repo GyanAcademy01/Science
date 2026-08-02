@@ -10,6 +10,7 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    ".agents/**",
     // vendored pdf.js worker — third-party bundle, lint નહીં કરવું
     "public/**",
   ]),

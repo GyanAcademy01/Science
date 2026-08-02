@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import type { TheorySection } from "@/types/theory";
 import { DataTable } from "@/components/ui/DataTable";
 import { MoleculeBullet } from "@/components/common/MoleculeBullet";
+import { ProtectedContent } from "@/components/common/ProtectedContent";
 
 export interface TopicBoxTheme {
   id: string;
@@ -205,16 +207,28 @@ export function TheoryRenderer({ sections }: { sections: TheorySection[] }) {
               </h2>
             </header>
 
-            <div className="reader ps-0 sm:ps-[46px]">
+            <ProtectedContent className="reader ps-0 sm:ps-[46px]">
               {section.imageUrl && (
                 <figure className="mb-3.5 overflow-hidden rounded-[var(--r-md)] border border-[var(--stroke)] bg-[var(--surface-2)] shadow-xs">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={section.imageUrl}
-                    alt={section.imageCaption || section.title}
-                    className="h-auto w-full object-contain transition-transform duration-300 hover:scale-[1.005]"
-                    loading="lazy"
-                  />
+                  {section.imageUrl.startsWith("/") && !section.imageUrl.startsWith("//") ? (
+                    <Image
+                      src={section.imageUrl}
+                      alt={section.imageCaption || section.title}
+                      width={1376}
+                      height={768}
+                      sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1024px) calc(100vw - 3rem), 1376px"
+                      className="h-auto w-full object-contain transition-transform duration-300 hover:scale-[1.005]"
+                      loading="lazy"
+                    />
+                  ) : (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={section.imageUrl}
+                      alt={section.imageCaption || section.title}
+                      className="h-auto w-full object-contain transition-transform duration-300 hover:scale-[1.005]"
+                      loading="lazy"
+                    />
+                  )}
                   {section.imageCaption && (
                     <figcaption className="bg-[var(--surface)] px-3 py-2 text-center text-[0.8rem] font-semibold text-[var(--fg-muted)]">
                       📸 {section.imageCaption}
@@ -223,7 +237,7 @@ export function TheoryRenderer({ sections }: { sections: TheorySection[] }) {
                 </figure>
               )}
               <SectionBody section={section} theme={theme} />
-            </div>
+            </ProtectedContent>
           </article>
         );
       })}

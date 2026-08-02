@@ -1,7 +1,6 @@
 "use client";
 
-import { Check, X } from "lucide-react";
-import { cn, OPTION_LABELS } from "@/lib/utils";
+import { OPTION_LABELS } from "@/lib/utils";
 
 interface OptionButtonProps {
   index: number;

@@ -131,6 +131,24 @@ h4 {
   background: var(--stroke-strong);
 }
 
+/* Scoped reader deterrence: normal controls remain selectable and usable. */
+.protected-reading,
+.protected-reading img,
+.protected-reading canvas {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.protected-reading img,
+.protected-reading canvas {
+  -webkit-user-drag: none;
+}
+
+.protected-reading :is(input, textarea, select, button, a, form, [contenteditable="true"]) {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
 /* ========================================================================
    App typography scaling
    ======================================================================== */
