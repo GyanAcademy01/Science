@@ -44,17 +44,19 @@ export function Topbar() {
           </span>
         </Link>
 
-        {/* Center: Home / Navigation button directly in topbar for mobile & desktop */}
+        {/* Center: Home icon button directly in topbar (icon only) */}
         <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
+              title={item.label}
+              aria-label={item.label}
               className={cn(
-                "flex items-center gap-1 rounded-full px-3 py-1 text-[0.8rem] font-semibold transition-all duration-300",
+                "grid h-8 w-8 place-items-center rounded-full border border-[var(--stroke)] transition-all duration-300 active:scale-95",
                 isActive(item.href)
-                  ? "text-white shadow-sm"
-                  : "text-[var(--fg-muted)] hover:text-[var(--fg)]",
+                  ? "text-white border-transparent shadow-sm"
+                  : "bg-[var(--surface-2)] text-[var(--fg-muted)] hover:text-[var(--fg)] hover:border-[var(--stroke-strong)]",
               )}
               style={
                 isActive(item.href)
@@ -62,8 +64,7 @@ export function Topbar() {
                   : undefined
               }
             >
-              <Home size={13} className="shrink-0" />
-              <span>{item.label}</span>
+              <Home size={15} strokeWidth={2.2} />
             </Link>
           ))}
         </nav>
