@@ -36,7 +36,7 @@ export function Topbar() {
           >
             🔬
           </span>
-          <span className="text-[0.95rem] leading-none">
+          <span className="hidden sm:inline text-[0.95rem] leading-none">
             <span className="text-grad">{siteConfig.name}</span>
           </span>
         </Link>
