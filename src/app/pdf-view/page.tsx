@@ -1,9 +1,12 @@
-import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AtomLoader } from "@/components/ui/AtomLoader";
 import { resolvePdfRequest, type PdfViewerRequest } from "@/lib/pdf";
-import PDFViewer from "./PDFViewer";
+
+const PDFViewer = dynamic(() => import("./PDFViewer"), {
+  loading: () => <AtomLoader label="PDF તૈયાર થાય છે…" />,
+});
 
 export const metadata: Metadata = {
   title: "PDF",
@@ -29,9 +32,5 @@ export default async function PDFViewPage({
 
   if (!request) notFound();
 
-  return (
-    <Suspense fallback={<AtomLoader label="PDF તૈયાર થાય છે…" />}>
-      <PDFViewer request={request} />
-    </Suspense>
-  );
+  return <PDFViewer request={request} />;
 }

@@ -23,7 +23,15 @@ function isNeverCache(request) {
 }
 
 function isHashedNextAsset(request) {
-  return new URL(request.url).pathname.startsWith("/_next/static/");
+  const { pathname } = new URL(request.url);
+  return (
+    pathname.startsWith("/_next/static/") ||
+    pathname.endsWith(".png") ||
+    pathname.endsWith(".jpg") ||
+    pathname.endsWith(".svg") ||
+    pathname.endsWith(".webp") ||
+    pathname.endsWith(".woff2")
+  );
 }
 
 async function precacheShell() {
