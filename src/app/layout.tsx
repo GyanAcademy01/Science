@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Outfit, Noto_Sans_Gujarati } from "next/font/google";
 import { Topbar } from "@/components/layout/Topbar";
+import { Analytics } from "@vercel/analytics/react";
 import { LabBackground } from "@/components/common/LabBackground";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { ServiceWorkerRegistration } from "@/components/common/ServiceWorkerRegistration";
@@ -109,6 +111,8 @@ export default function RootLayout({
         </div>
         <ScrollToTop />
         <ServiceWorkerRegistration />
+        <Analytics />
+        <Script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c11e7492a5434d3b8e45f949c817290f"}' />
       </body>
     </html>
   );
