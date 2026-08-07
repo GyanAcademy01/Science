@@ -8,6 +8,7 @@ import { QuestionCard } from "./QuestionCard";
 import { ResultScreen } from "./ResultScreen";
 import { saveBestResult } from "@/lib/progress";
 import { toGujaratiDigits } from "@/lib/utils";
+import { playCorrectSound, playWrongSound } from "@/lib/sounds";
 
 interface TestShellProps {
   set: TestSet;
@@ -47,12 +48,20 @@ export function TestShell({
     (choice: number) => {
       setAnswers((current) => {
         if (current[index] !== null) return current;
+        
+        const isRight = choice === set.questions[index].correctAnswer;
+        if (isRight) {
+          playCorrectSound();
+        } else {
+          playWrongSound();
+        }
+
         const next = [...current];
         next[index] = choice;
         return next;
       });
     },
-    [index],
+    [index, set.questions],
   );
 
   const finish = useCallback(() => {

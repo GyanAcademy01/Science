@@ -25,10 +25,10 @@ export function OptionButton({
 
   if (isAnswered) {
     if (isCorrect) {
-      btnStyles = "bg-emerald-50 border-emerald-300 ring-1 ring-emerald-100 text-emerald-700 shadow-lg shadow-emerald-100/50";
+      btnStyles = "bg-emerald-50 border-emerald-300 ring-1 ring-emerald-100 text-emerald-700 shadow-lg shadow-emerald-100/50 anim-correct";
       badgeStyles = "bg-emerald-500 border-emerald-400 text-white shadow-lg shadow-emerald-500/30 ring-0";
     } else if (selected) {
-      btnStyles = "bg-red-50 border-red-300 ring-1 ring-red-100 text-red-700 shadow-lg shadow-red-100/50";
+      btnStyles = "bg-red-50 border-red-300 ring-1 ring-red-100 text-red-700 shadow-lg shadow-red-100/50 anim-wrong";
       badgeStyles = "bg-red-500 border-red-400 text-white shadow-lg shadow-red-500/30 ring-0";
     } else {
       btnStyles = "bg-white opacity-40 border-slate-100 text-slate-300 pointer-events-none";
